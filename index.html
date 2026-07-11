@@ -68,9 +68,14 @@
               <a class="navbar-brand" href="index.html">
                 <img src="./images/logogreenwash.png" alt="Logo GW Lavado Ecologico" class="logo-header" />
               </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <!-- SVG hamburguesa animada -->
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                  <path class="line line1" d="M4 7h16" stroke="#1f7164" stroke-width="2.2" stroke-linecap="round" fill="none"></path>
+                  <path class="line line2" d="M4 12h16" stroke="#1f7164" stroke-width="2.2" stroke-linecap="round" fill="none"></path>
+                  <path class="line line3" d="M4 17h16" stroke="#1f7164" stroke-width="2.2" stroke-linecap="round" fill="none"></path>
+                </svg>
               </button>
 
               <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -95,6 +100,8 @@
                   </li>
                 </ul>
               </div>
+              <!-- Backdrop para off-canvas móvil -->
+              <div class="offcanvas-backdrop"></div>
             </nav>
           </div>
         </div>
@@ -142,6 +149,8 @@
     </section>
     <!-- end slider section -->
   </div>
+
+    
 
   <!-- welcome section -->
   <section id="welcome_section" class="welcome_section layout_padding">
@@ -790,6 +799,33 @@
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script>
+    // Reproducir/pausar video dentro del carousel cuando cambia la slide
+    (function(){
+      if (typeof jQuery === 'undefined') return;
+      var $c = jQuery('#carouselExampleIndicators');
+      if (!$c.length) return;
+
+      // Al cambiar de slide, reproducir video si existe y pausar los demás
+      $c.on('slid.bs.carousel', function () {
+        var $active = $c.find('.carousel-item.active');
+        // Pausar todos los videos
+        $c.find('video').each(function(){
+          try { this.pause(); this.currentTime = 0; } catch(e){}
+        });
+        // Reproducir los videos dentro de la slide activa
+        $active.find('video').each(function(){
+          try { this.play(); } catch(e){}
+        });
+      });
+
+      // Si la slide activa al cargar contiene video, reproducirlo
+      jQuery(function(){
+        var $active = $c.find('.carousel-item.active');
+        $active.find('video').each(function(){ try { this.play(); } catch(e){} });
+      });
+    })();
+  </script>
   <script>
     document.addEventListener('scroll', function () {
       var topbar = document.querySelector('.topbar');

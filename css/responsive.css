@@ -164,9 +164,176 @@
   .slider_section ol.carousel-indicators {
     right: 0;
   }
+
+  /* Mejoras para la sección Welcome en móvil */
+  .welcome_section {
+    padding: 30px 12px !important;
+  }
+
+  .welcome_section .custom_heading-container h2 {
+    font-size: 28px !important;
+    text-align: center;
+  }
+
+  .welcome_section h3 {
+    font-size: 15px !important;
+    text-align: center;
+  }
+
+  .welcome_section .detail-box p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+
+  .welcome_section .img-box {
+    text-align: center !important;
+    margin-top: 18px;
+  }
+
+  .welcome_section .img-box img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 6px;
+  }
+
+  /* Stack contact block vertically and remove left border on phone-contact */
+  .contact-block-container {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+    margin-top: 30px !important;
+  }
+
+  .phone-contact {
+    padding-left: 0 !important;
+    border-left: none !important;
+  }
+
+  /* Reduce heading underline width on small screens */
+  .welcome_section .heading-underline {
+    width: 40px !important;
+  }
 }
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+  /* Carousel: reducir altura y asegurar imagen completa */
+  .slider_section,
+  .slider_section .carousel-item {
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  .slider_section .carousel-banner-img,
+  .slider_section .carousel-item img,
+  .slider_section .hero-video {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 40vh !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+  }
+
+  /* Mostrar controles del slider en móvil (version reducida) */
+  .slider_section .carousel_btn-container,
+  .slider_section .carousel_btn-container {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    pointer-events: auto !important;
+    padding: 0 8px !important;
+  }
+  .slider_section .carousel_btn-container .carousel-control-prev,
+  .slider_section .carousel_btn-container .carousel-control-next {
+    width: 36px !important;
+    height: 36px !important;
+    background-color: rgba(0,0,0,0.5) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 6px !important;
+    opacity: 1 !important;
+    color: #fff !important;
+  }
+  .slider_section .carousel_btn-container .carousel-control-prev svg,
+  .slider_section .carousel_btn-container .carousel-control-next svg {
+    width: 18px !important;
+    height: 18px !important;
+    fill: #fff !important;
+  }
+
+  .slider_section ol.carousel-indicators {
+    display: block !important;
+    bottom: 8px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: auto !important;
+  }
+
+  .slider_section ol.carousel-indicators li {
+    display: inline-block !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    margin: 0 4px !important;
+    background-color: rgba(0,0,0,0.28) !important;
+  }
+
+  /* Categorías: columna única, quitar grandes márgenes */
+  .grid-categorias {
+    margin-left: 12px !important;
+    margin-right: 12px !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .tarjeta-categoria {
+    height: auto !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+  }
+
+  .tarjeta-categoria img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 220px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  /* Mostrar botón en móviles (colocado bajo el contenido para evitar solapamientos) */
+  .tarjeta-categoria .btn-tarjeta {
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: inline-block !important;
+    margin: 12px auto 0 auto !important;
+    z-index: 2 !important;
+  }
+  .overlay-categoria {
+    padding-bottom: 50px !important;
+    align-items: flex-end !important;
+  }
+  /* En móviles hacer overlay relativo y compacto para evitar solapamientos */
+  .tarjeta-categoria .overlay-categoria {
+    position: relative !important;
+    height: auto !important;
+    top: auto !important;
+    left: auto !important;
+    background: rgba(0,0,0,0.45) !important;
+    padding: 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+}
 
 @media (max-width: 420px) {}
 
@@ -175,5 +342,120 @@
 @media (min-width: 1200px) {
   .container {
     max-width: 1170px;
+  }
+}
+
+/* Ajustes específicos para móviles pequeños */
+@media (max-width: 420px) {
+  body {
+    padding-top: 88px;
+  }
+
+  .new-nav {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .logo-header {
+    width: 72px !important;
+    margin-left: 8px !important;
+  }
+
+  .welcome_section {
+    padding: 22px 12px !important;
+  }
+
+  .welcome_section .custom_heading-container h2 {
+    font-size: 22px !important;
+    line-height: 1.1 !important;
+    margin-left: 30%;
+  }
+
+  .welcome_section h3 {
+    font-size: 14px !important;
+    text-align: center !important;
+  }
+
+  .welcome_section .detail-box p {
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+  }
+
+  .welcome_section .img-box {
+    text-align: center !important;
+    margin-top: 14px !important;
+  }
+
+  .welcome_section .img-box img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+  }
+
+  .contact-block-container {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: stretch !important;
+  }
+
+  .btn-whatsapp {
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+    width: 100% !important;
+    text-align: center !important;
+    border-radius: 6px !important;
+  }
+
+  .phone-contact {
+    padding-left: 0 !important;
+    border-left: none !important;
+    justify-content: center !important;
+  }
+
+  .welcome_section .heading-underline {
+    width: 36px !important;
+  }
+
+  .carousel-item img.carousel-banner-img {
+    max-height: calc(100vh - 120px) !important;
+  }
+
+  .slider_section .carousel_btn-container .carousel-control-prev,
+  .slider_section .carousel_btn-container .carousel-control-next {
+    display: flex !important;
+    width: 36px !important;
+    height: 36px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(0,0,0,0.45) !important;
+    border-radius: 50% !important;
+    padding: 6px !important;
+    color: #fff !important;
+    opacity: 1 !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .welcome_section .custom_heading-container h2 {
+    font-size: 20px !important;
+  }
+  .welcome_section h3 {
+    font-size: 13px !important;
+  }
+  .welcome_section .detail-box p {
+    font-size: 12px !important;
+  }
+  .btn-whatsapp {
+    padding: 9px 12px !important;
+    font-size: 13px !important;
+  }
+  .logo-header {
+    width: 64px !important;
+  }
+  .carousel-item img.carousel-banner-img {
+    max-height: calc(100vh - 110px) !important;
   }
 }
