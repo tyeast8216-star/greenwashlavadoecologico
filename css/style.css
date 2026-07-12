@@ -166,7 +166,7 @@ body {
   padding: 18px 0;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
   padding-right: 200px;
-   border-bottom: 2.5px solid rgb(42, 187, 47); /* Abajo */
+  border-bottom: 2.5px solid rgb(42, 187, 47); /* Abajo */
 }
 
 .new-nav .navbar-brand {
@@ -945,6 +945,312 @@ body {
 
 /* --- FIN DE LA SECCIÓN DE CATEGORÍAS --- */
 
+/* Ajustes rápidos para la sección de videos: limitar ancho y mantener proporción */
+/* Contenedor principal de la sección */
+.videos-section {
+  padding: 60px 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor Flex para alinear las dos columnas */
+.videos-container {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Cada columna (Título + Video) */
+.video-card {
+  flex: 1 1 320px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Estilos de los Títulos */
+.video-title {
+  color: #1b5e20;
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Línea decorativa debajo del título */
+.video-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background-color: #000000;
+}
+
+/* Contenedor del video para control de proporciones y bordes */
+.video-wrapper {
+  width: 100%;
+  max-width: 640px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+/* El elemento de video en sí */
+.video-wrapper video,
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ajustes Responsivos para tablets y móviles */
+@media (max-width: 991px) {
+  .videos-section {
+    padding: 40px 16px;
+  }
+
+  .videos-container {
+    gap: 28px;
+  }
+
+  .video-card {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .videos-section {
+    padding: 32px 12px;
+  }
+
+  .videos-container {
+    gap: 24px;
+  }
+
+  .video-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .video-title::after {
+    width: 80px;
+    height: 2px;
+  }
+
+  .video-wrapper {
+    margin-top: 12px;
+    border-radius: 6px;
+  }
+}
+
+
+/* SECCION BANNER1 */
+/* Contenedor principal del banner */
+.cta-banner {
+  position: relative;
+  width: 100%;
+  margin-top: 80px;
+  min-height: 400px; /* Altura regulable según prefieras */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Imagen de fondo */
+  background-image: url('../images/separador.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+/* Capa verde translúcida para dar el tono exacto y mejorar el contraste del texto */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Degradado verde con opacidad (puedes ajustar el nivel de transparencia cambiando el 0.85) */
+  background: linear-gradient(135deg, rgba(57, 181, 74, 0.88), rgba(0, 148, 68, 0.10));
+  z-index: 1;
+}
+
+/* Contenedor del texto (apilado por encima de la capa verde) */
+.cta-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  color: #ffffff;
+}
+
+/* Título principal */
+.cta-title {
+  font-size: 36px;
+  font-weight: 400; /* Estilo ligero/regular como el de la imagen */
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Subtítulo */
+.cta-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* Botón "Más información" */
+.cta-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #39b54a; /* Verde corporativo para el texto del botón */
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 12px 45px;
+  border-radius: 2px; /* Esquinas apenas redondeadas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Efecto al pasar el cursor por encima del botón */
+.cta-button:hover {
+  background-color: #f4f4f4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 768px) {
+  .cta-banner {
+    min-height: 300px;
+  }
+  
+  .cta-title {
+    font-size: 26px;
+  }
+  
+  .cta-subtitle {
+    font-size: 16px;
+  }
+  
+  .cta-button {
+    font-size: 18px;
+    padding: 10px 35px;
+  }
+}
+
+/* Process section */
+.process-section {
+  margin-top: 80px;
+  position: relative;
+  width: 100%;
+  padding: 80px 20px;
+  background-color: #ffffff; /* Color verde oscuro base */
+  
+  /* Agregamos la misma imagen texturizada de fondo de forma sutil */
+  background-image: url('ruta-de-tu-imagen-de-agua.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  font-family: 'Arial', sans-serif;
+  overflow: hidden;
+}
+
+/* Capa oscura superpuesta para dar el tono verde profundo corporativo */
+.process-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Tono verde bosque oscuro con opacidad alta */
+  background: rgba(255, 255, 255, 0.92); 
+  z-index: 1;
+}
+
+/* Contenedor interno alineado */
+.process-content {
+  position: relative;
+  z-index: 2; /* Por encima de la capa verde */
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  color: #000000;
+}
+
+/* Título principal */
+.process-title {
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Subtítulo */
+.process-subtitle {
+  font-size: 18px;
+  font-weight: 300;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* Contenedor del reproductor de video */
+.process-video-container {
+  width: 100%;
+  max-width: 700px; /* Controla el ancho máximo del video en pantallas grandes */
+  margin: 0 auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra pronunciada para destacar el video */
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9; /* Mantiene la proporción del reproductor */
+}
+
+/* Estilos para el elemento de video o iframe */
+.process-video-container video,
+.process-video-container iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ajustes para pantallas móviles */
+@media (max-width: 768px) {
+  .process-section {
+    padding: 50px 15px;
+  }
+  
+  .process-title {
+    font-size: 24px;
+  }
+  
+  .process-subtitle {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+}
 /* ===================================================
    SECCIÓN DE FRANQUICIA MASTER
    =================================================== */
@@ -1212,6 +1518,11 @@ font-size: 16px;
   width: 100%;
 }
 
+.client_section{
+  background-color: #f9f9f9;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
 .client_section h2 {
   font-weight: bold;
   text-align: center;
@@ -1345,6 +1656,181 @@ font-size: 16px;
   transform: translateY(-7px);
 }
 
+
+/* --- Sección Final VisionWash --- */
+.final-section {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+.final-section-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Columna Información --- */
+.final-section-info {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.final-section-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.final-section-icon {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.final-section-logo h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ffffff; /* Asegura el color blanco */
+}
+
+.final-section-logo h2 span {
+    font-weight: 400;
+}
+
+.final-section-description {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+/* Detalles de contacto */
+.final-section-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.final-section-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.final-section-item i {
+    font-size: 1.1rem;
+    color: #ffffff;
+    width: 20px;
+    text-align: center;
+}
+
+.final-section-item a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.final-section-item a:hover {
+    color: #ffffff;
+}
+
+/* --- Columna Mapa --- */
+.final-section-map {
+    flex: 1;
+    min-width: 350px;
+    height: 320px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Responsividad --- */
+@media (max-width: 768px) {
+    .final-section-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .final-section-info, 
+    .final-section-map {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .final-section-map {
+        height: 250px;
+    }
+}
+
+/* --- Pie de Página (Footer) --- */
+.site-footer {
+    background-color: #3eb843;
+    padding: 30px 20px;
+    border-top: 1px solid #3eb843; /* Línea sutil de separación superior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.site-footer-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo del texto del copyright */
+.site-footer-copyright p {
+    color: #ffffff;
+    font-size: 0.85rem;
+}
+
+/* Estilo de la lista de enlaces */
+.site-footer-links {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.site-footer-links a {
+    color: #fcfcfc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s ease;
+}
+
+.site-footer-links a:hover {
+    color: #ffffff; /* Al pasar el mouse se ilumina en blanco */
+}
+
+/* --- Ajuste Responsivo para Móviles --- */
+@media (max-width: 768px) {
+    .site-footer-container {
+        flex-direction: column-reverse; /* En móvil el copyright baja y los enlaces suben */
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .site-footer-links {
+        justify-content: center;
+        gap: 15px;
+    }
+}
 /* info section */
 .footer_bg {
   background-image: url(../images/footer-bg.png);
@@ -1486,4 +1972,6 @@ font-size: 16px;
 }
 
 /* end footer section*/
+
+
 /*# sourceMappingURL=style.css.map */
