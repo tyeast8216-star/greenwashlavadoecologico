@@ -112,50 +112,62 @@
       </div>
     </header>
     <!-- end header section -->
-    <!-- slider section -->
-    <section class="slider_section">
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100 carousel-banner-img" src="images/banner1greenwash.jpg" alt="Banner 1" />
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-banner-img" src="images/banner2greenwash.jpg" alt="Banner 2" />
-          </div>
-          <div class="carousel-item">
-            <img class="d-block w-100 carousel-banner-img" src="images/banner3greenwash.jpg" alt="Banner 3" />
-          </div>
-          <div class="carousel-item">
-            <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
-              <source src="videos/video1.mp4" type="video/mp4" />
-              Tu navegador no soporta video HTML5.
-            </video>
-          </div>
+
+    <section class="hero-banner">
+    <!-- Flechas de navegación -->
+    <button class="slider-arrow arrow-left" aria-label="Anterior">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M201.4 297.4C188.9 309.9 188.9 330.2 201.4 342.7L361.4 502.7C373.9 515.2 394.2 515.2 406.7 502.7C419.2 490.2 419.2 469.9 406.7 457.4L269.3 320L406.6 182.6C419.1 170.1 419.1 149.8 406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3L201.3 297.3z" /></svg>
+    </button>
+    <button class="slider-arrow arrow-right" aria-label="Siguiente">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M278.6 137.3C291.1 124.8 311.4 124.8 323.9 137.3L483.9 297.3C496.4 309.8 496.4 330.1 483.9 342.6L323.9 502.6C311.4 515.1 291.1 515.1 278.6 502.6C266.1 490.1 266.1 469.8 278.6 457.3L416 320L278.7 182.7C266.2 170.2 266.2 149.9 278.7 137.4z" /></svg>
+    </button>
+
+    <div class="slider-wrapper">
+        <!-- Slide 1: Mapa -->
+        <div class="slide active">
+            <div class="hero-container">
+                <div class="map-wrapper"><img class="map-spain" src="../images/mapaespana2.png" alt="Mapa"></div>
+                <div class="content-wrapper">
+                    <h2 class="title-top">¡Únete a la</h2>
+                    <h1 class="title-main">franquicia líder<br>en España!</h1>
+                </div>
+            </div>
         </div>
-        <div class="carousel_btn-container">
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <svg class="slider-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512" aria-hidden="true">
-              <path
-                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-            </svg>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <svg class="slider-arrow arrow-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"
-              aria-hidden="true">
-              <path
-                d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
-            </svg>
-            <span class="sr-only">Next</span>
-          </a>
+
+        <!-- Slide 2: Sistema de Lavado -->
+        <div class="slide">
+            <div class="hero-container system-slide">
+                <div class="cylinders-section">
+                    <div class="cylinder" style="height: 300px; background: orange;">180L</div>
+                    <div class="cylinder" style="height: 200px; background: yellow; color: black;">120L</div>
+                    <div class="cylinder" style="height: 100px; background: lightblue;">60L</div>
+                    <div class="cylinder" style="height: 60px; background: #4a90e2;">4L</div>
+                </div>
+                <div class="text-section"><h1>Un sistema de lavado único</h1></div>
+            </div>
         </div>
-      </div>
-    </section>
-    <!-- end slider section -->
-  </div>
 
+        <!-- Slide 3: Stand Comercial -->
+        <div class="slide">
+            <div class="hero-container stand-slide">
+                <div class="text-section"><h1 style="color:white; font-size: 3rem;">Distintos sistemas de comercialización</h1></div>
+                <div class="booth-side"><img src="./images/estructuradelavado2.png" alt="Stand"></div>
+            </div>
+        </div>
 
-
+        <!-- Slide 4: Pioneros (Banner Coche) -->
+        <div class="slide">
+            <div class="hero-container car-slide">
+                <div class="text-section">
+                    <h2 class="sub-title">Pioneros en el</h2>
+                    <h1 class="main-title">lavado ecológico<br>de vehículos</h1>
+                </div>
+                <div class="image-side"><img src="../images/cochebanner.png" alt="Coche"></div>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
   <!-- welcome section -->
   <section id="welcome_section" class="welcome_section layout_padding">
     <div class="container">
@@ -213,7 +225,8 @@
     <div class="categorias-header">
       <h2>FRANQUICIA DE LAVADO ECOLOGICO</h2>
       <div class="linea-divisoria"></div>
-      <p>Green Wash ofrece un modelo de franquicia automotriz altamente rentable y adaptado a cada inversor a través de
+      <p>Green Wash ofrece un modelo de franquicia automotriz altamente rentable y adaptado a cada inversor a través
+        de
         tres modalidades clave</p>
     </div>
 
@@ -279,14 +292,12 @@
           <path
             d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zM224 160a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm-8 64l48 0c13.3 0 24 10.7 24 24l0 88 8 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-80 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l24 0 0-64-24 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z" />
         </svg>
-        <P>Centro de lavado ecológico ubicado en parkings en superficie públicos o centros comerciales en su version low
+        <P>Centro de lavado ecológico ubicado en parkings en superficie públicos o centros comerciales en su version
+          low
           cost (bajo coste)</P>
       </div>
     </div>
   </section>
-  <!--<div class="separador">
-    <h2>FRANQUICIA DE LAVADO ECOLOGICO DE VEHICULOS</h2>
-  </div> -->
 
   <div class="franquicia-master">
     <!-- El overlay se genera automáticamente desde el CSS para oscurecer el fondo -->
@@ -358,100 +369,52 @@
   </section>
   <!-- end videos section -->
 
-  <!-- client section -->
-  <section class="client_section layout_padding">
-    <div class="container">
-      <h2>
-        Qué dicen nuestros clientes?
-      </h2>
-      <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="client_container layout_padding2">
-              <div class="client_text">
-                <p>
-                  Desde el principio la atención fue muy cercana y transparente. Ellos llevaron a cabo directamente la
-                  negociación con el centro comercial y me consiguieron las mejores condiciones posibles.
-                  Durante el curso de formación aprendí todo lo necesario y ante cualquier duda tienen profesionales que
-                  con una simple llamada te echan una mano en aspectos comerciales, técnicos, informáticos.
-                </p>
-              </div>
-              <div class="detail-box">
-                <div class="img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="name">
-                  <h5>
-                    Justo García
-                  </h5>
-                  <p>
-                    Franquiciado, Green Wash Valladolid
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="client_container layout_padding2">
-              <div class="client_text">
-                <p>
-                  Valoración siempre buena, utilizamos buenos productos con un acabado perfecto con un método de trabajo
-                  optimo.
-                  La mejor calidad de cara al cliente con una alta fidelización.
-                  Siempre contando con el soporte de la central en cualquier duda o necesidad eventual.
-                </p>
-              </div>
-              <div class="detail-box">
-                <div class="img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="name">
-                  <h5>
-                    Pedro Leonardo Riveros
-                  </h5>
-                  <p>
-                    Franquiciado, Green Wash Las Palmas
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="client_container layout_padding2">
-              <div class="client_text">
-                <p>
-                  Estamos muy contentos con la franquicia Green Wash.
-                  Su software de gestión que te permite controlar a distancia lo que está ocurriendo en tu negocio.
-                  Yo empecé montando un centro y ahora cuento con dos.
-                </p>
-              </div>
-              <div class="detail-box">
-                <div class="img-box">
-                  <img src="images/client.png" alt="" />
-                </div>
-                <div class="name">
-                  <h5>
-                    Olga Vianney Mamani Callisaya
-                  </h5>
-                  <p>
-                    Franquiciada, Green Wash C.C. Maquinista y C.C. Splau
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+  <section class="testimonios">
+    <div class="process-content">
+      <h2 class="process-title">¿QUÉ COMENTAN NUESTROS FRANQUICIADOS?</h2>
+      <p class="process-subtitle">Instalación Franquicia Parking Subterráneo</p>
+    </div>
+    <div class="contenedor-tarjetas">
+      <!-- Tarjeta 1 -->
+      <article class="tarjeta">
+        <div class="icono-comillas">❝</div>
+        <img src="./images/client3.png" alt="Foto Franquiciado">
+        <p>Desde el principio la atención fue muy cercana y transparente. Ellos llevaron a cabo directamente la
+          negociación con el centro comercial y me consiguieron las mejores condiciones posibles.
 
+          Durante el curso de formación aprendí todo lo necesario y ante cualquier duda tienen profesionales que con una
+          simple llamada te echan una mano en aspectos comerciales, técnicos, informáticos…</p>
+        <p class="autor"><strong>Justo García</strong><br>Franquiciado, Green Wash Valladolid</p>
+      </article>
+      <!-- Repite este bloque para las otras tarjetas -->
+      <!-- Tarjeta 1 -->
+      <article class="tarjeta">
+        <div class="icono-comillas">❝</div>
+        <img src="./images/client3.png" alt="Foto Franquiciado">
+        <p>Estamos muy contentos con la franquicia Green Wash.
+
+          Su software de gestión que te permite controlar a distancia lo que está ocurriendo en tu negocio.
+
+          Yo empecé montando un centro y ahora cuento con dos.</p>
+        <p class="autor"><strong>Olga Vianney Mamani Callisaya</strong><br>Franquiciada, Green Wash C.C. Maquinista y
+          C.C. Splau</p>
+      </article>
+      <!-- Repite este bloque para las otras tarjetas -->
+      <!-- Tarjeta 1 -->
+      <article class="tarjeta">
+        <div class="icono-comillas">❝</div>
+        <img src="./images/client3.png" alt="Foto Franquiciado">
+        <p>Valoración siempre buena, utilizamos buenos productos con un acabado perfecto con un método de trabajo
+          optimo.
+
+          La mejor calidad de cara al cliente con una alta fidelización.
+
+          Siempre contando con el soporte de la central en cualquier duda o necesidad eventual.</p>
+        <p class="autor"><strong>Cristian Cabrera Fenoy</strong><br>Franquiciado, Green Wash Arenas Barcelona</p>
+      </article>
+      <!-- Repite este bloque para las otras tarjetas -->
     </div>
   </section>
-  <!-- end client section -->
   <!-- contact section -->
   <section class="contact_section layout_padding">
     <div class="container contact_heading">
@@ -810,33 +773,35 @@
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script>
-    // Reproducir/pausar video dentro del carousel cuando cambia la slide
-    (function () {
-      if (typeof jQuery === 'undefined') return;
-      var $c = jQuery('#carouselExampleIndicators');
-      if (!$c.length) return;
+  <script>//este es el carrusel
+    const slides = document.querySelectorAll('.slide');
+    const nextBtn = document.querySelector('.arrow-right');
+    const prevBtn = document.querySelector('.arrow-left');
+    let currentSlide = 0;
 
-      // Al cambiar de slide, reproducir video si existe y pausar los demás
-      $c.on('slid.bs.carousel', function () {
-        var $active = $c.find('.carousel-item.active');
-        // Pausar todos los videos
-        $c.find('video').each(function () {
-          try { this.pause(); this.currentTime = 0; } catch (e) { }
-        });
-        // Reproducir los videos dentro de la slide activa
-        $active.find('video').each(function () {
-          try { this.play(); } catch (e) { }
-        });
-      });
+    function showSlide(index) {
+      slides.forEach(s => s.classList.remove('active'));
+      slides[index].classList.add('active');
+    }
 
-      // Si la slide activa al cargar contiene video, reproducirlo
-      jQuery(function () {
-        var $active = $c.find('.carousel-item.active');
-        $active.find('video').each(function () { try { this.play(); } catch (e) { } });
-      });
-    })();
+    nextBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    // Avanza automáticamente el slider cada cierto tiempo.
+    const slideAutoIntervalMs = 5000;
+    const slideAutoTimer = setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, slideAutoIntervalMs);
   </script>
+
   <script>
     document.addEventListener('scroll', function () {
       var topbar = document.querySelector('.topbar');
