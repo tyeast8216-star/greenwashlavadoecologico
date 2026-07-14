@@ -1574,6 +1574,7 @@ body {
 .franquicia-master {
   position: relative;
   min-height: 500px;
+  margin-top: -50px;
   /* Altura ideal para que el mapa luzca bien */
   width: 100%;
 
@@ -2097,6 +2098,7 @@ body {
 .hero-banner {
   position: relative;
   width: 100%;
+  margin-top: -30px;
   height: 800px;
   overflow: hidden;
   background-image: url('../images/banner5greenwash.jpg');
@@ -2168,7 +2170,7 @@ body {
   animation: pulse 2s infinite;
 }
 
-.pin-1 { top: 22%; left: 25%; }
+.pin-madrid { top: 22%; left: 25%; }
 .pin-2 { top: 45%; left: 35%; }
 .pin-3 { top: 25%; left: 55%; }
 .pin-4 { top: 60%; left: 45%; }
