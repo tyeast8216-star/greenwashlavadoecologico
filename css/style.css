@@ -561,7 +561,10 @@ body {
 /* Ajustes móviles: reducir tamaño de imagen y texto para pantallas pequeñas */
 @media (max-width: 768px) {
   .stand-slide .text-section h1 { font-size: 2rem; }
-  .stand-slide .booth-side .booth-label img { max-width: 260px; margin: 18px auto 0; }
+  .stand-slide .booth-side .booth-label img {
+    max-width: min(90vw, 620px);
+    margin: 18px auto 0;
+  }
   .system-slide .cylinders-section { gap: 10px; }
 }
 
@@ -620,15 +623,55 @@ body {
   display: block !important;
 }
 
-/* Asegurar que los elementos video dentro del carrusel sean visibles y responsivos */
-.slider_section .carousel-item video,
-.slider_section .hero-video {
-  width: 100% !important;
-  height: auto !important;
-  max-height: 100% !important;
-  display: block !important;
-  object-fit: cover !important;
+.whatsapp-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50%;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+  z-index: 99999;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
+
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.22);
+}
+
+.whatsapp-icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.whatsapp-text {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.78);
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 24px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.18s ease, visibility 0.18s ease;
+}
+
+.whatsapp-float:hover .whatsapp-text {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 /* Evitar que reglas generales de .hero_area (position:absolute) afecten al video del carousel
    - los videos dentro de .slider_section deben estar en el flujo para mantener la altura del slide */
@@ -2170,15 +2213,14 @@ body {
   animation: pulse 2s infinite;
 }
 
-.pin-madrid { top: 22%; left: 25%; }
-.pin-2 { top: 45%; left: 35%; }
-.pin-3 { top: 25%; left: 55%; }
-.pin-4 { top: 60%; left: 45%; }
-.pin-5 { top: 50%; left: 75%; }
-.pin-6 { top: 60%; left: 30%; }
-.pin-7 { top: 60%; left: 20%; }
+.pin-1 { top: 30%; left: 25%; }
+.pin-2 { top: 36%; left: 35%; }
+.pin-3 { top: 30%; left: 15%; }
+.pin-4 { top: 60%; left: 10%; }
+.pin-5 { top: 47%; left: 42%; }
+.pin-6 { top: 59%; left: 29%; }
+.pin-7 { top: 50%; left: 20%; }
 .pin-8 { top: 50%; left: 20%; }
-.pin-9 { top: 45%; left: 85%; }
 
 @keyframes pulse {
   0% { transform: rotate(-45deg) scale(1); }
@@ -2333,6 +2375,7 @@ body {
 .text-section {
     color: white;
     max-width: 400px;
+    margin-left: 90px;
 }
 
 .text-section h1 {
@@ -2403,6 +2446,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: -50px;
 }
 
 .booth-side img {
@@ -2413,127 +2457,205 @@ body {
 }
 
 @media (max-width: 992px) {
+  /* --- 1. Evitamos que el banner se colapse --- */
   .hero-banner {
-    min-height: 650px;
-    height: auto;
-    padding: 40px 0;
+    height: 700px; /* Altura fija para que los slides absolutos no se aplasten */
+    min-height: 700px;
+    padding: 0;
+    position: relative;
   }
 
-  .hero-container,
-  .slide .hero-container {
+  .slider-wrapper {
+    height: 100%;
+  }
+
+  .slide {
+    height: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+  }
+
+  /* --- 2. Contenedor de cada diapositiva --- */
+  .hero-container {
+    display: flex;
+    flex-direction: column !important; /* Apilado vertical */
     justify-content: center;
-    gap: 30px;
-    max-width: 100%;
-    padding: 0 16px;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px;
+    box-sizing: border-box;
   }
 
-  .hero-banner::before {
-    width: 130%;
-    height: 180px;
-    bottom: -25px;
-  }
-
-  .map-wrapper,
-  .booth-side,
-  .image-side,
+  /* --- 3. Textos unificados y legibles --- */
   .content-wrapper,
   .text-section {
     width: 100%;
-    max-width: 100%;
+    text-align: center;
+    padding: 0 !important;
   }
 
+  .title-top {
+    font-size: 1.5rem;
+  }
+
+  .title-main,
+  .text-section h1,
+  .car-slide .text-section h1,
+  .stand-slide .text-section h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+
+  /* --- 4. Slide 1: Mapa (Redimensionado sin romper) --- */
   .map-wrapper {
+    width: 100%;
+    max-width: 280px; /* Evita que ocupe toda la pantalla */
     height: auto;
-    min-height: 320px;
-    padding: 20px 0;
+    min-height: auto;
+    margin: 0 auto;
   }
 
   .map-spain {
     width: 100%;
-    max-height: 320px;
-  }
-
-  .cylinders-section {
-    gap: 12px;
     height: auto;
-    padding: 10px 0;
-    justify-content: center;
   }
 
-  .cylinder {
-    width: 56px;
-    padding-top: 12px;
-  }
-
-  .content-wrapper {
-    padding-left: 0;
-    text-align: center;
-  }
-
-  .title-top {
-    font-size: 1.8rem;
-  }
-
-  .title-main {
-    font-size: 2.8rem;
-    line-height: 1.05;
-    margin-bottom: 20px;
+  /* Ocultar pines en móvil para que no floten fuera del mapa */
+  .pin {
+    display: none !important;
   }
 
   .badge-franchise {
-    width: auto;
-    justify-content: center;
+    margin: 15px auto 0 auto;
   }
 
-  .highlight-number {
-    font-size: 5rem;
+  /* --- 5. Slide 2: Cilindros (Escalados) --- */
+  .cylinders-section {
+    height: 150px; /* Reducimos la altura del grupo */
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
   }
 
-  .text-section h1,
-  .car-slide .text-section h2,
-  .car-slide .text-section h1,
-  .stand-slide .text-section h1 {
-    font-size: 2rem;
-    text-align: center;
+  /* Forzamos que los cilindros bajen de tamaño en móvil */
+  .cylinder {
+    width: 45px !important;
+    font-size: 0.8rem;
   }
+  .cylinder[style*="250px"] { height: 140px !important; }
+  .cylinder[style*="200px"] { height: 110px !important; }
+  .cylinder[style*="150px"] { height: 80px !important; }
+  .cylinder[style*="100px"] { height: 50px !important; }
 
-  .car-slide .image-side img,
-  .booth-side img {
+  .text-section {
+    margin-left: 0 !important;
+    padding: 0 10px;
+  }
+  /* --- 6. Slides 3 y 4: Imágenes controladas --- */
+  .stand-slide, 
+    .stand-slide .hero-container, 
+    .stand-slide .booth-side {
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        min-height: auto !important;
+        flex: none !important;
+        display: block !important;
+    }
+
+    /* Forzamos a la imagen a ser el elemento dominante */
+    .stand-slide .booth-side img {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        /* Quitamos recortes del navegador */
+        overflow: visible !important;
+    }
+  .car-slide .image-side {
+    width: 100%;
+    max-width: min(90vw, 320px);
     margin: 0 auto;
   }
 
+  .car-slide .image-side img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* --- 7. Flechas laterales tradicionales --- */
   .slider-arrow {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
+    z-index: 10;
   }
+  .arrow-left { left: 10px; }
+  .arrow-right { right: 10px; }
+}
 
-  .arrow-left {
-    left: 12px;
-    right: auto;
+/* Ajuste extra fino para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .hero-banner {
+    height: 620px;
+    min-height: 620px;
   }
-
-  .arrow-right {
-    right: 12px;
-    left: auto;
+  .title-main,
+  .text-section h1 {
+    font-size: 1.8rem !important;
   }
 }
 
 /* mantener el botón de flecha visible en móviles y evitar solapamientos */
 @media (max-width: 576px) {
-  .slider-arrow {
-    width: 44px;
-    height: 44px;
+  .hero-banner {
+    min-height: 460px;
+    padding: 18px 0 24px;
+  }
+
+  .hero-banner::before {
+    width: 130%;
+    height: 100px;
+    bottom: -15px;
+  }
+
+  .map-wrapper {
+    min-height: 180px;
+    padding: 10px 0;
+  }
+
+  .map-spain {
+    max-height: 180px;
   }
 
   .title-main {
-    font-size: 2.4rem;
+    font-size: 1.6rem;
   }
 
   .title-top {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
+  }
+
+  .badge-number {
+    font-size: 1.5rem;
+  }
+
+  .badge-text {
+    font-size: 0.8rem;
+  }
+
+  .slider-arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero-container,
+  .slide .hero-container {
+    gap: 14px;
   }
 }
 

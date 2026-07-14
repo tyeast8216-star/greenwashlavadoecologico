@@ -128,15 +128,14 @@
             <div class="hero-container">
                 <div class="map-wrapper"><img class="map-spain" src="../images/mapaespana2.png" alt="Mapa"></div>
                 <!-- Pines distribuidos estratégicamente por el mapa -->
-                <div class="pin pin-madrid"></div>
-                <div class="pin pin-barcelona"></div>
-                <div class="pin pin-valencia"></div>
-                <div class="pin pin-sevilla"></div>
-                <div class="pin pin-bilbao"></div>
-                <div class="pin pin-galicia"></div>
-                <div class="pin pin-zaragoza"></div>
-                <div class="pin pin-malaga"></div>
-                <div class="pin pin-murcia"></div>
+                <div class="pin pin-1"></div>
+                <div class="pin pin-2"></div>
+                <div class="pin pin-3"></div>
+                <div class="pin pin-4"></div>
+                <div class="pin pin-5"></div>
+                <div class="pin pin-6"></div>
+                <div class="pin pin-7"></div>
+                <div class="pin pin-8"></div>
                 <div class="content-wrapper">
                    <h2 class="title-top">¡Únete a la</h2>
                 <h1 class="title-main">franquicia líder<br>en España!</h1>
@@ -175,9 +174,9 @@
         <div class="slide">
             <div class="hero-container stand-slide">
                 <div class="text-section"><h1 style="color:white; font-size: 3rem;">Distintos sistemas de comercialización</h1></div>
-                <div class="booth-side"><img src="./images/estructuradelavado2.png" alt="Stand"></div>
+                <div class="booth-side"><img src="./images/estructuradelavado3.png" alt="Stand"></div>
             </div>
-        </div>
+        </div> 
 
         <!-- Slide 4: Pioneros (Banner Coche) -->
         <div class="slide">
@@ -471,7 +470,10 @@
             <label for="inputState">Seleccionar servicio</label>
             <select id="inputState" class="form-control">
               <option selected=""></option>
-              <option>...</option>
+              <option>Parking Subterraneo</option>
+              <option>Industrial Local</option>
+              <option>Parking Superficie</option>
+              <option>Low Cost</option>
             </select>
           </div>
 
@@ -493,7 +495,7 @@
   <!--<section class="final-section">
     <div class="final-section-container">
 
-      <!-- Columna Izquierda: Información 
+       Columna Izquierda: Información 
       <div class="final-section-info">
         <div class="final-section-logo">
           <span class="final-section-icon">💧</span>
@@ -517,7 +519,7 @@
         </div>
       </div>
 
-      <!-- Columna Derecha: Mapa 
+       Columna Derecha: Mapa 
       <div class="final-section-map">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.4716766779435!2d-4.025442523460492!3d39.90842238644026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6a0a3b3fa58a43%3A0x280e226d9bc539aa!2sParque%20Comercial%20Abad%C3%ADa!5e0!3m2!1ses!2ses!4v1700000000000!5m2!1ses!2ses"
@@ -780,18 +782,8 @@
       </div>
     </div>
 
-  </section>
+  </section> -->
 
-   end info_section 
-
-  <!-- footer section 
-  <section class="container-fluid footer_section">
-    <p>
-      © 2026 Todos los derechos reservados por
-      <a href="https://html.design/">GW Lavado Ecológico</a>
-    </p>
-  </section>
-  <!-- footer section -->
   </div>
 
 
@@ -811,19 +803,29 @@
     nextBtn.addEventListener('click', () => {
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
+      resetSlideTimer();
     });
 
     prevBtn.addEventListener('click', () => {
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       showSlide(currentSlide);
+      resetSlideTimer();
     });
 
     // Avanza automáticamente el slider cada cierto tiempo.
     const slideAutoIntervalMs = 5000;
-    const slideAutoTimer = setInterval(() => {
+    let slideAutoTimer = setInterval(() => {
       currentSlide = (currentSlide + 1) % slides.length;
       showSlide(currentSlide);
     }, slideAutoIntervalMs);
+
+    function resetSlideTimer() {
+      clearInterval(slideAutoTimer);
+      slideAutoTimer = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, slideAutoIntervalMs);
+    }
   </script>
 
   <script>
@@ -837,6 +839,16 @@
       }
     });
   </script>
+
+  <a href="https://wa.me/00584122813682?text=Hola%2C%20quiero%20más%20información%20sobre%20su%20servicio" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <span class="whatsapp-icon" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20.52 3.48C18.3 1.26 15.35 0 12.11 0 5.63 0 .45 5.18.45 11.66c0 2.05.54 4.05 1.57 5.78L0 24l6.12-1.63c1.65.9 3.52 1.35 5.39 1.35 6.48 0 11.66-5.18 11.66-11.66 0-3.24-1.26-6.19-3.49-8.53Z" fill="#fff"/>
+        <path d="M17.65 14.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.86 1.06-1.06 1.28-.19.22-.38.25-.71.08-.33-.16-1.39-.51-2.65-1.64-.98-.88-1.63-1.96-1.82-2.29-.19-.33-.02-.51.14-.67.14-.14.33-.36.49-.54.16-.19.21-.33.33-.55.11-.22.06-.41-.03-.57-.09-.16-.74-1.78-1.01-2.44-.27-.64-.55-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.33-1.16 1.13-1.16 2.75 0 1.61 1.19 3.16 1.36 3.38.16.22 2.35 3.6 5.7 5.05.8.35 1.42.56 1.9.72.8.26 1.53.22 2.1.13.64-.1 1.92-.78 2.19-1.53.27-.74.27-1.38.19-1.52-.08-.16-.3-.25-.63-.41Z" fill="#25d366"/>
+      </svg>
+    </span>
+    <span class="whatsapp-text">WhatsApp</span>
+  </a>
 
 </body>
 
