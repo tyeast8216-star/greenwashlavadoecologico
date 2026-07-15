@@ -505,6 +505,12 @@ body {
   animation-delay: 1.18s;
 }
 
+.interior-cylinder img {
+  max-width: 40px;
+  height: auto;
+  margin-bottom: 6px;
+
+}
 /* Small adjustments to make the cylinders look like bars */
 .system-slide .cylinders-section {
   display: flex;
@@ -566,6 +572,7 @@ body {
     margin: 18px auto 0;
   }
   .system-slide .cylinders-section { gap: 10px; }
+
 }
 
 /* Animaciones para Slide 4: Pioneros (Banner Coche) */
@@ -1271,6 +1278,10 @@ body {
   .grid-categorias {
     grid-template-columns: repeat(2, 1fr);
     /* 2 columnas en tablets */
+  }
+
+  .categorias-header .linea-divisoria {
+      width: 20rem;
   }
 }
 
@@ -2200,7 +2211,8 @@ body {
   transform-origin: center;
 }
 
-/* Pines Ubicadores */
+
+/* Pines Ubicadores 
 .pin {
   position: absolute;
   width: 16px;
@@ -2211,8 +2223,17 @@ body {
   transform: rotate(-45deg);
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.4);
   animation: pulse 2s infinite;
+}*/
+/* GW Ubicadores */
+.pin {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/logogreenwashfondoverde.png);
+  background-size: contain; /* Recomendado para que la imagen se ajuste bien */
+  background-repeat: no-repeat;
+  z-index: 10; /* Asegura que los pines queden por encima del mapa */
 }
-
 .pin-1 { top: 30%; left: 25%; }
 .pin-2 { top: 36%; left: 35%; }
 .pin-3 { top: 30%; left: 15%; }
@@ -2456,6 +2477,53 @@ body {
   border-radius: 8px;
 }
 
+/* Añade esto a tu CSS */
+.stand-slide {
+    position: relative; /* Esto hace que el hijo absoluto se quede dentro de este div */
+}
+
+/* Ajusta el distintivo */
+.years-badge {
+    display: inline-block;
+    margin-top: 20px;
+    background-color: #0d3115;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+    border-left: 5px solid #f79204;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    max-width: 220px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUpYears 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeInUpYears {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.years-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f79204; /* Ajusta este color al de tu marca */
+    line-height: 1;
+}
+
+.years-text {
+    font-size: 0.9rem;
+    color: #ffffff;
+    text-transform: uppercase;
+}
 @media (max-width: 992px) {
   /* --- 1. Evitamos que el banner se colapse --- */
   .hero-banner {
@@ -2554,6 +2622,31 @@ body {
     margin-left: 0 !important;
     padding: 0 10px;
   }
+  .cylinder:last-child .interior-cylinder {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 0;
+  }
+
+  .cylinder:last-child .interior-cylinder img {
+    display: block;
+    margin-top: 10px !important;
+    transform: translateY(10px);
+    max-height: 36px;
+    width: auto;
+  }
+
+  .cylinder:last-child .interior-cylinder p {
+    display: block;
+    transform: translateY(10px);
+    max-height: 36px;
+    width: auto;
+  }
+
   /* --- 6. Slides 3 y 4: Imágenes controladas --- */
   .stand-slide, 
     .stand-slide .hero-container, 
