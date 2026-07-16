@@ -2155,7 +2155,7 @@ body {
   margin-top: -30px;
   height: 800px;
   overflow: hidden;
-  background-image: url('../images/banner5greenwash.jpg');
+  background-image: url('../images/banner6greenwash.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -2224,15 +2224,15 @@ body {
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.4);
   animation: pulse 2s infinite;
 }*/
-/* GW Ubicadores */
+/* GW Ubicadores 
 .pin {
   position: absolute;
   width: 50px;
   height: 50px;
   background-image: url(../images/logogreenwashfondoverde.png);
-  background-size: contain; /* Recomendado para que la imagen se ajuste bien */
+  background-size: contain;  Recomendado para que la imagen se ajuste bien 
   background-repeat: no-repeat;
-  z-index: 10; /* Asegura que los pines queden por encima del mapa */
+  z-index: 10;  Asegura que los pines queden por encima del mapa 
 }
 .pin-1 { top: 30%; left: 25%; }
 .pin-2 { top: 36%; left: 35%; }
@@ -2241,7 +2241,7 @@ body {
 .pin-5 { top: 47%; left: 42%; }
 .pin-6 { top: 59%; left: 29%; }
 .pin-7 { top: 50%; left: 20%; }
-.pin-8 { top: 50%; left: 20%; }
+.pin-8 { top: 50%; left: 20%; }*/
 
 @keyframes pulse {
   0% { transform: rotate(-45deg) scale(1); }
@@ -2459,6 +2459,41 @@ body {
     opacity: 1;
 }
 
+.hero-banner .carousel-indicators {
+    position: absolute;
+    left: 50%;
+    bottom: 150px;
+    transform: translateX(-135%);
+    display: flex;
+    gap: 12px;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-banner .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    min-height: 10px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.649);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3), 0 4px 10px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.hero-banner .carousel-indicators button.active,
+.hero-banner .carousel-indicators button:hover {
+    background: #ffffff;
+    border-color: rgba(31, 113, 100, 0.95);
+    transform: scale(1.2);
+}
+
 /* Asegurar que el contenedor hero tenga el ancho correcto dentro del slide */
 .slide .hero-container {
     display: grid;
@@ -2543,6 +2578,17 @@ body {
     align-items: center;
   }
 
+  .hero-banner .carousel-indicators {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-110%);
+    display: flex;
+    gap: 12px;
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+}
   /* --- 2. Contenedor de cada diapositiva --- */
   .hero-container {
     display: flex;
@@ -2680,7 +2726,7 @@ body {
   .car-slide .image-side img {
     width: 140%;
     height: auto;
-    padding-right: 30px;
+    padding-right: 60px;
     display: block;
   }
 

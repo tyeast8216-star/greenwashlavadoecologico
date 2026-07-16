@@ -9,7 +9,7 @@
   <meta name="description" content=""/>
   <meta name="author" content=""/>
 
-  <title>BigWing</title>
+  <title>Green Wash - Lavado Ecologico</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css"/>
@@ -27,14 +27,23 @@
 
 <body class="sub_page">
   <div class="hero_area">
-    <!-- header section strats -->
+    <!--<video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
+      <source src="videos/video1.mp4" type="video/mp4" />
+      Tu navegador no soporta video HTML5.
+    </video>
+     header section strats -->
     <header class="header_section">
       <div class="topbar">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6">
               <div class="topbar-info">
-                <a href="mailto:info@delunasoft.com">info@delunasoft.com</a>
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512"><!--!Font Awesome Free v7.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                  <path
+                    d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z" />
+                </svg>
+                <a href="mailto:info@greenwash.es">info@greenwash.es</a>
               </div>
             </div>
             <div class="col-md-6 text-md-right d-none d-md-block">
@@ -51,10 +60,20 @@
           <div class="col-12">
             <nav class="navbar navbar-expand-lg navbar-light new-nav">
               <a class="navbar-brand" href="index.html">
-                <img src="./images/logogwlavadoeco.png" alt="Logo GW Lavado Ecologico" class="logo-header" />
+                <img src="./images/logogreenwash.png" alt="Logo GW Lavado Ecologico" class="logo-header" />
               </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+              <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <!-- SVG hamburguesa animada -->
+                <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true">
+                  <path class="line line1" d="M4 7h16" stroke="#1f7164" stroke-width="2.2" stroke-linecap="round"
+                    fill="none"></path>
+                  <path class="line line2" d="M4 12h16" stroke="#1f7164" stroke-width="2.2" stroke-linecap="round"
+                    fill="none"></path>
+                  <path class="line line3" d="M4 17h16" stroke="#1f7164" stroke-width="2.2" stroke-linecap="round"
+                    fill="none"></path>
+                </svg>
               </button>
 
               <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -79,6 +98,8 @@
                   </li>
                 </ul>
               </div>
+              <!-- Backdrop para off-canvas móvil -->
+              <div class="offcanvas-backdrop"></div>
             </nav>
           </div>
         </div>
