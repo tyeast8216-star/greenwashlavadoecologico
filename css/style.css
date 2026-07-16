@@ -2505,11 +2505,26 @@ body {
     margin-top: -50px;
 }
 
-.booth-side img {
+.booth-side {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.booth-side .stand-image {
   width: 100%;
   max-width: 1200px;
   height: auto;
+  display: block;
   border-radius: 8px;
+  transform: translateX(24px);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.booth-side .stand-image.is-visible {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 /* Añade esto a tu CSS */

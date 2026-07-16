@@ -176,7 +176,9 @@
                 <span class="years-text">años en el mercado</span>
               </div>-->
             </div>
-            <div class="booth-side"><img src="./images/estructuradelavado3.png" alt="Stand"></div>
+            <div class="booth-side">
+              <img id="standDisplayImage" class="stand-image is-visible" src="./images/estructuradelavado3.png" alt="Stand">
+            </div>
           </div>
         </div>
 
@@ -794,9 +796,52 @@
   <script>// carousel de hero-banner
     const slides = document.querySelectorAll('.hero-banner .slide');
     const indicatorsContainer = document.querySelector('.carousel-indicators');
+    const standImage = document.getElementById('standDisplayImage');
+    const standImages = ['./images/estructuradelavado3.png', './images/edificiodelavado3.png', './images/superficiedelavado3.png'];
     let currentSlide = 0;
-    const slideAutoIntervalMs = 5000;
+    const slideAutoIntervalMs = 3000;
     let slideAutoTimer = null;
+    let standImageInterval = null;
+    let standImageTransitionTimer = null;
+    let standImageIndex = 0;
+
+    function showNextStandImage() {
+      if (!standImage) return;
+
+      if (standImageTransitionTimer) {
+        clearTimeout(standImageTransitionTimer);
+      }
+
+      standImage.classList.remove('is-visible');
+      standImageTransitionTimer = setTimeout(() => {
+        standImageIndex = (standImageIndex + 1) % standImages.length;
+        standImage.src = standImages[standImageIndex];
+        standImage.classList.add('is-visible');
+        standImageTransitionTimer = null;
+      }, 180);
+    }
+
+    function startStandImageRotation() {
+      if (!standImage || standImageInterval) return;
+      standImage.classList.add('is-visible');
+      standImageInterval = setInterval(showNextStandImage, slideAutoIntervalMs);
+    }
+
+    function stopStandImageRotation() {
+      if (standImageInterval) {
+        clearInterval(standImageInterval);
+        standImageInterval = null;
+      }
+      if (standImageTransitionTimer) {
+        clearTimeout(standImageTransitionTimer);
+        standImageTransitionTimer = null;
+      }
+      if (standImage) {
+        standImageIndex = 0;
+        standImage.src = standImages[0];
+        standImage.classList.add('is-visible');
+      }
+    }
 
     function showSlide(index) {
       slides.forEach((slide, slideIndex) => {
@@ -804,6 +849,12 @@
       });
       updateIndicators(index);
       currentSlide = index;
+
+      if (index === 2) {
+        startStandImageRotation();
+      } else {
+        stopStandImageRotation();
+      }
     }
 
     function updateIndicators(activeIndex) {
