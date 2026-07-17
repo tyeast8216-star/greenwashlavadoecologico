@@ -283,6 +283,18 @@ body {
   display: block;
 }
 
+.navbar-toggler .close-icon {
+  display: none;
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-icon {
+  display: none;
+}
+
+.navbar-toggler:not(.collapsed) .close-icon {
+  display: block;
+}
+
 .navbar-toggler .line {
   transition: transform .28s ease, opacity .2s ease;
   transform-origin: center;
