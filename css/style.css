@@ -1081,14 +1081,14 @@ body {
 .seccion-categorias {
   margin: 50px auto;
   background-color: #f9f9f9;
-  padding: 0 20px;
+  padding: 0 10px;
   font-family: 'Arial', sans-serif;
   text-align: center;
-  padding: 30px;
+  padding-bottom: 2px;
 }
 
 .categorias-header h2 {
-  padding-top: 120px;
+  padding-top: 50px;
   font-size: 32px;
   font-weight: 800;
   color: #1a202c;
@@ -1433,7 +1433,7 @@ body {
 .cta-banner {
   position: relative;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 20px;
   min-height: 400px;
   /* Altura regulable según prefieras */
   display: flex;
@@ -1535,15 +1535,14 @@ body {
 
 /* Process section */
 .process-section {
-  margin-top: 80px;
+  margin-top: 0px;
   position: relative;
   width: 100%;
-  padding: 80px 20px;
+  padding: 20px 20px;
   background-color: #ffffff;
   /* Color verde oscuro base */
 
   /* Agregamos la misma imagen texturizada de fondo de forma sutil */
-  background-image: url('ruta-de-tu-imagen-de-agua.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1640,7 +1639,7 @@ body {
 .franquicia-master {
   position: relative;
   min-height: 500px;
-  margin-top: -50px;
+  margin-top: -90px;
   /* Altura ideal para que el mapa luzca bien */
   width: 100%;
 
@@ -1966,7 +1965,7 @@ body {
 
 @media (max-width: 576px) {
   .testimonios {
-    padding: 40px 16px;
+    padding: 10px 16px;
   }
 
   .tarjeta {
@@ -1986,7 +1985,8 @@ body {
 
 .contact_section .contact_heading {
   text-align: center;
-  margin-bottom: 45px;
+  margin-top: -20px;
+  margin-bottom: 30px;
 }
 
 .contact_section .contact_heading h2 {
@@ -2046,7 +2046,7 @@ body {
 .final-section {
   background-color: #000000;
   color: #ffffff;
-  padding: 80px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2167,7 +2167,7 @@ body {
   margin-top: -30px;
   height: 800px;
   overflow: hidden;
-  background-image: url('../images/banner6greenwash.jpg');
+  background-image: url('../images/banner4greenwash-Recuperado.jpg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -2493,7 +2493,7 @@ body {
 }
 
 .title-top {
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: 300;
   margin-bottom: 0;
   letter-spacing: 1px;
@@ -2504,7 +2504,7 @@ body {
   font-size: 4.5rem;
   font-weight: 800;
   text-transform: uppercase;
-  line-height: 0.95;
+  line-height: 1.05;
   margin-top: 5px;
   margin-bottom: 25px;
   text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
@@ -2807,7 +2807,7 @@ body {
   }
 
   .title-top {
-    font-size: 1.5rem;
+    font-size: 1.9rem;
   }
 
   .title-main,
@@ -2815,7 +2815,7 @@ body {
   .car-slide .text-section h1,
   .stand-slide .text-section h1 {
     font-size: 1.8rem !important;
-    line-height: 1.1;
+    line-height: 1.2;
     margin-bottom: 10px;
     margin-top: 40px;
   }
@@ -2823,14 +2823,15 @@ body {
   /* --- 4. Slide 1: Mapa (Redimensionado sin romper) --- */
   .map-wrapper {
     width: 100%;
-    max-width: 280px; /* Evita que ocupe toda la pantalla */
+    max-width: 300px; /* Evita que ocupe toda la pantalla */
     height: auto;
     min-height: auto;
     margin: 0 auto;
+    margin-bottom: 30px;
   }
 
   .map-spain {
-    width: 100%;
+    width: 120%;
     height: auto;
   }
 
@@ -2849,6 +2850,7 @@ body {
     display: flex;
     align-items: flex-end;
     gap: 8px;
+    margin-bottom: 40px;
   }
 
   /* Forzamos que los cilindros bajen de tamaño en móvil */
@@ -2975,7 +2977,7 @@ body {
   }
 
   .title-top {
-    font-size: 1.3rem;
+    font-size: 1.9rem;
   }
 
   .badge-number {
