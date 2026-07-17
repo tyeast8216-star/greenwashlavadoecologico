@@ -823,11 +823,13 @@
   <script>// carousel de hero-banner
     const slides = document.querySelectorAll('.hero-banner .slide');
     const indicatorsContainer = document.querySelector('.carousel-indicators');
+    const sliderWrapper = document.querySelector('.hero-banner .slider-wrapper');
     const standImage = document.getElementById('standDisplayImage');
     const standImages = ['./images/estructuradelavado3.png', './images/edificiodelavado3.png', './images/superficiedelavado3.png'];
     let currentSlide = 0;
     const slideAutoIntervalMs = 3000;
     let slideAutoTimer = null;
+    let isAutoSlidePaused = false;
     let standImageInterval = null;
     let standImageTransitionTimer = null;
     let standImageIndex = 0;
@@ -907,6 +909,20 @@
           stopAutoSlide();
         });
         indicatorsContainer.appendChild(button);
+      });
+    }
+
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('click', (event) => {
+        if (event.target.closest('.carousel-indicators')) return;
+
+        if (slideAutoTimer) {
+          stopAutoSlide();
+          isAutoSlidePaused = true;
+        } else if (isAutoSlidePaused) {
+          startAutoSlide();
+          isAutoSlidePaused = false;
+        }
       });
     }
 
