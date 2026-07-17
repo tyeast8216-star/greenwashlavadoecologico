@@ -2163,6 +2163,92 @@ body {
   justify-content: center;
 }
 
+.history-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.calendar-wrapper {
+  background: transparent;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+}
+
+.calendar-glow {
+  position: absolute;
+  inset: 8% 16% auto 16%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 70%);
+  filter: blur(8px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.calendar-img {
+  max-width: 450px;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.18));
+}
+
+.history-text-block {
+  position: relative;
+  z-index: 2;
+}
+
+.history-subtitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+  color: #fefefe;
+}
+
+.history-title {
+  font-size: 3.6rem !important;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.history-text {
+  font-size: 1.45rem;
+  margin-top: 10px;
+  color: #fefefe;
+  font-weight: 500;
+}
+
+.history-badge {
+  display: inline-flex;
+  margin-top: 18px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #f79204 0%, #ffb347 100%);
+  color: #0d3115;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.calendar-top {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.calendar-bottom {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #666;
+}
 /* Líneas dinámicas de fondo (Efecto abstracto) */
 .hero-banner::before {
   content: '';
@@ -2174,6 +2260,34 @@ body {
   background: rgba(255, 255, 255, 0.08);
   transform: rotate(-5deg);
   z-index: 1;
+}
+
+.slide.active .history-slide .calendar-wrapper {
+  animation: historyCalendarIn 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.slide.active .history-slide .calendar-glow {
+  animation: historyGlowPulse 2.2s ease-in-out infinite;
+}
+
+.slide.active .history-slide .calendar-img {
+  animation: historyImageFloat 3.6s ease-in-out 0.6s infinite;
+}
+
+.slide.active .history-slide .history-subtitle {
+  animation: historyTextReveal 0.8s ease-out 0.2s both;
+}
+
+.slide.active .history-slide .history-title {
+  animation: historyTextReveal 0.9s ease-out 0.35s both;
+}
+
+.slide.active .history-slide .history-text {
+  animation: historyTextReveal 0.9s ease-out 0.5s both;
+}
+
+.slide.active .history-slide .history-badge {
+  animation: historyBadgeAppear 0.8s ease-out 0.7s both;
 }
 
 .hero-container {
@@ -2289,6 +2403,61 @@ body {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes historyCalendarIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes historyImageFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
+@keyframes historyTextReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes historyBadgeAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes historyGlowPulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
   }
 }
 
@@ -2813,6 +2982,55 @@ body {
   .hero-container,
   .slide .hero-container {
     gap: 14px;
+  }
+
+  .history-slide {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    padding: 0 12px;
+  }
+
+  .calendar-wrapper {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .calendar-img {
+    max-width: 220px;
+    width: 100%;
+  }
+
+  .history-subtitle {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .history-title {
+    font-size: 1.7rem !important;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .history-text {
+    font-size: 1rem;
+    margin-top: 4px;
+  }
+
+  .history-badge {
+    margin-top: 10px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .slide.active .history-slide .calendar-wrapper,
+  .slide.active .history-slide .history-subtitle,
+  .slide.active .history-slide .history-title,
+  .slide.active .history-slide .history-text,
+  .slide.active .history-slide .history-badge {
+    animation-duration: 0.7s;
   }
 }
 
