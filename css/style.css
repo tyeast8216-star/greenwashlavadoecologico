@@ -595,8 +595,8 @@ body {
 }
 
 @keyframes carImageFloat {
-  0% { transform: translateY(30px) scale(0.88) rotate(-2deg); opacity: 0; }
-  60% { transform: translateY(-8px) scale(1.03) rotate(1deg); opacity: 1; }
+  0% { transform: translateY(18px) scale(0.95) rotate(-1deg); opacity: 0; }
+  60% { transform: translateY(-4px) scale(1.01) rotate(0.5deg); opacity: 1; }
   100% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
 }
 
@@ -612,7 +612,7 @@ body {
   max-width: 1200px;
   height: auto;
   opacity: 0;
-  transform: translateY(30px) scale(0.88) rotate(-2deg);
+  transform: translateY(18px) scale(0.95) rotate(-1deg);
 }
 
 .slide.active .car-slide .text-section h2,
@@ -629,7 +629,7 @@ body {
 }
 
 .slide.active .car-slide .image-side img {
-  animation: carImageFloat 900ms cubic-bezier(.22,.9,.26,1) both;
+  animation: carImageFloat 1000ms cubic-bezier(.2,.8,.2,1) both;
   animation-delay: 0.7s;
 }
 

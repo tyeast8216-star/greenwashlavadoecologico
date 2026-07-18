@@ -840,7 +840,8 @@
     const standImage = document.getElementById('standDisplayImage');
     const standImages = ['./images/estructuralavado3.png', './images/edificiodelavado3.png', './images/superficiedelavado3.png'];
     let currentSlide = 0;
-    const slideAutoIntervalMs = 3000;
+    const slideAutoIntervalMs = 15000;
+    const standImageIntervalMs = 3000;
     let slideAutoTimer = null;
     let isAutoSlidePaused = false;
     let standImageInterval = null;
@@ -866,7 +867,7 @@
     function startStandImageRotation() {
       if (!standImage || standImageInterval) return;
       standImage.classList.add('is-visible');
-      standImageInterval = setInterval(showNextStandImage, slideAutoIntervalMs);
+      standImageInterval = setInterval(showNextStandImage, standImageIntervalMs);
     }
 
     function stopStandImageRotation() {
@@ -925,17 +926,55 @@
       });
     }
 
+    function pauseAutoTransitions() {
+      stopAutoSlide();
+      if (standImageInterval) {
+        clearInterval(standImageInterval);
+        standImageInterval = null;
+      }
+      if (standImageTransitionTimer) {
+        clearTimeout(standImageTransitionTimer);
+        standImageTransitionTimer = null;
+      }
+      isAutoSlidePaused = true;
+    }
+
+    function resumeAutoTransitions() {
+      if (!isAutoSlidePaused) return;
+
+      isAutoSlidePaused = false;
+      if (currentSlide === 2) {
+        startStandImageRotation();
+      } else {
+        stopStandImageRotation();
+      }
+      startAutoSlide();
+    }
+
     if (sliderWrapper) {
       sliderWrapper.addEventListener('click', (event) => {
         if (event.target.closest('.carousel-indicators')) return;
 
         if (slideAutoTimer) {
-          stopAutoSlide();
-          isAutoSlidePaused = true;
+          pauseAutoTransitions();
         } else if (isAutoSlidePaused) {
-          startAutoSlide();
-          isAutoSlidePaused = false;
+          resumeAutoTransitions();
         }
+      });
+
+      sliderWrapper.addEventListener('touchstart', (event) => {
+        if (event.target.closest('.carousel-indicators')) return;
+        pauseAutoTransitions();
+      }, { passive: true });
+
+      sliderWrapper.addEventListener('touchend', (event) => {
+        if (event.target.closest('.carousel-indicators')) return;
+        resumeAutoTransitions();
+      });
+
+      sliderWrapper.addEventListener('touchcancel', (event) => {
+        if (event.target.closest('.carousel-indicators')) return;
+        resumeAutoTransitions();
       });
     }
 
