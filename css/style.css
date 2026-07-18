@@ -346,7 +346,7 @@ body {
 
   .navbar-collapse {
     position: absolute !important;
-    top: calc(100% + 1px);
+    top: calc(100% + 0.5px);
     left: 40px;
     right: 40px;
     width: auto;
