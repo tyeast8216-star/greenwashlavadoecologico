@@ -2730,24 +2730,16 @@ body {
   height: auto;
   display: block;
   border-radius: 8px;
-  transform: translateX(24px);
+  transform: translateX(12px);
   opacity: 0;
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 .booth-side .stand-image.is-visible {
   transform: translateX(0);
   opacity: 1;
 }
-
-/* Añade esto a tu CSS */
-.stand-slide {
-    position: relative; /* Esto hace que el hijo absoluto se quede dentro de este div */
-}
-
-/* Ajusta el distintivo */
 .years-badge {
-    display: inline-block;
     margin-top: 20px;
     background-color: #0d3115;
     padding: 15px 20px;
