@@ -2597,14 +2597,70 @@ body {
 }
 
 .cylinder {
-    width: 80px;
-    border-radius: 10px 10px 0 0;
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    padding-top: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  width: 80px;
+  height: 250px;
+  background: #e2533d;
+  border-radius: 10px 10px 0 0;
+  
+  /* Flexbox para alinear los elementos */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+  /* Estilos conservados */
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  padding-top: 0;
 }
+
+.hidro-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  word-break: normal;
+  overflow: visible;
+  padding: 0 2px;
+}
+
+.hidro-text2 {
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  width: 110px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+  word-break: normal;
+  overflow: visible;
+  padding: 0 2px;
+}
+.value-text {
+  margin-top: auto; /* Empuja el número hacia abajo del todo */
+  padding-bottom: 15px; /* Da un respiro en la base */
+  font-size: 18px; /* Ajuste sutil para balancear con el texto superior */
+}
+
+.value-text2 {
+  display: flex;
+  margin-top: auto; /* Empuja el número hacia abajo del todo */
+  align-items: center;
+  justify-content: center;
+  font-size: 18px; /* Ajuste sutil para balancear con el texto superior */
+}
+
 
 .text-section {
     color: white;
@@ -2888,10 +2944,53 @@ body {
     width: 45px !important;
     font-size: 0.8rem;
   }
-  .cylinder[style*="250px"] { height: 140px !important; }
-  .cylinder[style*="200px"] { height: 110px !important; }
-  .cylinder[style*="150px"] { height: 80px !important; }
-  .cylinder[style*="100px"] { height: 50px !important; }
+  .cylinder[style*="250px"] { height: 180px !important; }
+  .cylinder[style*="200px"] { height: 135px !important; }
+  .cylinder[style*="150px"] { height: 98px !important; }
+  .cylinder[style*="100px"] { height: 65px !important; }
+
+  .hidro-text {
+  position: absolute;
+  top: 41%;
+  left: 50%;
+  width: 110px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  word-break: normal;
+  overflow: visible;
+  padding: 0 2px;
+}
+
+.hidro-text2 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 80px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1;
+  white-space: nowrap;
+  word-break: normal;
+  overflow: visible;
+  padding: 0 2px;
+}
+.value-text {
+  margin-top: 2px; /* Empuja el número hacia abajo del todo */
+  padding-bottom: 2px; /* Da un respiro en la base */
+  font-size: 15px; /* Ajuste sutil para balancear con el texto superior */
+}
+
+.value-text2 {
+  margin-top: auto; /* Empuja el número hacia abajo del todo */
+  margin-bottom: 12px; /* Da un respiro en la base */
+  font-size: 15px; /* Ajuste sutil para balancear con el texto superior */
+}
 
   .text-section {
     margin-left: 0 !important;
