@@ -840,7 +840,7 @@
     const standImage = document.getElementById('standDisplayImage');
     const standImages = ['./images/estructuralavado3.png', './images/edificiodelavado3.png', './images/superficiedelavado3.png'];
     let currentSlide = 0;
-    const slideAutoIntervalMs = 15000;
+    const slideAutoIntervalMs = 7000;
     const standImageIntervalMs = 3000;
     let slideAutoTimer = null;
     let isAutoSlidePaused = false;
@@ -963,17 +963,17 @@
       });
 
       sliderWrapper.addEventListener('touchstart', (event) => {
-        if (event.target.closest('.carousel-indicators')) return;
+        if (event.target.closest('.carousel-indicators') || event.target.closest('#standDisplayImage')) return;
         pauseAutoTransitions();
       }, { passive: true });
 
       sliderWrapper.addEventListener('touchend', (event) => {
-        if (event.target.closest('.carousel-indicators')) return;
+        if (event.target.closest('.carousel-indicators') || event.target.closest('#standDisplayImage')) return;
         resumeAutoTransitions();
       });
 
       sliderWrapper.addEventListener('touchcancel', (event) => {
-        if (event.target.closest('.carousel-indicators')) return;
+        if (event.target.closest('.carousel-indicators') || event.target.closest('#standDisplayImage')) return;
         resumeAutoTransitions();
       });
     }
