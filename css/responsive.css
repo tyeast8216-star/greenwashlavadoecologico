@@ -358,6 +358,113 @@
 
   .logo-header {
     width: 72px !important;
+  }
+
+  /* Responsive about.html */
+  .banner-empresa {
+    height: auto !important;
+    padding: 60px 18px;
+    min-height: 180px;
+  }
+
+  .overlay-empresa {
+    padding: 24px 18px;
+  }
+
+  .overlay-empresa h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .overlay-empresa .subtitle {
+    font-size: 1rem !important;
+  }
+
+  .seccion-empresa {
+    flex-direction: column !important;
+    gap: 18px !important;
+    padding: 30px 18px !important;
+  }
+
+  .seccion-empresa .contenedor-texto,
+  .seccion-empresa .contenedor-imagen {
+    width: 100% !important;
+  }
+
+  .seccion-empresa .contenedor-texto {
+    order: 2;
+  }
+
+  .seccion-empresa .contenedor-imagen {
+    order: 1;
+  }
+
+  .seccion-empresa .contenedor-imagen img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .seccion-empresa h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .seccion-empresa p {
+    font-size: 0.94rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .timeline-swiper-outer {
+    padding: 14px 16px 26px !important;
+  }
+
+  .timeline-swiper {
+    overflow: hidden !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 44px !important;
+    height: 44px !important;
+    left: -54px !important;
+    right: -54px !important;
+    top: calc(50% - 35px) !important;
+  }
+
+  .swiper-button-next {
+    right: -54px !important;
+  }
+
+  .timeline-swiper .swiper-slide {
+    padding: 8px 0 16px !important;
+  }
+
+  .timeline-swiper .swiper-slide .card {
+    min-height: 210px !important;
+    padding: 18px 16px !important;
+  }
+
+  .timeline-swiper .swiper-slide .card img {
+    height: 128px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .timeline-swiper .swiper-slide .card h3 {
+    font-size: 1rem !important;
+  }
+
+  .timeline-swiper .swiper-slide .card p {
+    font-size: 0.82rem !important;
+    line-height: 1.5 !important;
+    max-width: 100% !important;
+  }
+
+  .timeline-swiper .swiper-slide .year {
+    width: 56px !important;
+    height: 56px !important;
+    margin: 0 auto 12px !important;
+  }
+}
+
+
     margin-left: 8px !important;
   }
 
