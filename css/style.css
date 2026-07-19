@@ -1156,6 +1156,39 @@ body {
   /* Espaciado entre tarjetas */
 }
 
+.diferenciadores {
+  padding-top: -10px;
+  margin-top: -10px;
+  font-family: sans-serif;
+}
+
+/* Selector renombrado */
+.wrapper-diferenciadores {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.item-diferencial {
+  flex: 1;
+  padding: 15px;
+}
+
+.item-diferencial img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.item-diferencial h3 {
+  color: #006644; 
+  margin-bottom: 10px;
+}
+
+.item-diferencial p {
+  color: #555;
+  line-height: 1.5;
+}
 /* --- TARJETA INDIVIDUAL --- */
 .tarjeta-categoria {
   position: relative;
@@ -3533,7 +3566,6 @@ body {
     width: 56px;
     height: 56px;
     margin: 0 auto 12px;
-    margin-left: 50px !important;
   }
 }
 
