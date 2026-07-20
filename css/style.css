@@ -1585,7 +1585,6 @@ body {
 
 /* Contenedor principal de la sección */
 .seccion-certificacion {
-
   margin: 40px;
   text-align: center;
 }
@@ -1665,10 +1664,6 @@ body {
            VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
            ========================================== */
 @media (max-width: 768px) {
-  body {
-    padding: 20px 15px;
-  }
-
   .caja-aviso {
     padding: 15px 20px;
     font-size: 15px;
