@@ -4341,4 +4341,232 @@ body {
   max-width: 100%;
 }
 
+/* SECCION DE SERVICE */
+
+/* Contenedor principal de la sección */
+.seccion-franquicia {
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+/* Estructura de dos columnas */
+.franquicia-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Columna de Texto (Izquierda) */
+.franquicia-texto {
+  flex: 1.2;
+  min-width: 320px;
+}
+
+.franquicia-texto h2 {
+  color: #006644;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.franquicia-texto .divisor-verde {
+  width: 90px;
+  height: 4px;
+  background-color: #0fc925;
+  margin-bottom: 15px;
+}
+
+.franquicia-texto h4 {
+  color: #666666;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.franquicia-texto p {
+  color: #555555;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Columna de Imagen (Derecha) */
+.franquicia-imagen {
+  flex: 0.8;
+  min-width: 300px;
+}
+
+.franquicia-imagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================
+           VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
+           ========================================== */
+@media (max-width: 768px) {
+  .franquicia-grid {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .franquicia-texto,
+  .franquicia-imagen {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .franquicia-texto h2 {
+    font-size: 24px;
+  }
+
+  .franquicia-texto p {
+    text-align: left;
+  }
+}
+
+/* Contenedor principal de la sección */
+.seccion-cta-franquicia {
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+/* Estructura de dos columnas */
+.cta-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* Columna Izquierda: Textos y Beneficios */
+.cta-texto {
+  flex: 1.1;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cta-texto h2 {
+  color: #006644;
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 10px;
+}
+
+.cta-texto>p {
+  color: #555555;
+  font-size: 15px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+/* Caja de beneficios interna */
+.caja-beneficios {
+  background-color: #f9f9f9;
+  border-left: 4px solid #006644;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.caja-beneficios ul {
+  list-style: none;
+}
+
+.caja-beneficios li {
+  font-size: 14px;
+  color: #444444;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.caja-beneficios li:last-child {
+  margin-bottom: 0;
+}
+
+.caja-beneficios strong {
+  color: #006644;
+}
+
+/* Columna Derecha: Fondo Verde con Botón de Acción */
+.cta-accion {
+  flex: 0.9;
+  min-width: 300px;
+  background-color: #006644;
+  border-radius: 8px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Botón de llamada a la acción */
+.btn-solicitar {
+  display: inline-block;
+  background-color: #2b59a2;
+  /* Azul corporativo */
+  color: #ffffff;
+  padding: 15px 35px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.btn-solicitar:hover {
+  background-color: #1f427a;
+}
+
+.cta-accion p {
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+.cta-accion a.telefono {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* ==========================================
+           VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
+           ========================================== */
+@media (max-width: 768px) {
+  .cta-grid {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .cta-texto,
+  .cta-accion {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .cta-texto h2 {
+    font-size: 22px;
+  }
+
+  .cta-accion {
+    padding: 30px 20px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
