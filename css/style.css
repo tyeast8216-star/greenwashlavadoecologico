@@ -4411,6 +4411,9 @@ body {
            VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
            ========================================== */
 @media (max-width: 768px) {
+  .seccion-franquicia {
+  margin: 30px;
+}
   .franquicia-grid {
     flex-direction: column;
     gap: 25px;
@@ -4549,6 +4552,9 @@ body {
            VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
            ========================================== */
 @media (max-width: 768px) {
+  .seccion-cta-franquicia {
+  margin: 30px;
+}
   .cta-grid {
     flex-direction: column;
     gap: 25px;
