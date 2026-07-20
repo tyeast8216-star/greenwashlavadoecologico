@@ -334,7 +334,7 @@ body {
   .new-nav .navbar-brand {
     margin-left: 0;
   }
- 
+
   .logo-header {
     width: 110px;
   }
@@ -490,10 +490,12 @@ body {
     transform: scaleY(0.18);
     opacity: 0.2;
   }
+
   60% {
     transform: scaleY(1.06);
     opacity: 1;
   }
+
   100% {
     transform: scaleY(1);
     opacity: 1;
@@ -505,6 +507,7 @@ body {
     transform: translateX(40px);
     opacity: 0;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -518,7 +521,7 @@ body {
   opacity: 0.2;
 }
 
-.system-slide .text-section > * {
+.system-slide .text-section>* {
   opacity: 0;
   transform: translateX(40px);
 }
@@ -527,24 +530,38 @@ body {
 .slide.active .system-slide .cylinders-section .cylinder {
   animation-name: cylinderGrow;
   animation-duration: 850ms;
-  animation-timing-function: cubic-bezier(.22,.9,.26,1);
+  animation-timing-function: cubic-bezier(.22, .9, .26, 1);
   animation-fill-mode: both;
 }
-.slide.active .system-slide .cylinders-section .cylinder:nth-child(1) { animation-delay: 0.18s; }
-.slide.active .system-slide .cylinders-section .cylinder:nth-child(2) { animation-delay: 0.34s; }
-.slide.active .system-slide .cylinders-section .cylinder:nth-child(3) { animation-delay: 0.5s; }
-.slide.active .system-slide .cylinders-section .cylinder:nth-child(4) { animation-delay: 0.66s; }
+
+.slide.active .system-slide .cylinders-section .cylinder:nth-child(1) {
+  animation-delay: 0.18s;
+}
+
+.slide.active .system-slide .cylinders-section .cylinder:nth-child(2) {
+  animation-delay: 0.34s;
+}
+
+.slide.active .system-slide .cylinders-section .cylinder:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.slide.active .system-slide .cylinders-section .cylinder:nth-child(4) {
+  animation-delay: 0.66s;
+}
 
 .slide.active .system-slide .text-section h1 {
-  animation: slideTextIn 700ms cubic-bezier(.22,.9,.26,1) both;
+  animation: slideTextIn 700ms cubic-bezier(.22, .9, .26, 1) both;
   animation-delay: 0.9s;
 }
+
 .slide.active .system-slide .text-section .highlight-number {
-  animation: slideTextIn 700ms cubic-bezier(.22,.9,.26,1) both;
+  animation: slideTextIn 700ms cubic-bezier(.22, .9, .26, 1) both;
   animation-delay: 1.05s;
 }
+
 .slide.active .system-slide .text-section p {
-  animation: slideTextIn 700ms cubic-bezier(.22,.9,.26,1) both;
+  animation: slideTextIn 700ms cubic-bezier(.22, .9, .26, 1) both;
   animation-delay: 1.18s;
 }
 
@@ -554,12 +571,14 @@ body {
   margin-bottom: 6px;
 
 }
+
 /* Small adjustments to make the cylinders look like bars */
 .system-slide .cylinders-section {
   display: flex;
   align-items: flex-end;
   gap: 18px;
 }
+
 .system-slide .cylinders-section .cylinder {
   width: 56px;
   border-radius: 6px 6px 0 0;
@@ -572,15 +591,37 @@ body {
 
 /* Animaciones para Slide 3: Stand Comercial (texto e imagen) */
 @keyframes standTextIn {
-  0% { transform: translateX(-36px); opacity: 0; }
-  60% { transform: translateX(6px); opacity: 1; }
-  100% { transform: translateX(0); opacity: 1; }
+  0% {
+    transform: translateX(-36px);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateX(6px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes standImagePop {
-  0% { transform: scale(0.86) translateY(18px) rotate(-4deg); opacity: 0; }
-  60% { transform: scale(1.04) translateY(-6px) rotate(2deg); opacity: 1; }
-  100% { transform: scale(1) translateY(0) rotate(0); opacity: 1; }
+  0% {
+    transform: scale(0.86) translateY(18px) rotate(-4deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.04) translateY(-6px) rotate(2deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1) translateY(0) rotate(0);
+    opacity: 1;
+  }
 }
 
 .stand-slide .text-section h1 {
@@ -598,37 +639,65 @@ body {
 }
 
 .slide.active .stand-slide .text-section h1 {
-  animation: standTextIn 700ms cubic-bezier(.22,.9,.26,1) both;
+  animation: standTextIn 700ms cubic-bezier(.22, .9, .26, 1) both;
   animation-delay: 0.22s;
 }
 
 .slide.active .stand-slide .booth-side .booth-label img {
-  animation: standImagePop 900ms cubic-bezier(.22,.9,.26,1) both;
+  animation: standImagePop 900ms cubic-bezier(.22, .9, .26, 1) both;
   animation-delay: 0.52s;
 }
 
 /* Ajustes móviles: reducir tamaño de imagen y texto para pantallas pequeñas */
 @media (max-width: 768px) {
-  .stand-slide .text-section h1 { font-size: 2rem; }
+  .stand-slide .text-section h1 {
+    font-size: 2rem;
+  }
+
   .stand-slide .booth-side .booth-label img {
     max-width: min(90vw, 620px);
     margin: 18px auto 0;
   }
-  .system-slide .cylinders-section { gap: 10px; }
+
+  .system-slide .cylinders-section {
+    gap: 10px;
+  }
 
 }
 
 /* Animaciones para Slide 4: Pioneros (Banner Coche) */
 @keyframes carTextReveal {
-  0% { transform: translateX(-40px); opacity: 0; }
-  80% { transform: translateX(10px); opacity: 1; }
-  100% { transform: translateX(0); opacity: 1; }
+  0% {
+    transform: translateX(-40px);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes carImageFloat {
-  0% { transform: translateY(18px) scale(0.95) rotate(-1deg); opacity: 0; }
-  60% { transform: translateY(-4px) scale(1.01) rotate(0.5deg); opacity: 1; }
-  100% { transform: translateY(0) scale(1) rotate(0); opacity: 1; }
+  0% {
+    transform: translateY(18px) scale(0.95) rotate(-1deg);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateY(-4px) scale(1.01) rotate(0.5deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) scale(1) rotate(0);
+    opacity: 1;
+  }
 }
 
 .car-slide .text-section h2,
@@ -648,7 +717,7 @@ body {
 
 .slide.active .car-slide .text-section h2,
 .slide.active .car-slide .text-section h1 {
-  animation: carTextReveal 700ms cubic-bezier(.22,.9,.26,1) both;
+  animation: carTextReveal 700ms cubic-bezier(.22, .9, .26, 1) both;
 }
 
 .slide.active .car-slide .text-section h2 {
@@ -660,7 +729,7 @@ body {
 }
 
 .slide.active .car-slide .image-side img {
-  animation: carImageFloat 1000ms cubic-bezier(.2,.8,.2,1) both;
+  animation: carImageFloat 1000ms cubic-bezier(.2, .8, .2, 1) both;
   animation-delay: 0.7s;
 }
 
@@ -1157,9 +1226,8 @@ body {
 }
 
 .diferenciadores {
-  padding-top: -10px;
-  margin-top: -10px;
-  font-family: sans-serif;
+  margin-top: 60px !important;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Selector renombrado */
@@ -1181,7 +1249,7 @@ body {
 }
 
 .item-diferencial h3 {
-  color: #006644; 
+  color: #006644;
   margin-bottom: 10px;
 }
 
@@ -1189,6 +1257,441 @@ body {
   color: #555;
   line-height: 1.5;
 }
+
+/* ==========================================
+   VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
+   ========================================== */
+@media (max-width: 768px) {
+  .wrapper-diferenciadores {
+    flex-direction: column;
+    /* Cambia la fila a una columna vertical */
+    gap: 15px;
+    /* Reduce un poco el espacio entre elementos */
+  }
+
+  .item-diferencial {
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    margin-top: 0px;
+    padding: 30px;
+    /* Ajusta el padding para pantallas pequeñas */
+  }
+
+  .diferenciadores h2 {
+    display: flex;
+    justify-content: center;
+    margin-left: 70px;
+  }
+}
+
+/* Contenedor principal de la sección */
+.seccion-sistema {
+  padding-top: 0;
+  background-color: #fafafa;
+  margin-top: -60px;
+}
+
+/* Grid flexbox para las columnas */
+.sistema-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sistema-columna {
+  flex: 1;
+  padding: 15px;
+  min-width: 300px;
+}
+
+.sistema-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  display: block;
+}
+
+/* Estilos para el bloque de texto */
+.sistema-texto h2 {
+  color: #006644;
+  font-size: 28px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sistema-texto .divisor-verde {
+  width: 80px;
+  height: 4px;
+  background-color: #23c823;
+  margin-bottom: 20px;
+}
+
+.sistema-texto h4 {
+  color: #666666;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+.sistema-texto p {
+  color: #555555;
+  line-height: 1.6;
+  font-size: 15px;
+  text-align: justify;
+}
+
+/* ==========================================
+           VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
+           ========================================== */
+@media (max-width: 768px) {
+  .sistema-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sistema-columna {
+    width: 100%;
+    padding: 40px;
+    min-width: unset;
+  }
+
+  .sistema-texto h2 {
+    font-size: 24px;
+  }
+
+  .sistema-texto p {
+    text-align: left;
+  }
+}
+
+
+/* Contenedor principal de la sección */
+.seccion-ancelave {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
+}
+
+/* Título Principal */
+.seccion-ancelave h2.titulo-principal {
+  color: #006644;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+/* Línea verde decorativa debajo del título */
+.seccion-ancelave .divisor-verde {
+  width: 90px;
+  height: 4px;
+  background-color: #006644;
+  margin-bottom: 30px;
+}
+
+/* Estructura de dos columnas */
+.ancelave-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Columna de Texto */
+.ancelave-texto {
+  flex: 1.2;
+  min-width: 300px;
+}
+
+.ancelave-texto p {
+  color: #555555;
+  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+/* Estilo del Botón y Enlace inferior */
+.contenedor-boton {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.btn-ancelave {
+  display: inline-block;
+  background-color: #2b59a2;
+  /* Azul corporativo ancelave */
+  color: #ffffff;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ancelave:hover {
+  background-color: #1f427a;
+}
+
+.enlaceweb2 {
+  color: #006644;
+  text-decoration: none;
+  font-size: 15px;
+  margin-left: 12rem;
+}
+
+.enlace-web {
+  color: #006644;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.enlace-web:hover {
+  text-decoration: underline;
+}
+
+/* Columna Gráfica / Imágenes (Derecha) */
+.ancelave-graficos {
+  flex: 0.8;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ancelave-graficos img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.img-logo-texto {
+  max-width: 400px;
+}
+
+.img-folleto {
+  max-width: 250px;
+  align-self: flex-end;
+}
+
+/* ==========================================
+           VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
+           ========================================== */
+@media (max-width: 768px) {
+  .ancelave-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .ancelave-texto,
+  .ancelave-graficos {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .ancelave-texto p {
+    text-align: left;
+    /* Alineado a la izquierda para mejor lectura en móvil */
+  }
+
+  .ancelave-graficos {
+    align-items: center;
+  }
+
+  .img-folleto {
+    align-self: center;
+    /* Centra el folleto en pantallas pequeñas */
+  }
+
+  .seccion-ancelave h2.titulo-principal {
+    font-size: 24px;
+  }
+}
+
+/* Sección de Aviso Importante con fondo verde corporativo */
+.seccion-aviso {
+  background-image: url(../images/separador.jpg);
+  color: #ffffff;
+  text-align: center;
+  padding: 50px 20px;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.seccion-aviso h2 {
+  font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.seccion-aviso p {
+  font-size: 15px;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+/* Contenedor responsivo para el vídeo (Aspect Ratio 16:9) */
+.video-contenedor {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  /* Ancho máximo similar al diseño original */
+  margin: 0 auto;
+  /* Fondo blanco mientras pones el vídeo o si carga */
+  overflow: hidden;
+  /* Proporción de 16:9 para vídeos */
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* El elemento de video en sí */
+.video-contenedor video,
+.video-contenedor iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ==========================================
+           VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
+           ========================================== */
+@media (max-width: 768px) {
+  .seccion-aviso {
+    padding: 30px 15px;
+  }
+
+  .seccion-aviso h2 {
+    font-size: 22px;
+  }
+
+  .seccion-aviso p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Contenedor principal de la sección */
+.seccion-certificacion {
+
+  margin: 40px;
+  text-align: center;
+}
+
+/* 1. Caja de texto superior con borde */
+.caja-aviso {
+  border: 1px solid #333333;
+  padding: 20px 30px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  color: #333333;
+  background-color: #ffffff;
+}
+
+/* 2. Bloque de la placa de certificación */
+.contenedor-placa {
+  margin-bottom: 50px;
+}
+
+.contenedor-placa img {
+  width: 100%;
+  max-width: 380px;
+  /* Tamaño aproximado de la placa en pantallas grandes */
+  height: auto;
+  display: inline-block;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Sutil sombra para realzar el efecto metálico */
+  border-radius: 4px;
+}
+
+.leyenda-placa {
+  font-size: 13px;
+  color: #666666;
+  font-style: italic;
+}
+
+/* 3. Bloque inferior de llamada a la acción (CTA) */
+.seccion-contacto-cta {
+  margin-top: 40px;
+}
+
+.seccion-contacto-cta h3 {
+  font-size: 20px;
+  color: #222222;
+  margin-bottom: 12px;
+}
+
+.seccion-contacto-cta p {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.5;
+  max-width: 750px;
+  margin: 0 auto 25px auto;
+}
+
+/* Estilo del botón de Contacto */
+.btn-contacto {
+  display: inline-block;
+  border: 1px solid #333333;
+  color: #333333;
+  background-color: #ffffff;
+  padding: 12px 35px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.btn-contacto:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* ==========================================
+           VERSIÓN RESPONSIVA (MÓVILES Y TABLETS)
+           ========================================== */
+@media (max-width: 768px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  .caja-aviso {
+    padding: 15px 20px;
+    font-size: 15px;
+    margin-bottom: 35px;
+  }
+
+  .seccion-contacto-cta h3 {
+    font-size: 18px;
+  }
+
+  .seccion-contacto-cta p {
+    font-size: 14px;
+    text-align: left;
+    /* En móviles suele leerse mejor justificado a la izquierda */
+    padding: 0 10px;
+  }
+
+  .contenedor-placa img {
+    max-width: 100%;
+    /* La placa se adapta al ancho de los móviles pequeños */
+  }
+}
+
 /* --- TARJETA INDIVIDUAL --- */
 .tarjeta-categoria {
   position: relative;
@@ -1358,7 +1861,7 @@ body {
   }
 
   .categorias-header .linea-divisoria {
-      width: 20rem;
+    width: 20rem;
   }
 }
 
@@ -1982,18 +2485,23 @@ body {
   background-color: #f9f9f9;
   padding: 80px 20px;
 }
+
 .contenedor-tarjetas {
   display: flex;
-  justify-content: space-between; /* Espacia las tarjetas equitativamente */
-  gap: 20px; /* Separación entre tarjetas */
+  justify-content: space-between;
+  /* Espacia las tarjetas equitativamente */
+  gap: 20px;
+  /* Separación entre tarjetas */
   padding: 20px;
 }
 
 .tarjeta {
-  background-color: #1e5631; /* Verde oscuro del diseño */
+  background-color: #1e5631;
+  /* Verde oscuro del diseño */
   color: white;
   padding: 20px;
-  flex: 1; /* Hace que todas tengan el mismo ancho */
+  flex: 1;
+  /* Hace que todas tengan el mismo ancho */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2001,16 +2509,19 @@ body {
 }
 
 .tarjeta img {
-  width: 100px; /* Ajusta según sea necesario */
+  width: 100px;
+  /* Ajusta según sea necesario */
   height: 100px;
-  border-radius: 50%; /* Para que la imagen sea circular */
+  border-radius: 50%;
+  /* Para que la imagen sea circular */
   object-fit: cover;
   margin-bottom: 15px;
 }
 
 .icono-comillas {
   font-size: 2rem;
-  color: #88c83a; /* Verde claro del icono */
+  color: #88c83a;
+  /* Verde claro del icono */
   margin-bottom: 10px;
 }
 
@@ -2326,6 +2837,7 @@ body {
   text-transform: uppercase;
   color: #666;
 }
+
 /* Líneas dinámicas de fondo (Efecto abstracto) */
 .hero-banner::before {
   content: '';
@@ -2435,9 +2947,17 @@ body {
 .pin-8 { top: 50%; left: 20%; }*/
 
 @keyframes pulse {
-  0% { transform: rotate(-45deg) scale(1); }
-  50% { transform: rotate(-45deg) scale(1.15); }
-  100% { transform: rotate(-45deg) scale(1); }
+  0% {
+    transform: rotate(-45deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(-45deg) scale(1.15);
+  }
+
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
 }
 
 @keyframes mapEntrance {
@@ -2445,6 +2965,7 @@ body {
     opacity: 0;
     transform: translateY(25px) scale(0.95);
   }
+
   to {
     opacity: 0.85;
     transform: translateY(0) scale(1);
@@ -2452,10 +2973,12 @@ body {
 }
 
 @keyframes mapFloat {
+
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(-1deg);
   }
@@ -2466,6 +2989,7 @@ body {
     opacity: 0;
     transform: translateX(25px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -2477,6 +3001,7 @@ body {
     opacity: 0;
     transform: translateX(18px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -2488,6 +3013,7 @@ body {
     opacity: 0;
     transform: translateX(-40px) scale(0.92);
   }
+
   to {
     opacity: 1;
     transform: translateX(0) scale(1);
@@ -2495,10 +3021,12 @@ body {
 }
 
 @keyframes historyImageFloat {
+
   0%,
   100% {
     transform: translateY(0) rotate(0deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(-1.5deg);
   }
@@ -2509,6 +3037,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -2520,6 +3049,7 @@ body {
     opacity: 0;
     transform: translateY(15px) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -2527,11 +3057,13 @@ body {
 }
 
 @keyframes historyGlowPulse {
+
   0%,
   100% {
     opacity: 0.6;
     transform: scale(0.96);
   }
+
   50% {
     opacity: 1;
     transform: scale(1.04);
@@ -2543,6 +3075,7 @@ body {
     opacity: 0;
     transform: translateY(20px) scale(0.95);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -2616,17 +3149,18 @@ body {
 
 /* --- NUEVA ZONA: SISTEMA DE LAVADO --- */
 .system-slide {
-    display: flex !important; /* Sobrescribimos el grid solo para este slide si es necesario */
-    justify-content: center;
-    align-items: center;
-    gap: 50px;
+  display: flex !important;
+  /* Sobrescribimos el grid solo para este slide si es necesario */
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }
 
 .cylinders-section {
-    display: flex;
-    gap: 20px;
-    align-items: flex-end;
-    height: 300px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  height: 300px;
 }
 
 .cylinder {
@@ -2635,17 +3169,17 @@ body {
   height: 250px;
   background: #e2533d;
   border-radius: 10px 10px 0 0;
-  
+
   /* Flexbox para alinear los elementos */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
+
   /* Estilos conservados */
   color: white;
   font-weight: bold;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   padding-top: 0;
 }
 
@@ -2680,131 +3214,144 @@ body {
   overflow: visible;
   padding: 0 2px;
 }
+
 .value-text {
-  margin-top: auto; /* Empuja el número hacia abajo del todo */
-  padding-bottom: 15px; /* Da un respiro en la base */
-  font-size: 18px; /* Ajuste sutil para balancear con el texto superior */
+  margin-top: auto;
+  /* Empuja el número hacia abajo del todo */
+  padding-bottom: 15px;
+  /* Da un respiro en la base */
+  font-size: 18px;
+  /* Ajuste sutil para balancear con el texto superior */
 }
 
 .value-text2 {
   display: flex;
-  margin-top: auto; /* Empuja el número hacia abajo del todo */
+  margin-top: auto;
+  /* Empuja el número hacia abajo del todo */
   align-items: center;
   justify-content: center;
-  font-size: 18px; /* Ajuste sutil para balancear con el texto superior */
+  font-size: 18px;
+  /* Ajuste sutil para balancear con el texto superior */
 }
 
 
 .text-section {
-    color: white;
-    max-width: 400px;
-    margin-left: 90px;
+  color: white;
+  max-width: 400px;
+  margin-left: 90px;
 }
 
 .text-section h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1.1;
-    text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .highlight-number {
-    font-size: 8rem;
-    font-weight: 900;
-    color: #f79204;
-    line-height: 1;
+  font-size: 8rem;
+  font-weight: 900;
+  color: #f79204;
+  line-height: 1;
 }
 
 /* Ajuste para que las flechas se mantengan visibles sobre ambos slides */
 .slider-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.2);
-    border: none;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    transition: background 0.3s;
+  position: absolute;
+  top: 50%;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: background 0.3s;
 }
 
 .slider-arrow:hover {
-    background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.arrow-left { left: 20px; }
-.arrow-right { right: 20px; }
+.arrow-left {
+  left: 20px;
+}
+
+.arrow-right {
+  right: 20px;
+}
 
 /* Asegura que el contenedor del slider ocupe todo el banner */
 .slider-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 /* Ocultar todos los slides por defecto */
 .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none; /* Esto evita que aparezcan todos juntos */
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* Esto evita que aparezcan todos juntos */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Mostrar solo el activo */
 .slide.active {
-    display: flex !important; /* Fuerza el layout flex */
-    opacity: 1;
+  display: flex !important;
+  /* Fuerza el layout flex */
+  opacity: 1;
 }
 
 .hero-banner .carousel-indicators {
-    position: absolute;
-    left: 50%;
-    bottom: 150px;
-    transform: translateX(-135%);
-    display: flex;
-    gap: 12px;
-    z-index: 50;
-    align-items: center;
-    justify-content: center;
+  position: absolute;
+  left: 50%;
+  bottom: 150px;
+  transform: translateX(-135%);
+  display: flex;
+  gap: 12px;
+  z-index: 50;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-banner .carousel-indicators button {
-    width: 10px;
-    height: 10px;
-    min-width: 10px;
-    min-height: 10px;
-    padding: 0;
-    border-radius: 50%;
-    border: 2px solid rgba(255, 255, 255, 0.9);
-    background: rgba(255, 255, 255, 0.649);
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3), 0 4px 10px rgba(0, 0, 0, 0.12);
-    cursor: pointer;
-    transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
-    outline: none;
-    box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+  min-height: 10px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.649);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.3), 0 4px 10px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  outline: none;
+  box-sizing: border-box;
 }
 
 .hero-banner .carousel-indicators button.active,
 .hero-banner .carousel-indicators button:hover {
-    background: #ffffff;
-    border-color: rgba(31, 113, 100, 0.95);
-    transform: scale(1.2);
+  background: #ffffff;
+  border-color: rgba(31, 113, 100, 0.95);
+  transform: scale(1.2);
 }
 
 /* Asegurar que el contenedor hero tenga el ancho correcto dentro del slide */
 .slide .hero-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-top: -50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: -50px;
 }
 
 .booth-side {
@@ -2828,50 +3375,56 @@ body {
   transform: translateX(0);
   opacity: 1;
 }
+
 .years-badge {
-    margin-top: 20px;
-    background-color: #0d3115;
-    padding: 15px 20px;
-    border-radius: 10px;
-    text-align: center;
-    border-left: 5px solid #f79204;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-    max-width: 220px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUpYears 0.8s ease forwards;
-    animation-delay: 0.3s;
+  margin-top: 20px;
+  background-color: #0d3115;
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  border-left: 5px solid #f79204;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  max-width: 220px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpYears 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
 
 @keyframes fadeInUpYears {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .years-number {
-    display: block;
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #f79204; /* Ajusta este color al de tu marca */
-    line-height: 1;
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f79204;
+  /* Ajusta este color al de tu marca */
+  line-height: 1;
 }
 
 .years-text {
-    font-size: 0.9rem;
-    color: #ffffff;
-    text-transform: uppercase;
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-transform: uppercase;
 }
+
 @media (max-width: 992px) {
+
   /* --- 1. Evitamos que el banner se colapse --- */
   .hero-banner {
-    height: 700px; /* Altura fija para que los slides absolutos no se aplasten */
+    height: 700px;
+    /* Altura fija para que los slides absolutos no se aplasten */
     min-height: 700px;
     padding: 0;
     position: relative;
@@ -2897,11 +3450,13 @@ body {
     z-index: 50;
     align-items: center;
     justify-content: center;
-}
+  }
+
   /* --- 2. Contenedor de cada diapositiva --- */
   .hero-container {
     display: flex;
-    flex-direction: column !important; /* Apilado vertical */
+    flex-direction: column !important;
+    /* Apilado vertical */
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -2942,7 +3497,8 @@ body {
   /* --- 4. Slide 1: Mapa (Redimensionado sin romper) --- */
   .map-wrapper {
     width: 100%;
-    max-width: 300px; /* Evita que ocupe toda la pantalla */
+    max-width: 300px;
+    /* Evita que ocupe toda la pantalla */
     height: auto;
     min-height: auto;
     margin: 0 auto;
@@ -2965,7 +3521,8 @@ body {
 
   /* --- 5. Slide 2: Cilindros (Escalados) --- */
   .cylinders-section {
-    height: 150px; /* Reducimos la altura del grupo */
+    height: 150px;
+    /* Reducimos la altura del grupo */
     display: flex;
     align-items: flex-end;
     gap: 8px;
@@ -2977,58 +3534,78 @@ body {
     width: 45px !important;
     font-size: 0.8rem;
   }
-  .cylinder[style*="250px"] { height: 180px !important; }
-  .cylinder[style*="200px"] { height: 135px !important; }
-  .cylinder[style*="150px"] { height: 98px !important; }
-  .cylinder[style*="100px"] { height: 65px !important; }
+
+  .cylinder[style*="250px"] {
+    height: 180px !important;
+  }
+
+  .cylinder[style*="200px"] {
+    height: 135px !important;
+  }
+
+  .cylinder[style*="150px"] {
+    height: 98px !important;
+  }
+
+  .cylinder[style*="100px"] {
+    height: 65px !important;
+  }
 
   .hidro-text {
-  position: absolute;
-  top: 41%;
-  left: 50%;
-  width: 110px;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  transform-origin: center;
-  text-align: center;
-  font-size: 12px;
-  line-height: 1;
-  white-space: nowrap;
-  word-break: normal;
-  overflow: visible;
-  padding: 0 2px;
-}
+    position: absolute;
+    top: 41%;
+    left: 50%;
+    width: 110px;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1;
+    white-space: nowrap;
+    word-break: normal;
+    overflow: visible;
+    padding: 0 2px;
+  }
 
-.hidro-text2 {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  width: 80px;
-  transform: translate(-50%, -50%) rotate(-90deg);
-  transform-origin: center;
-  text-align: center;
-  font-size: 10px;
-  line-height: 1;
-  white-space: nowrap;
-  word-break: normal;
-  overflow: visible;
-  padding: 0 2px;
-}
-.value-text {
-  margin-top: 2px; /* Empuja el número hacia abajo del todo */
-  padding-bottom: 2px; /* Da un respiro en la base */
-  font-size: 15px; /* Ajuste sutil para balancear con el texto superior */
-}
+  .hidro-text2 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 80px;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    transform-origin: center;
+    text-align: center;
+    font-size: 10px;
+    line-height: 1;
+    white-space: nowrap;
+    word-break: normal;
+    overflow: visible;
+    padding: 0 2px;
+  }
 
-.value-text2 {
-  margin-top: auto; /* Empuja el número hacia abajo del todo */
-  margin-bottom: 12px; /* Da un respiro en la base */
-  font-size: 15px; /* Ajuste sutil para balancear con el texto superior */
-}
+  .value-text {
+    margin-top: 2px;
+    /* Empuja el número hacia abajo del todo */
+    padding-bottom: 2px;
+    /* Da un respiro en la base */
+    font-size: 15px;
+    /* Ajuste sutil para balancear con el texto superior */
+  }
+
+  .value-text2 {
+    margin-top: auto;
+    /* Empuja el número hacia abajo del todo */
+    margin-bottom: 12px;
+    /* Da un respiro en la base */
+    font-size: 15px;
+    /* Ajuste sutil para balancear con el texto superior */
+  }
 
   .text-section {
     margin-left: 0 !important;
     padding: 0 10px;
   }
+
   .cylinder:last-child .interior-cylinder {
     display: flex;
     flex-direction: column;
@@ -3055,27 +3632,28 @@ body {
   }
 
   /* --- 6. Slides 3 y 4: Imágenes controladas --- */
-  .stand-slide, 
-    .stand-slide .hero-container, 
-    .stand-slide .booth-side {
-        width: 100% !important;
-        height: auto !important;
-        max-height: none !important;
-        min-height: auto !important;
-        flex: none !important;
-        display: block !important;
-    }
+  .stand-slide,
+  .stand-slide .hero-container,
+  .stand-slide .booth-side {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: auto !important;
+    flex: none !important;
+    display: block !important;
+  }
 
-    /* Forzamos a la imagen a ser el elemento dominante */
-    .stand-slide .booth-side img {
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        object-fit: contain !important;
-        /* Quitamos recortes del navegador */
-        overflow: visible !important;
-    }
+  /* Forzamos a la imagen a ser el elemento dominante */
+  .stand-slide .booth-side img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    /* Quitamos recortes del navegador */
+    overflow: visible !important;
+  }
+
   .car-slide .image-side {
     width: 100%;
     max-width: min(90vw, 520px);
@@ -3096,8 +3674,14 @@ body {
     height: 40px;
     z-index: 10;
   }
-  .arrow-left { left: 10px; }
-  .arrow-right { right: 10px; }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    right: 10px;
+  }
 }
 
 /* Ajuste extra fino para pantallas muy pequeñas */
@@ -3106,6 +3690,7 @@ body {
     height: 620px;
     min-height: 620px;
   }
+
   .title-main,
   .text-section h1 {
     font-size: 1.8rem !important;
@@ -3427,7 +4012,8 @@ body {
 .overlay-empresa {
   width: 100%;
   height: 100%;
-  background-color: rgb(42, 187, 47); /* Mantenemos tu tono verde */
+  background-color: rgb(42, 187, 47);
+  /* Mantenemos tu tono verde */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -3457,8 +4043,10 @@ body {
 
 .seccion-empresa {
   display: flex;
-  align-items: flex-start; /* Alinea texto e imagen arriba */
-  gap: 40px; /* Espacio entre el texto y la imagen */
+  align-items: flex-start;
+  /* Alinea texto e imagen arriba */
+  gap: 40px;
+  /* Espacio entre el texto y la imagen */
   padding: 50px 0;
   max-width: 1200px;
   margin: 0 auto;
@@ -3541,7 +4129,7 @@ body {
     padding: 18px 14px;
   }
 
-  .dot{
+  .dot {
     position: relative;
     top: 50px !important;
     margin-bottom: 0px !important;
@@ -3571,23 +4159,27 @@ body {
 
 
 .contenedor-texto {
-  flex: 1; /* Ocupa la mitad del espacio */
+  flex: 1;
+  /* Ocupa la mitad del espacio */
 }
 
 .contenedor-imagen {
-  flex: 1; /* Ocupa la otra mitad */
+  flex: 1;
+  /* Ocupa la otra mitad */
 }
 
 .contenedor-imagen img {
   width: 100%;
   height: auto;
-  border-radius: 8px; /* Opcional: para suavizar los bordes */
+  border-radius: 8px;
+  /* Opcional: para suavizar los bordes */
 }
 
 .linea-empresa2 {
   width: 180px;
   height: 3px;
-  background-color: #23c823; /* Ajusta según el color de tu línea */
+  background-color: #23c823;
+  /* Ajusta según el color de tu línea */
   margin: 10px 0 20px 0;
 }
 
@@ -3596,6 +4188,7 @@ body {
 .timeline-swiper {
   position: relative;
 }
+
 .timeline-swiper::before {
   content: '';
   position: absolute;
@@ -3693,16 +4286,19 @@ body {
   position: absolute;
   top: 27%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centrado matemático perfecto */
-  
+  transform: translate(-50%, -50%);
+  /* Centrado matemático perfecto */
+
   /* Estilos del número */
   font-size: 24px;
   font-weight: bold;
   color: white;
   padding: 5px 10px;
   border-radius: 50%;
-  pointer-events: none; /* Permite hacer clic en la imagen sin que el número estorbe */
+  pointer-events: none;
+  /* Permite hacer clic en la imagen sin que el número estorbe */
 }
+
 .timeline-swiper .swiper-slide .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 22px 48px rgba(30, 206, 45, 0.12);
