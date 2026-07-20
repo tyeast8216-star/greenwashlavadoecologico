@@ -4637,4 +4637,452 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Estilos de la sección Principal */
+.parking-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.parking-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 40px;
+    align-items: center;
+}
+
+/* Columna de Texto */
+.text-column h1 {
+    font-size: 2.5rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+}
+
+.text-column p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.text-column strong {
+    color: #333;
+}
+
+.btn-green {
+    display: inline-block;
+    background-color: #13cb19;
+    color: #ffffff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-green:hover {
+    background-color: #259e29; /* Un tono más oscuro al pasar el ratón */
+}
+
+/* Columna de Imagen/Carrusel */
+.image-column {
+    position: relative;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: none; /* Ocultar todos por defecto */
+}
+
+.carousel-item.active {
+    display: block; /* Mostrar solo el activo */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Indicadores (puntos) */
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Controles de navegación (flechas, ocultas por defecto como en la web original) */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+    display: none; /* Ocultar por defecto */
+}
+
+.carousel:hover .carousel-control {
+    display: block; /* Mostrar al hacer hover en el carrusel */
+}
+
+.carousel-control:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+/* Diseño Responsivo (Adaptación a móviles) */
+@media (max-width: 768px) {
+    .parking-section .container {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna */
+    }
+    
+    .text-column {
+        text-align: center; /* Centrar el texto */
+        margin-bottom: 30px;
+    }
+    
+    .text-column h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Estilos para la Sección de Apoyo Integral */
+.support-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.support-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.support-image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    display: block;
+}
+
+.support-content h2 {
+    font-size: 1.8rem;
+    color: #1f2937;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.support-content p {
+    font-size: 1rem;
+    color: #4b5563;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.support-content strong {
+    color: #111827;
+}
+
+/* Botón de Escuchar Texto */
+.btn-audio {
+    background-color: #0b6638; /* Verde corporativo */
+    color: #ffffff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-audio:hover {
+    background-color: #074727;
+}
+
+/* Adaptación Responsiva para móviles */
+@media (max-width: 768px) {
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-banner-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Barra Verde de Llamada a la Acción (Nombre Único) */
+.green-promo-bar {
+    background-color: #075e47; /* Tono verde oscuro corporativo */
+    padding: 35px 0;
+    color: #ffffff;
+    margin: 40px 0;
+}
+
+.green-promo-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.green-promo-content p {
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.btn-green-light {
+    background-color: #a7f3d0; /* Verde claro pastel */
+    color: #064e3b;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-green-light:hover {
+    background-color: #6ee7b7;
+    transform: scale(1.02);
+}
+
+.promo-icon-plus {
+    background-color: #064e3b;
+    color: #ffffff;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .green-promo-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Estilos generales de la sección */
+.implantation-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.implantation-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: #064e3b;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* Cuadrícula de 2 columnas */
+.implantation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Lado Izquierdo: Video */
+.video-container {
+    width: 100%;
+    background-color: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Botón de Descargar PDF */
+.btn-download-pdf {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #075e47;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-download-pdf:hover {
+    background-color: #043c2e;
+}
+
+/* Lado Derecho: Acordeón */
+.accordion {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-header {
+    width: 100%;
+    background-color: #ffffff;
+    border: none;
+    padding: 18px 20px;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #064e3b;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+    background-color: #f9fafb;
+}
+
+.accordion-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #075e47;
+}
+
+.accordion-content {
+    padding: 0 20px 20px 20px;
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    display: none; /* Oculto por defecto */
+}
+
+.accordion-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto 15px auto; /* Centra la imagen y le da espacio abajo */
+}
+
+/* Mostrar contenido si el item está activo */
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg); /* Gira el '+' convirtiéndolo en una 'x' o indicador de abierto */
+    transition: transform 0.2s ease;
+}
+
+/* Contenedor que hace que el texto flote alrededor de la imagen */
+.content-with-image {
+    overflow: hidden; /* Asegura que el contenedor contenga los elementos flotados */
+    margin-bottom: 15px;
+}
+
+.content-with-image img {
+    float: left;            /* Envía la imagen a la izquierda */
+    width: 45%;             /* Ajusta el ancho de la imagen respecto al bloque */
+    height: auto;
+    margin-right: 20px;     /* Espacio separador entre la imagen y el texto */
+    margin-bottom: 10px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.content-with-image p {
+    text-align: justify;    /* Justifica el texto para el efecto de bloque limpio */
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;              /* Evita saltos de línea indeseados */
+}
+/* Diseño responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .implantation-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 /*# sourceMappingURL=style.css.map */
