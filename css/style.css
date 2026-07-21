@@ -4412,8 +4412,9 @@ body {
            ========================================== */
 @media (max-width: 768px) {
   .seccion-franquicia {
-  margin: 30px;
-}
+    margin: 30px;
+  }
+
   .franquicia-grid {
     flex-direction: column;
     gap: 25px;
@@ -4436,653 +4437,1033 @@ body {
 
 /* Contenedor general de la sección de beneficios */
 .benefit-section {
-    padding: 50px 0;
-    font-family: 'Poppins', sans-serif;
-    color: #1f2937;
-    background-color: #ffffff;
+  padding: 50px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #1f2937;
+  background-color: #ffffff;
 }
 
 .benefit-section .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .benefit-grid-wrapper {
-    display: grid;
-    grid-template-columns: 1.4fr 0.9fr;
-    gap: 40px;
-    align-items: stretch;
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 40px;
+  align-items: stretch;
 }
 
 .benefit-left h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1f2937;
-    line-height: 1.2;
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
 .benefit-subtitle {
-    font-size: 1.05rem;
-    color: #4b5563;
-    margin-bottom: 35px;
+  font-size: 1.05rem;
+  color: #4b5563;
+  margin-bottom: 35px;
 }
 
 /* Tarjetas de Beneficios */
 .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
 }
 
 .benefit-card {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 12px;
-    padding: 20px 15px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px 15px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .benefit-icon {
-    font-size: 1.8rem;
-    color: #0b6638;
-    margin-bottom: 15px;
+  font-size: 1.8rem;
+  color: #0b6638;
+  margin-bottom: 15px;
 }
 
 .benefit-card h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-    color: #1f2937;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1f2937;
 }
 
 .benefit-card p {
-    font-size: 0.8rem;
-    color: #4b5563;
+  font-size: 0.8rem;
+  color: #4b5563;
 }
 
 /* Columna Derecha - Caja CTA */
 .benefit-right {
-    display: flex;
+  display: flex;
 }
 
 .cta-box {
-    background-color: #074727;
-    width: 100%;
-    border-radius: 16px;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  background-color: #074727;
+  width: 100%;
+  border-radius: 16px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    color: #ffffff;
-    padding: 18px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.05rem;
-    width: 100%;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-    transition: all 0.3s ease;
-    display: inline-block;
-    margin-bottom: 25px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  padding: 18px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-bottom: 25px;
 }
 
 .btn-primary:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
 }
 
 .cta-note {
-    color: #e5e7eb;
-    font-size: 0.9rem;
-    margin-bottom: 30px;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
 }
 
 .cta-note strong {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .cta-phone span {
-    display: block;
-    color: #9ca3af;
-    font-size: 0.85rem;
-    margin-bottom: 5px;
+  display: block;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin-bottom: 5px;
 }
 
 .cta-phone a {
-    color: #ffffff;
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-decoration: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 /* Prueba Social Inferior */
 .social-proof {
-    margin-top: 60px;
-    padding-top: 30px;
-    background-color: #f9fafb;
-    border-top: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  margin-top: 60px;
+  padding-top: 30px;
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .badges {
-    display: flex;
-    gap: 25px;
-    color: #4b5563;
-    font-size: 0.9rem;
-    font-weight: 500;
+  display: flex;
+  gap: 25px;
+  color: #4b5563;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .badges i {
-    color: #0b6638;
-    margin-right: 5px;
+  color: #0b6638;
+  margin-right: 5px;
 }
 
 .testimonial {
-    text-align: right;
+  text-align: right;
 }
 
 .testimonial p {
-    font-style: italic;
-    font-size: 0.95rem;
-    color: #1f2937;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #1f2937;
 }
 
 .testimonial span {
-    font-size: 0.8rem;
-    color: #4b5563;
+  font-size: 0.8rem;
+  color: #4b5563;
 }
 
 /* Responsivo para la sección */
 @media (max-width: 968px) {
-    .benefit-grid-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .benefit-left h1 {
-        font-size: 2rem;
-    }
-    
-    .testimonial {
-        text-align: left;
-    }
-    
-    .social-proof {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .benefit-grid-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-left h1 {
+    font-size: 2rem;
+  }
+
+  .testimonial {
+    text-align: left;
+  }
+
+  .social-proof {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 768px) {
-    .benefits-grid {
-        grid-template-columns: 1fr;
-    }
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Estilos de la sección Principal */
 .parking-section {
-    padding: 80px 0;
-    background-color: var(--bg-light);
+  padding: 80px 0;
+  background-color: var(--bg-light);
 }
 
 .parking-section .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-    gap: 40px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* Dos columnas iguales */
+  gap: 40px;
+  align-items: center;
 }
 
 /* Columna de Texto */
 .text-column h1 {
-    font-size: 2.5rem;
-    color: var(--heading-color);
-    margin-bottom: 20px;
+  font-size: 2.5rem;
+  color: var(--heading-color);
+  margin-bottom: 20px;
 }
 
 .text-column p {
-    margin-bottom: 25px;
-    font-size: 1.1rem;
+  margin-bottom: 25px;
+  font-size: 1.1rem;
 }
 
 .text-column strong {
-    color: #333;
+  color: #333;
 }
 
 .btn-green {
-    display: inline-block;
-    background-color: #13cb19;
-    color: #ffffff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  background-color: #13cb19;
+  color: #ffffff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .btn-green:hover {
-    background-color: #259e29; /* Un tono más oscuro al pasar el ratón */
+  background-color: #259e29;
+  /* Un tono más oscuro al pasar el ratón */
 }
 
 /* Columna de Imagen/Carrusel */
 .image-column {
-    position: relative;
+  position: relative;
 }
 
 .carousel {
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
-    min-width: 100%;
-    display: none; /* Ocultar todos por defecto */
+  min-width: 100%;
+  display: none;
+  /* Ocultar todos por defecto */
 }
 
 .carousel-item.active {
-    display: block; /* Mostrar solo el activo */
+  display: block;
+  /* Mostrar solo el activo */
 }
 
 .carousel-item img {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Indicadores (puntos) */
 .carousel-indicators {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
 }
 
 .dot {
-    height: 10px;
-    width: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  height: 10px;
+  width: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.dot.active, .dot:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+.dot.active,
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Controles de navegación (flechas, ocultas por defecto como en la web original) */
 .carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    font-size: 2rem;
-    color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    padding: 10px;
-    transition: color 0.3s ease;
-    display: none; /* Ocultar por defecto */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 10px;
+  transition: color 0.3s ease;
+  display: none;
+  /* Ocultar por defecto */
 }
 
 .carousel:hover .carousel-control {
-    display: block; /* Mostrar al hacer hover en el carrusel */
+  display: block;
+  /* Mostrar al hacer hover en el carrusel */
 }
 
 .carousel-control:hover {
-    color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .carousel-control.prev {
-    left: 10px;
+  left: 10px;
 }
 
 .carousel-control.next {
-    right: 10px;
+  right: 10px;
 }
 
 /* Diseño Responsivo (Adaptación a móviles) */
 @media (max-width: 768px) {
-    .parking-section .container {
-        grid-template-columns: 1fr; /* Cambiar a una sola columna */
-    }
-    
-    .text-column {
-        text-align: center; /* Centrar el texto */
-        margin-bottom: 30px;
-    }
-    
-    .text-column h1 {
-        font-size: 2rem;
-    }
+  .parking-section .container {
+    grid-template-columns: 1fr;
+    /* Cambiar a una sola columna */
+  }
+
+  .text-column {
+    text-align: center;
+    /* Centrar el texto */
+    margin-bottom: 30px;
+  }
+
+  .text-column h1 {
+    font-size: 2rem;
+  }
 }
 
 /* Estilos para la Sección de Apoyo Integral */
 .support-section {
-    padding: 60px 0;
-    background-color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 0;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .support-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .support-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.3fr;
-    gap: 40px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.support-grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px !important;
+  align-items: center;
 }
 
 .support-image img {
-    width: 100%;
-    height: auto;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
+.support-image2 img {
+  width: 70%;
+  height: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: block;
 }
 
 .support-content h2 {
-    font-size: 1.8rem;
-    color: #1f2937;
-    margin-bottom: 20px;
-    font-weight: 700;
+  font-size: 1.8rem;
+  color: #1f2937;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .support-content p {
-    font-size: 1rem;
-    color: #4b5563;
-    margin-bottom: 15px;
-    line-height: 1.6;
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 .support-content strong {
-    color: #111827;
+  color: #111827;
 }
 
 /* Botón de Escuchar Texto */
 .btn-audio {
-    background-color: #0b6638; /* Verde corporativo */
-    color: #ffffff;
-    border: none;
-    padding: 12px 22px;
-    border-radius: 6px;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-    transition: background-color 0.3s ease;
+  background-color: #0b6638;
+  /* Verde corporativo */
+  color: #ffffff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-audio:hover {
-    background-color: #074727;
+  background-color: #074727;
 }
 
 /* Adaptación Responsiva para móviles */
 @media (max-width: 768px) {
-    .support-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .cta-banner-content {
-        flex-direction: column;
-        text-align: center;
-    }
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-banner-content {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* Barra Verde de Llamada a la Acción (Nombre Único) */
 .green-promo-bar {
-    background-color: #075e47; /* Tono verde oscuro corporativo */
-    padding: 35px 0;
-    color: #ffffff;
-    margin: 40px 0;
+  background-color: #075e47;
+  /* Tono verde oscuro corporativo */
+  padding: 35px 0;
+  color: #ffffff;
+  margin: 40px 0;
 }
 
 .green-promo-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .green-promo-content p {
-    font-size: 1.15rem;
-    font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 500;
 }
 
 .btn-green-light {
-    background-color: #a7f3d0; /* Verde claro pastel */
-    color: #064e3b;
-    padding: 12px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 700;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+  background-color: #a7f3d0;
+  /* Verde claro pastel */
+  color: #064e3b;
+  padding: 12px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-green-light:hover {
-    background-color: #6ee7b7;
-    transform: scale(1.02);
+  background-color: #6ee7b7;
+  transform: scale(1.02);
 }
 
 .promo-icon-plus {
-    background-color: #064e3b;
-    color: #ffffff;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    font-weight: bold;
+  background-color: #064e3b;
+  color: #ffffff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 /* Responsivo para móviles */
 @media (max-width: 768px) {
-    .green-promo-content {
-        flex-direction: column;
-        text-align: center;
-    }
+  .green-promo-content {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 /* Estilos generales de la sección */
 .implantation-section {
-    padding: 60px 0;
-    background-color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 0;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .implantation-section .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .section-title {
-    font-size: 2rem;
-    color: #064e3b;
-    margin-bottom: 30px;
-    font-weight: 700;
+  font-size: 2rem;
+  color: #064e3b;
+  margin-bottom: 30px;
+  font-weight: 700;
 }
 
 /* Cuadrícula de 2 columnas */
 .implantation-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 
 /* Lado Izquierdo: Video */
 .video-container {
-    width: 100%;
-    background-color: #111;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    margin-bottom: 20px;
+  width: 100%;
+  background-color: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
 }
 
 .video-container video {
-    width: 100%;
-    height: auto;
-    display: block;
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Botón de Descargar PDF */
 .btn-download-pdf {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #075e47;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #075e47;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
 .btn-download-pdf:hover {
-    background-color: #043c2e;
+  background-color: #043c2e;
 }
 
 /* Lado Derecho: Acordeón */
 .accordion {
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .accordion-item {
-    border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .accordion-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .accordion-header {
-    width: 100%;
-    background-color: #ffffff;
-    border: none;
-    padding: 18px 20px;
-    text-align: left;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #064e3b;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: background-color 0.2s ease;
+  width: 100%;
+  background-color: #ffffff;
+  border: none;
+  padding: 18px 20px;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #064e3b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: background-color 0.2s ease;
 }
 
 .accordion-header:hover {
-    background-color: #f9fafb;
+  background-color: #f9fafb;
 }
 
 .accordion-icon {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #075e47;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #075e47;
 }
 
 .accordion-content {
-    padding: 0 20px 20px 20px;
-    color: #4b5563;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    display: none; /* Oculto por defecto */
+  padding: 0 20px 20px 20px;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  display: none;
+  /* Oculto por defecto */
 }
 
 .accordion-content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto 15px auto; /* Centra la imagen y le da espacio abajo */
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px auto 15px auto;
+  /* Centra la imagen y le da espacio abajo */
 }
 
 /* Mostrar contenido si el item está activo */
 .accordion-item.active .accordion-content {
-    display: block;
+  display: block;
 }
 
 .accordion-item.active .accordion-icon {
-    transform: rotate(45deg); /* Gira el '+' convirtiéndolo en una 'x' o indicador de abierto */
-    transition: transform 0.2s ease;
+  transform: rotate(45deg);
+  /* Gira el '+' convirtiéndolo en una 'x' o indicador de abierto */
+  transition: transform 0.2s ease;
 }
 
 /* Contenedor que hace que el texto flote alrededor de la imagen */
 .content-with-image {
-    overflow: hidden; /* Asegura que el contenedor contenga los elementos flotados */
-    margin-bottom: 15px;
+  overflow: hidden;
+  /* Asegura que el contenedor contenga los elementos flotados */
+  margin-bottom: 15px;
 }
 
 .content-with-image img {
-    float: left;            /* Envía la imagen a la izquierda */
-    width: 45%;             /* Ajusta el ancho de la imagen respecto al bloque */
-    height: auto;
-    margin-right: 20px;     /* Espacio separador entre la imagen y el texto */
-    margin-bottom: 10px;
-    border-radius: 6px;
-    object-fit: cover;
+  float: left;
+  /* Envía la imagen a la izquierda */
+  width: 45%;
+  /* Ajusta el ancho de la imagen respecto al bloque */
+  height: auto;
+  margin-right: 20px;
+  /* Espacio separador entre la imagen y el texto */
+  margin-bottom: 10px;
+  border-radius: 6px;
+  object-fit: cover;
 }
 
 .content-with-image p {
-    text-align: justify;    /* Justifica el texto para el efecto de bloque limpio */
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #4b5563;
-    margin: 0;              /* Evita saltos de línea indeseados */
+  text-align: justify;
+  /* Justifica el texto para el efecto de bloque limpio */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin: 0;
+  /* Evita saltos de línea indeseados */
 }
+
 /* Diseño responsivo para pantallas pequeñas */
 @media (max-width: 768px) {
-    .implantation-grid {
-        grid-template-columns: 1fr;
-    }
+  .implantation-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
+/* Contenedor principal del banner */
+.hero-banner3 {
+  position: relative;
+  /* Necesario para posicionar el texto encima */
+  width: 100%;
+  /* Ajusta la altura según la proporción deseada, por ejemplo, 40vw (40% del ancho de la ventana) */
+  height: 40vw;
+  min-height: 300px;
+  /* Altura mínima para pantallas muy pequeñas */
+  max-height: 400px;
+  /* Altura máxima para pantallas muy grandes */
+  background-image: url('../images/bannerparkingsubterraneo.jpg');
+  /* Usa la imagen de tu archivo verbatim */
+  background-size: cover;
+  /* Cubre todo el área sin deformarse */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+}
 
-/*# sourceMappingURL=style.css.map */
+/* Contenedor principal del banner */
+.hero-banner4 {
+  position: relative;
+  /* Necesario para posicionar el texto encima */
+  width: 100%;
+  /* Ajusta la altura según la proporción deseada, por ejemplo, 40vw (40% del ancho de la ventana) */
+  height: 40vw;
+  min-height: 300px;
+  /* Altura mínima para pantallas muy pequeñas */
+  max-height: 400px;
+  /* Altura máxima para pantallas muy grandes */
+  background-image: url('../images/bannerparkingsuperficie.jpg');
+  /* Usa la imagen de tu archivo verbatim */
+  background-size: cover;
+  /* Cubre todo el área sin deformarse */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+}
+
+.hero-banner5 {
+  position: relative;
+  /* Necesario para posicionar el texto encima */
+  width: 100%;
+  /* Ajusta la altura según la proporción deseada, por ejemplo, 40vw (40% del ancho de la ventana) */
+  height: 40vw;
+  min-height: 300px;
+  /* Altura mínima para pantallas muy pequeñas */
+  max-height: 400px;
+  /* Altura máxima para pantallas muy grandes */
+  background-image: url('../images/bannerlocalindustrial.jpg');
+  /* Usa la imagen de tu archivo verbatim */
+  background-size: cover;
+  /* Cubre todo el área sin deformarse */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+}
+
+.hero-banner6 {
+  position: relative;
+  /* Necesario para posicionar el texto encima */
+  width: 100%;
+  /* Ajusta la altura según la proporción deseada, por ejemplo, 40vw (40% del ancho de la ventana) */
+  height: 40vw;
+  min-height: 300px;
+  /* Altura mínima para pantallas muy pequeñas */
+  max-height: 400px;
+  /* Altura máxima para pantallas muy grandes */
+  background-image: url('../images/bannerparkinglowcost.jpg');
+  /* Usa la imagen de tu archivo verbatim */
+  background-size: cover;
+  /* Cubre todo el área sin deformarse */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+}
+
+/* Superposición oscura (overlay) para mejorar la legibilidad del texto */
+.hero-banner3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Degradado sutil de negro transparente a completamente transparente */
+}
+
+/* Contenedor para el texto centrado */
+.hero-text-container {
+  position: absolute;
+  bottom: 10%;
+  /* Posiciona el texto cerca de la parte inferior */
+  left: 5%;
+  /* Alinea a la izquierda con un margen */
+  z-index: 1;
+  /* Asegura que el texto esté por encima del overlay */
+}
+
+/* Estilo del título */
+.hero-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Fuente limpia y moderna */
+  font-size: 4vw;
+  /* Tamaño de fuente relativo al ancho de la pantalla */
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Sombra para mayor contraste */
+  margin: 0;
+  line-height: 1.1;
+}
+
+/* Contenedor principal de la sección */
+.industrial-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Columna izquierda: Imágenes */
+.images-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.images-column img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+/* Columna derecha: Contenido de texto */
+.content-column {
+  flex: 1.2;
+  min-width: 300px;
+}
+
+.content-column p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444444;
+  margin-bottom: 25px;
+}
+
+.content-column strong {
+  color: #222222;
+}
+
+.content-column h3 {
+  font-size: 18px;
+  color: #007a4d;
+  /* Verde corporativo */
+  margin-bottom: 15px;
+}
+
+/* Lista de requisitos */
+.requirements-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.requirements-list li {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+/* Estilos específicos y aislados para esta sección */
+.seccion-detalles-servicios-gw {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  align-items: center;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.seccion-detalles-servicios-gw * {
+  box-sizing: border-box;
+}
+
+.caja-texto-detalles-gw {
+  flex: 1.2;
+  min-width: 300px;
+}
+
+.caja-texto-detalles-gw h1 {
+  font-size: 26px;
+  color: #007a4d;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.caja-texto-detalles-gw h2 {
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.caja-texto-detalles-gw p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 18px;
+}
+
+.caja-texto-detalles-gw strong {
+  color: #222222;
+}
+
+.caja-imagen-estacion-gw {
+  flex: 1;
+  min-width: 300px;
+}
+
+.caja-imagen-estacion-gw img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .seccion-detalles-servicios-gw {
+    flex-direction: column;
+  }
+}
+
+/* Estilos específicos y aislados para esta sección */
+.seccion-franquiciados-gw {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.seccion-franquiciados-gw * {
+  box-sizing: border-box;
+}
+
+/* Título y barra decorativa */
+.franquiciados-titulo-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.franquiciados-titulo-container h2 {
+  font-size: 24px;
+  color: #007a4d;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.titulo-subrayado-gw {
+  width: 450px;
+  max-width: 80%;
+  height: 3px;
+  background-color: #007a4d;
+  margin: 0 auto;
+}
+
+/* Cuadrícula (Grid) para las 8 tarjetas */
+.franquiciados-grid-gw {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* Estilo de cada tarjeta individual */
+.tarjeta-servicio-gw {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #000;
+  aspect-ratio: 4 / 3;
+  /* Mantiene una proporción uniforme para las fotos */
+}
+
+.tarjeta-servicio-gw img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.85;
+  /* Oscurece ligeramente la imagen para resaltar el texto */
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-servicio-gw:hover img {
+  transform: scale(1.03);
+  /* Efecto zoom suave al pasar el cursor */
+}
+
+/* Texto superpuesto en la esquina inferior izquierda de cada tarjeta */
+.etiqueta-servicio-gw {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+/* Diseño responsivo para pantallas medianas (tablets) */
+@media (max-width: 900px) {
+  .franquiciados-grid-gw {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Diseño responsivo para pantallas pequeñas (móviles) */
+@media (max-width: 500px) {
+  .franquiciados-grid-gw {
+    grid-template-columns: 1fr;
+  }
+
+  /*# sourceMappingURL=style.css.map */
