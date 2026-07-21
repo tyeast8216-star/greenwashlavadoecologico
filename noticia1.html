@@ -120,107 +120,98 @@
     </header>
   </div>
 
+  <!-- end service section -->
+
   <section class="banner-empresa">
     <div class="overlay-empresa">
-      <h1>CONTACTO</h1>
-      <p class="subtitle">Queremos escucharle</p>
+      <h1>APARTADO DE NOTICIAS</h1>
+      <p class="subtitle">Enterate de nuestras últimas novedades</p>
       <div class="linea-empresa"></div>
     </div>
   </section>
-  
-  <!-- Sección de Contacto (Clases únicas y aisladas) -->
-  <section class="seccion-contacto-gw">
-    <!-- Título principal -->
-    <div class="contacto-titulo-principal">
-      <h2>¡Estamos aquí para ayudarle! Contacte con nosotros y resolveremos todas sus dudas.</h2>
+
+  <article class="article-container">
+
+    <!-- Cabecera del Artículo (clase modificada para evitar conflictos) -->
+    <header class="article-main-header">
+      <div class="article-category-tag">Innovación</div>
+      <h1>El futuro del lavado ecológico de vehículos en Latinoamérica</h1>
+
+      <div class="article-meta-info">
+        <span><i class="far fa-calendar-alt"></i> 21 Jul, 2026</span>
+        <span><i class="far fa-clock"></i> 4 min lectura</span>
+        <span><i class="far fa-user"></i> Green Wash Team</span>
+      </div>
+    </header>
+
+    <!-- Imagen Principal -->
+    <div class="article-featured-image">
+      <img src="https://images.unsplash.com/photo-1558449041-6219cd1eeb6c?auto=format&fit=crop&w=1200&q=80"
+        alt="Lavado ecológico de vehículos">
     </div>
 
-    <div class="contacto-contenido-grid">
-      <!-- Columna Izquierda: Información y Mascota -->
-      <div class="contacto-info-columna">
-        <div class="contacto-item">
-          <span class="contacto-icono">📞</span>
-          <div>
-            <strong>Telefono</strong>
-            <p>+34 619 230 012</p>
-          </div>
-        </div>
+    <!-- Cuerpo del Texto -->
+    <div class="article-body">
+      <p class="article-lead">Con más de tres décadas de experiencia en el sector del cuidado automotriz, en Green Wash
+        hemos sido testigos directos de cómo la industria ha tenido que evolucionar hacia modelos más sostenibles y
+        respetuosos con el medio ambiente.</p>
 
-        <div class="contacto-item">
-          <span class="contacto-icono">💬</span>
-          <div>
-            <strong>WhatsApp</strong>
-            <p>+34 603 299 299</p>
-          </div>
-        </div>
+      <h2>La transformación del sector hacia la sostenibilidad</h2>
+      <p>El lavado de vehículos tradicional ha consumido históricamente una cantidad desproporcionada de recursos
+        hídricos. Hoy en día, la escasez de agua en distintas regiones del mundo y la creciente conciencia ecológica de
+        los consumidores exigen alternativas eficientes. Las técnicas de lavado sin agua y el uso de productos
+        biodegradables no solo protegen los recursos naturales, sino que ofrecen acabados profesionales superiores.</p>
 
-        <div class="contacto-item">
-          <span class="contacto-icono">✉️</span>
-          <div>
-            <strong>Email</strong>
-            <p>info@greenwash.es</p>
-          </div>
-        </div>
+      <blockquote>
+        <i class="fas fa-quote-left"></i>
+        "La innovación verde no es solo una tendencia pasajera, es la única ruta viable para el futuro de las
+        franquicias de servicios automotrices a nivel global."
+      </blockquote>
 
-        <!-- Mascota corporativa -->
-        <div class="contacto-mascota">
-          <img src="./images/mascotagw.png" alt="Mascota Green Wash">
-        </div>
-      </div>
+      <h2>Ventajas clave del modelo ecológico</h2>
+      <p>Implementar procesos ecológicos aporta beneficios directos tanto para el medio ambiente como para los
+        emprendedores que buscan invertir en el sector:</p>
+      <ul>
+        <li><strong>Ahorro masivo de agua:</strong> Reducción de hasta un 95% de uso hídrico por cada servicio
+          realizado.</li>
+        <li><strong>Cero vertidos contaminantes:</strong> Los productos utilizados no generan residuos tóxicos en los
+          desagües urbanos.</li>
+        <li><strong>Versatilidad operativa:</strong> Al no requerir conexiones complejas de agua, permite modelos de
+          negocio móviles y flexibles.</li>
+      </ul>
 
-      <!-- Columna Derecha: Formulario con tarjeta de fondo verde claro -->
-      <div class="contacto-formulario-caja">
-        <form class="formulario-contacto-gw">
-          <div class="form-fila-doble">
-            <div class="form-grupo">
-              <label for="nombre-contacto">Nombre</label>
-              <input type="text" id="nombre-contacto" name="nombre">
-            </div>
-            <div class="form-grupo">
-              <label for="modalidad-contacto">Modalidad de Implantación</label>
-              <select id="modalidad-contacto" name="modalidad">
-                <option value="parking">Parking Subterráneo</option>
-                <option value="industrial">Local Industrial</option>
-                <option value="movil">Unidad Móvil</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-fila-doble">
-            <div class="form-grupo">
-              <label for="email-contacto">E-mail</label>
-              <input type="email" id="email-contacto" name="email">
-            </div>
-            <div class="form-grupo">
-              <label>Zona</label>
-              <div class="form-radio-grupo">
-                <label><input type="radio" name="zona" value="espana" checked> España</label>
-                <label><input type="radio" name="zona" value="internacional"> Internacional</label>
-              </div>
-              <select class="form-select-zona" name="subzona">
-                <option value="">—Por favor, elija una opción—</option>
-                <option value="opcion1">Opción 1</option>
-                <option value="opcion2">Opción 2</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-grupo">
-            <label for="telefono-contacto">Telefono</label>
-            <input type="tel" id="telefono-contacto" name="telefono">
-          </div>
-
-          <div class="form-grupo">
-            <label for="comentarios-contacto">Comentarios (opcional)</label>
-            <textarea id="comentarios-contacto" name="comentarios" rows="4"></textarea>
-          </div>
-
-          <button type="submit" class="form-boton-enviar">Enviar</button>
-        </form>
-      </div>
+      <h2>Conclusión</h2>
+      <p>El camino hacia la expansión en nuevos mercados, como nuestra llegada a Latinoamérica mediante franquicias
+        low-cost, demuestra que rentabilidad y ecología pueden ir de la mano. El futuro del sector ya está aquí y
+        continúa transformando la manera en que cuidamos nuestros vehículos.</p>
     </div>
-  </section>
-  <!-- footer section -->
+
+    <!-- Botón de Retorno -->
+    <div class="article-footer-nav">
+      <a href="blog.html" class="back-to-blog-btn"><i class="fas fa-arrow-left"></i> Volver al Blog</a>
+    </div>
+
+  </article>
+
+  <!-- Pie de página (Footer) -->
+  <footer class="site-footer">
+    <div class="site-footer-container">
+
+      <!-- Izquierda: Copyright -->
+      <div class="site-footer-copyright">
+        <p>Green Wash - Lavado Ecologico © 2026. Todos los derechos reservados.</p>
+      </div>
+
+      <!-- Derecha: Enlaces Legales -->
+      <div class="site-footer-links">
+        <a href="#">Inicio</a>
+        <a href="#">Aviso Legal</a>
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Política de Cookies</a>
+      </div>
+
+    </div>
+  </footer>
   </div>
 
 
