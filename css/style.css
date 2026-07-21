@@ -5984,6 +5984,10 @@ body {
 }
 
 .instagramfeed {
-  margin: 80px;
+  margin-bottom: 40px;
+}
+
+.instagram-section {
+    padding: 80px 20px;
 }
 /*# sourceMappingURL=style.css.map */
