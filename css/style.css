@@ -2268,6 +2268,10 @@ body {
   margin-bottom: 30px;
 }
 
+.franquicia-master img{
+  display: none;
+}
+
 /* 5. El Botón "VER DETALLES" */
 .btn-franquicia {
   display: inline-block;
@@ -2314,6 +2318,13 @@ body {
 
   .franquicia-master-content h2 {
     font-size: 2rem;
+  }
+  .franquicia-master img{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
