@@ -6370,4 +6370,11 @@ input:disabled+.slider {
   }
 }
 
+@media (max-width: 768px) {
+  body p {
+    text-align: justify !important;
+    text-justify: inter-word;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
