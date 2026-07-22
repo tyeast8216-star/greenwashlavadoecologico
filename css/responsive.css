@@ -442,13 +442,46 @@
   .swiper-button-next {
     width: 44px !important;
     height: 44px !important;
-    left: -54px !important;
-    right: -54px !important;
-    top: calc(50% - 70px) !important;
+    top: 50% !important;
+    left: 10px !important;
+    right: auto !important;
+    transform: translateY(-50%) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(255, 255, 255, 0.95) !important;
+    border: 1px solid #20bd15 !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+    border-radius: 50% !important;
+    color: #20bd15 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .swiper-button-prev {
+    left: 10px !important;
+    right: auto !important;
   }
 
   .swiper-button-next {
-    right: -54px !important;
+    right: 10px !important;
+    left: auto !important;
+  }
+
+  .swiper-button-next::after,
+  .swiper-button-prev::after {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #20bd15 !important;
+  }
+
+  .swiper-button-prev::after {
+    content: '‹' !important;
+  }
+
+  .swiper-button-next::after {
+    content: '›' !important;
   }
 
   .timeline-swiper .swiper-slide {
@@ -468,6 +501,29 @@
 
   .timeline-swiper .swiper-slide .card h3 {
     font-size: 1rem !important;
+
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    width: 44px !important;
+    height: 44px !important;
+    top: calc(50% - 210px) !important;
+    transform: translateY(-50%) !important;
+  }
+
+  .swiper-button-prev {
+    left: 12px !important;
+    right: auto !important;
+  }
+
+  .swiper-button-next {
+    right: 12px !important;
+    left: auto !important;
   }
 
   .timeline-swiper .swiper-slide .card p {
