@@ -10,6 +10,11 @@ body {
   padding-top: 108px;
 }
 
+body p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .header_section {
   position: fixed;
   top: 0;
