@@ -165,6 +165,15 @@
     right: 0;
   }
 
+  .history-text-block {
+    align-items: center;
+    text-align: center !important;
+  }
+
+  .history-text {
+    text-align: center !important;
+  }
+
   /* Mejoras para la sección Welcome en móvil */
   .welcome_section {
     padding: 30px 12px !important;

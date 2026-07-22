@@ -668,6 +668,13 @@ body p {
     gap: 10px;
   }
 
+  .system-slide .text-section p {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 17px;
+    display: inline-block;
+  }
+
 }
 
 /* Animaciones para Slide 4: Pioneros (Banner Coche) */
@@ -3790,6 +3797,23 @@ body p {
   .history-text {
     font-size: 1rem;
     margin-top: 4px;
+    display: inline-block;
+    max-width: calc(100% - 24px);
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    text-align: center;
+  }
+
+  .history-text-block {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
   }
 
   .history-badge {
