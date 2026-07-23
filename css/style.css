@@ -5669,7 +5669,7 @@ body p {
 
 .form-radio-grupo {
   display: flex;
-  gap: 20px;
+  
   font-size: 14px;
   color: #333333;
   margin-top: 2px;
