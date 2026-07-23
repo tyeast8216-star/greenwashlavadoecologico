@@ -101,6 +101,24 @@
     flex-direction: column;
   }
 
+  /* Forms: stack double fields on small screens and improve radio layout */
+  .form-fila-doble {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .form-fila-doble .form-grupo {
+    width: 100% !important;
+  }
+
+  .form-radio-grupo {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    margin-top: 4px !important;
+  }
+
   .slider_img-box img {
     z-index: 1;
     position: relative;
@@ -478,6 +496,23 @@
 
   .swiper-button-prev::after {
     content: '‹' !important;
+  }
+
+  /* Ajustes específicos para el formulario en móviles muy pequeños */
+  @media (max-width: 480px) {
+    .form-radio-grupo {
+      flex-direction: column !important;
+      gap: 8px !important;
+      align-items: flex-start !important;
+    }
+
+    .form-fila-doble {
+      gap: 10px !important;
+    }
+
+    .form-grupo label {
+      font-size: 15px !important;
+    }
   }
 
   .swiper-button-next::after {

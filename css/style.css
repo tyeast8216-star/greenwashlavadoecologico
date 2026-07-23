@@ -5569,7 +5569,7 @@ body p {
   flex-wrap: wrap;
   gap: 50px;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 /* Columna izquierda (Datos y Mascota) */
@@ -5624,6 +5624,9 @@ body p {
   /* Tono verde pastel suave de fondo exacto a la captura */
   padding: 35px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  max-width: 560px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .formulario-contacto-gw {
