@@ -5712,7 +5712,7 @@ body p {
 @media (max-width: 768px) {
   .contacto-contenido-grid {
     flex-direction: column;
-    margin-left: 30px;
+    margin-left: 10px;
   }
 
   .form-fila-doble {
