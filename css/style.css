@@ -197,6 +197,47 @@ body p {
   margin-bottom: 10px;
 }
 
+.logo-header3 {
+  display: block;
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+  margin-left: 110px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: floatLogo 1.2s ease-out forwards;
+}
+
+.titulo-con-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.titulo-con-logo h2 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.titulo-con-logo .logo-header4 {
+  width: 22px;
+  height: auto;
+  display: block;
+}
+
+@keyframes floatLogo {
+  0% {
+    transform: translateY(18px) scale(0.92);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
 .new-nav .navbar-nav .nav-link {
   color: #37603a;
   font-weight: 600;
@@ -354,6 +395,14 @@ body p {
     margin-left: 0;
   }
 
+  .logo-header3 {
+  display: block;
+  width: 60px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  opacity: 0;
+}
 
   .navbar-toggler {
     position: relative;
