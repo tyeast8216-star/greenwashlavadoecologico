@@ -5679,7 +5679,7 @@ body p {
 .form-radio-grupo label {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0px;
   cursor: pointer;
 }
 
