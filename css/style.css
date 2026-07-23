@@ -6401,4 +6401,38 @@ input:disabled+.slider {
   }
 }
 
+.gw-content-legal {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  color: #444444;
+  text-align: justify;
+}
+
+.gw-content-legal p {
+  margin-bottom: 20px;
+}
+
+.gw-content-legal p strong {
+  color: #222222;
+}
+
+/* --- RESPONSIVO MÓVIL --- */
+@media (max-width: 768px) {
+  .gw-hero-legal {
+    padding: 30px 20px;
+  }
+
+  .gw-hero-legal h1 {
+    font-size: 1.6rem;
+  }
+
+  .gw-content-legal {
+    padding: 0 20px;
+    margin: 20px auto;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
