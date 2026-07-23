@@ -189,6 +189,14 @@ body p {
   margin-left: 115px;
 }
 
+.logo-header2 {
+  display: block;
+  width: 200px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
 .new-nav .navbar-nav .nav-link {
   color: #37603a;
   font-weight: 600;
