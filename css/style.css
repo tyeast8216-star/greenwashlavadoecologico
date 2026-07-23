@@ -400,9 +400,10 @@ body p {
   width: 60px;
   height: auto;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-left: 40px;
+  margin-bottom: -20px;
   opacity: 0;
-}
+  }
 
   .navbar-toggler {
     position: relative;
@@ -2884,13 +2885,14 @@ body p {
 
 .history-title {
   font-size: 3.6rem !important;
-  line-height: 1;
+  line-height: 0.8;
   margin-bottom: 12px;
 }
 
 .history-text {
   font-size: 1.4rem !important;
   margin-top: 10px;
+  line-height: 1.0 !important; 
   color: #fefefe;
   font-weight: 500;
 }
