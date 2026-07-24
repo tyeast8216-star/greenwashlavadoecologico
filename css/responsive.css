@@ -457,6 +457,9 @@
     margin-left: 0px !important;
   }
 
+  .timeline-swiper .swiper-slide:last-child .year{
+    margin-left: 130px !important;
+  }
   .swiper-button-prev,
   .swiper-button-next {
     width: 44px !important;
