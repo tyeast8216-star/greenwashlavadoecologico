@@ -202,7 +202,7 @@ body p {
   width: 100px;
   height: auto;
   margin: 0 auto;
-  margin-left: 110px;
+  margin-left: 0px;
   margin-bottom: 20px;
   opacity: 0;
   animation: floatLogo 1.2s ease-out forwards;
@@ -3282,6 +3282,13 @@ body p {
   padding: 0 2px;
 }
 
+.header-flex {
+    display: flex;
+    align-items: center;    /* Los alinea verticalmente */
+    gap: 60px;               /* Reduce la distancia entre el signo y el texto (puedes probar con 0px o lo que prefieras) */
+    width: fit-content;     /* Hace que el contenedor mida solo lo que ocupan sus elementos juntos */
+}
+
 .hidro-text2 {
   position: absolute;
   top: 37%;
@@ -3304,6 +3311,7 @@ body p {
   padding-bottom: 15px;
   /* Da un respiro en la base */
   font-size: 18px;
+  text-shadow: 2px  2px 0 #000;
   /* Ajuste sutil para balancear con el texto superior */
 }
 
@@ -3314,6 +3322,7 @@ body p {
   align-items: center;
   justify-content: center;
   font-size: 18px;
+  text-shadow: 2px  2px 0 #000;
   /* Ajuste sutil para balancear con el texto superior */
 }
 
@@ -3517,6 +3526,12 @@ body p {
     height: 100%;
   }
 
+  .header-flex {
+    display: flex;
+    align-items: center;    /* Los alinea verticalmente */
+    gap: 20px;               /* Reduce la distancia entre el signo y el texto (puedes probar con 0px o lo que prefieras) */
+    width: fit-content;     /* Hace que el contenedor mida solo lo que ocupan sus elementos juntos */
+}
   .slide {
     height: 100%;
     display: flex;
