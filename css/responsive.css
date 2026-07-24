@@ -458,8 +458,9 @@
   }
 
   .timeline-swiper .swiper-slide:last-child .year{
-    margin-left: 130px !important;
+    margin-left: 120px !important;
   }
+
   .swiper-button-prev,
   .swiper-button-next {
     width: 44px !important;
