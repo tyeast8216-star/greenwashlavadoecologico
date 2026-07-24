@@ -215,6 +215,33 @@ body p {
   flex-wrap: wrap;
 }
 
+.titulo-con-logo2 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.titulo-con-logo2 {
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.titulo-con-logo2 h2 {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Divisor verde para el título del timeline */
+.titulo-con-logo2 .divisor-verde {
+  width: 90px;
+  height: 4px;
+  background-color: #23c823;
+  margin: 10px auto 22px;
+}
+
 .titulo-con-logo h2 {
   margin: 0;
   font-size: 2.4rem;
@@ -393,6 +420,11 @@ body p {
     width: 110px;
     height: auto;
     margin-left: 0;
+  }
+
+  .titulo-con-logo2 {
+  padding: 8px;
+  margin-bottom: 50px;
   }
 
   .logo-header3 {
@@ -1395,47 +1427,6 @@ body p {
     height: auto;
     margin: 12px auto;
     display: block;
-  }
-}
-
-/* Evitar desbordamiento de la última tarjeta del timeline (swiper) y centrarla en escritorio */
-@media (min-width: 992px) {
-  .timeline-swiper .swiper-slide:last-child {
-    display: flex;
-    justify-content: center;
-    padding-right: 12px;
-    box-sizing: border-box;
-  }
-
-  .timeline-swiper .swiper-slide:last-child .card {
-    max-width: 420px;
-    width: 100%;
-    margin: 0;
-  }
-
-  .timeline-swiper .swiper-slide:last-child .card img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-}
-
-/* Ajustes adicionales para evitar desbordamiento horizontal del swiper en escritorio */
-@media (min-width: 992px) {
-  .timeline-swiper-outer {
-    overflow-x: hidden !important;
-    /* reducir padding derecho para que la última tarjeta quede dentro del contenedor */
-    padding-right: 40px !important;
-  }
-
-  .timeline-swiper .swiper-wrapper {
-    box-sizing: border-box !important;
-    padding-right: 40px !important;
-  }
-
-  .timeline-swiper .swiper-slide:last-child {
-    margin-right: 0 !important;
-    padding-right: 0 !important;
   }
 }
 
