@@ -246,8 +246,8 @@
                 <h1 class="main-title history-title">De</h1>
               </div>
               <h1 class="main-title history-title">30 Años de Servicio</h1>
-              <p class="history-text">Haciendo historia desde 1992</p>
-              <div class="history-badge">+34 años</div>
+              <p class="history-text">Desde 1992 haciendo historia</p>
+              <div class="history-badge">34 años</div>
             </div>
 
           </div> <!-- Cierra hero-container -->
@@ -541,7 +541,7 @@
             <input type="tel" class="form-control" id="inputNumber4" />
           </div>
           <div class="form-group col-md-6">
-            <label for="inputState">Seleccionar servicio</label>
+            <label for="inputState">Seleccionar modalidad</label>
             <select id="inputState" class="form-control">
               <option selected=""></option>
               <option>Parking Subterraneo</option>
@@ -725,6 +725,9 @@
     let slideAutoTimer = null;
     let isAutoSlidePaused = false;
     let isStandImagePaused = false;
+    let touchStartX = null;
+    let touchDeltaX = 0;
+    let touchSwipeLocked = false;
     let standImageInterval = null;
     let standImageTransitionTimer = null;
     let standImageIndex = 0;
@@ -850,16 +853,43 @@
 
       sliderWrapper.addEventListener('touchstart', (event) => {
         if (event.target.closest('.carousel-indicators') || event.target.closest('#standDisplayImage')) return;
+        const touch = event.touches[0];
+        touchStartX = touch.clientX;
+        touchDeltaX = 0;
+        touchSwipeLocked = false;
         pauseAutoTransitions();
+      }, { passive: true });
+
+      sliderWrapper.addEventListener('touchmove', (event) => {
+        if (event.target.closest('.carousel-indicators') || event.target.closest('#standDisplayImage')) return;
+        const touch = event.touches[0];
+        if (touchStartX === null) return;
+        touchDeltaX = touch.clientX - touchStartX;
+        if (Math.abs(touchDeltaX) > 40) {
+          touchSwipeLocked = true;
+        }
       }, { passive: true });
 
       sliderWrapper.addEventListener('touchend', (event) => {
         if (event.target.closest('.carousel-indicators') || event.target.closest('#standDisplayImage')) return;
+        if (touchSwipeLocked && Math.abs(touchDeltaX) > 70) {
+          if (touchDeltaX < 0) {
+            showSlide((currentSlide + 1) % slides.length);
+          } else {
+            showSlide((currentSlide - 1 + slides.length) % slides.length);
+          }
+        }
+        touchStartX = null;
+        touchDeltaX = 0;
+        touchSwipeLocked = false;
         resumeAutoTransitions();
       });
 
       sliderWrapper.addEventListener('touchcancel', (event) => {
         if (event.target.closest('.carousel-indicators') || event.target.closest('#standDisplayImage')) return;
+        touchStartX = null;
+        touchDeltaX = 0;
+        touchSwipeLocked = false;
         resumeAutoTransitions();
       });
     }

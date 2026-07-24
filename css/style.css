@@ -400,7 +400,7 @@ body p {
   width: 60px;
   height: auto;
   margin: 0 auto;
-  margin-left: 40px;
+  margin-left: 20px;
   margin-bottom: -20px;
   opacity: 0;
   }
@@ -3287,7 +3287,7 @@ body p {
     align-items: center;    /* Los alinea verticalmente */
     gap: 60px;               /* Reduce la distancia entre el signo y el texto (puedes probar con 0px o lo que prefieras) */
     width: fit-content;     /* Hace que el contenedor mida solo lo que ocupan sus elementos juntos */
-}
+ }
 
 .hidro-text2 {
   position: absolute;
@@ -3531,7 +3531,8 @@ body p {
     align-items: center;    /* Los alinea verticalmente */
     gap: 20px;               /* Reduce la distancia entre el signo y el texto (puedes probar con 0px o lo que prefieras) */
     width: fit-content;     /* Hace que el contenedor mida solo lo que ocupan sus elementos juntos */
-}
+    margin-bottom: -20px;
+  }
   .slide {
     height: 100%;
     display: flex;
