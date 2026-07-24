@@ -440,7 +440,7 @@
   }
 
   .swiper-wrapper {
-    margin-left: -15px !important;
+    margin-left: 15px !important;
     padding-right: 15px !important;
   }
   .timeline-swiper-outer {
@@ -452,8 +452,9 @@
   }
 
   .timeline-swiper .swiper-slide:last-child {
-    margin-right: 5px !important;
-    margin-left: 30px !important;
+    margin-right: 20px !important;
+    padding-right: 40px !important;
+    margin-left: 0px !important;
   }
 
   .swiper-button-prev,
@@ -571,11 +572,7 @@
     width: 56px !important;
     height: 56px !important;
     margin: 0 auto 12px !important;
-    margin-left: 140px !important;
-  }
-
-  .welcome_section {
-    padding: 22px 12px !important;
+    margin-left: 150px !important;
   }
 
   .welcome_section .custom_heading-container h2 {

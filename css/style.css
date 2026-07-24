@@ -1383,7 +1383,60 @@ body p {
   width: 100%;
   height: auto;
   border-radius: 15px;
+  margin-bottom: 20px;
   display: block;
+}
+
+/* Limitar tamaño en pantallas de escritorio y centrar la imagen */
+@media (min-width: 992px) {
+  .seccion-sistema .sistema-imagen img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    margin: 12px auto;
+    display: block;
+  }
+}
+
+/* Evitar desbordamiento de la última tarjeta del timeline (swiper) y centrarla en escritorio */
+@media (min-width: 992px) {
+  .timeline-swiper .swiper-slide:last-child {
+    display: flex;
+    justify-content: center;
+    padding-right: 12px;
+    box-sizing: border-box;
+  }
+
+  .timeline-swiper .swiper-slide:last-child .card {
+    max-width: 420px;
+    width: 100%;
+    margin: 0;
+  }
+
+  .timeline-swiper .swiper-slide:last-child .card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Ajustes adicionales para evitar desbordamiento horizontal del swiper en escritorio */
+@media (min-width: 992px) {
+  .timeline-swiper-outer {
+    overflow-x: hidden !important;
+    /* reducir padding derecho para que la última tarjeta quede dentro del contenedor */
+    padding-right: 40px !important;
+  }
+
+  .timeline-swiper .swiper-wrapper {
+    box-sizing: border-box !important;
+    padding-right: 40px !important;
+  }
+
+  .timeline-swiper .swiper-slide:last-child {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
 }
 
 /* Estilos para el bloque de texto */
