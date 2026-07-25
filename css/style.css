@@ -1465,7 +1465,14 @@ body p {
 }
 
 .sistema-texto .divisor-verde {
-  width: 80px;
+  width: 100px;
+  height: 4px;
+  background-color: #23c823;
+  margin: 0 0 20px 0;
+}
+
+.sistema-texto .divisor-verde2 {
+  width:160px;
   height: 4px;
   background-color: #23c823;
   margin: 0 0 20px 0;
@@ -1529,7 +1536,7 @@ body p {
 
 /* Línea verde decorativa debajo del título */
 .seccion-ancelave .divisor-verde {
-  width: 90px;
+  width: 125px;
   height: 4px;
   background-color: #17cb0d;
   margin-bottom: 30px;
