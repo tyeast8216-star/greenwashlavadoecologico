@@ -201,11 +201,19 @@ body p {
   display: block;
   width: 100px;
   height: auto;
-  margin: 0 auto;
-  margin-left: 0px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px 0;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.slide.active .history-slide .logo-header3 {
+  animation: floatLogo 1.2s ease-out both;
+}
+
+.slide:not(.active) .history-slide .logo-header3 {
   opacity: 0;
-  animation: floatLogo 1.2s ease-out forwards;
+  transform: translateY(18px) scale(0.92);
 }
 
 .titulo-con-logo {
@@ -255,13 +263,21 @@ body p {
 
 @keyframes floatLogo {
   0% {
-    transform: translateY(18px) scale(0.92);
+    transform: translateY(18px) scale(0.94);
     opacity: 0;
+    filter: blur(2px);
+  }
+
+  60% {
+    transform: translateY(-4px) scale(1.01);
+    opacity: 1;
+    filter: blur(0);
   }
 
   100% {
     transform: translateY(0) scale(1);
     opacity: 1;
+    filter: blur(0);
   }
 }
 
@@ -2391,11 +2407,13 @@ body p {
   display: none;
 }
 
-/* 5. El Botón "VER DETALLES" */
 .btn-franquicia {
-  display: inline-block;
+  display: block; /* Cambia de inline-block a block para que acepte márgenes automáticos */
+  width: fit-content; /* O un ancho fijo (ej. 250px) para que no ocupe todo el ancho */
+  margin: 30px auto 0 auto; /* Arriba 20px, Derecha AUTO, Abajo 0, Izquierda AUTO */
+  
+  /* ... el resto de tus estilos ... */
   background-color: #1ece2d;
-  /* Verde corporativo de Green Wash */
   color: #ffffff;
   text-decoration: none;
   padding: 12px 30px;
