@@ -1447,10 +1447,19 @@ body p {
 }
 
 /* Estilos para el bloque de texto */
+.sistema-texto {
+  text-align: left;
+}
+
+.timeline-swiper-outer .sistema-texto {
+  padding-left: 0;
+}
+
 .sistema-texto h2 {
   color: #006644;
   font-size: 28px;
   margin-bottom: 5px;
+  margin-left: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -1459,7 +1468,7 @@ body p {
   width: 80px;
   height: 4px;
   background-color: #23c823;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
 }
 
 .sistema-texto h4 {
@@ -1511,7 +1520,7 @@ body p {
 
 /* Título Principal */
 .seccion-ancelave h2.titulo-principal {
-  color: #006644;
+  color: #006614;
   font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1522,7 +1531,7 @@ body p {
 .seccion-ancelave .divisor-verde {
   width: 90px;
   height: 4px;
-  background-color: #006644;
+  background-color: #17cb0d;
   margin-bottom: 30px;
 }
 
@@ -1642,6 +1651,8 @@ body p {
 
   .img-folleto {
     align-self: center;
+    max-width: 100px;
+    max-height: 200px;
     /* Centra el folleto en pantallas pequeñas */
   }
 
@@ -1665,6 +1676,7 @@ body p {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
+  color: red;
 }
 
 .seccion-aviso p {
@@ -1730,8 +1742,8 @@ body p {
   padding: 20px 30px;
   margin-bottom: 50px;
   font-size: 16px;
-  color: #333333;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #064aa3;
 }
 
 /* 2. Bloque de la placa de certificación */
@@ -1780,8 +1792,8 @@ body p {
 .btn-contacto {
   display: inline-block;
   border: 1px solid #333333;
-  color: #333333;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: #14c717;
   padding: 12px 35px;
   text-decoration: none;
   font-size: 15px;
