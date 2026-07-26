@@ -4754,16 +4754,21 @@ body p {
   color: #e5e7eb;
   font-size: 0.9rem;
   margin-bottom: 30px;
-  text-align: center;
+  text-align: center !important;
+  text-align-last: center !important;
+  text-justify: none !important;
   display: inline-block;
+  max-width: 100%;
 }
 
 .cta-note strong {
   color: #ffffff;
-  white-space: normal;
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
+  white-space: normal !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+  text-rendering: optimizeLegibility;
+  font-variant: normal !important;
 }
 
 .cta-phone span {
