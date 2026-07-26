@@ -5605,6 +5605,20 @@ body.pdf-modal-open {
   line-height: 1.1;
 }
 
+/* Estilo del título */
+.hero-title2 {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Fuente limpia y moderna */
+  font-size: 4vw;
+  /* Tamaño de fuente relativo al ancho de la pantalla */
+  font-weight: bold;
+  color: #000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  /* Sombra para mayor contraste */
+  margin: 0;
+  line-height: 1.1;
+}
+
 /* Contenedor principal de la sección */
 .industrial-section {
   display: flex;
