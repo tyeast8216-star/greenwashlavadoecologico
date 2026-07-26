@@ -1525,6 +1525,18 @@ body p {
   padding: 40px;
 }
 
+/* Contenedor principal ajustado */
+.seccion-ancelave2 {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px 0 40px 0; /* Eliminamos el padding izquierdo (último valor) */
+}
+
+/* La imagen se pega al borde izquierdo */
+.seccion-ancelave2 img {
+  margin-left: 0;
+  display: block; /* Evita espacios fantasma debajo de la imagen */
+}
 /* Título Principal */
 .seccion-ancelave h2.titulo-principal {
   color: #006614;
@@ -1623,6 +1635,11 @@ body p {
   display: block;
 }
 
+.img-logo-texto2 {
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
 .img-logo-texto {
   max-width: 400px;
 }
@@ -1656,6 +1673,10 @@ body p {
     align-items: center;
   }
 
+  .img-logo-texto2 {
+  max-width: 340px;
+  margin-bottom: 30px;
+}
   .img-folleto {
     align-self: center;
     max-width: 100px;
