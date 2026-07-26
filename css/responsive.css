@@ -242,6 +242,24 @@
   .welcome_section .heading-underline {
     width: 40px !important;
   }
+
+  /* Móvil: apilar texto y mapa en la sección Franquicia Máster */
+  .franquiciamas-container {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  .franquiciamas-container .text-section,
+  .franquiciamas-container .map-section {
+    width: 100% !important;
+  }
+
+  .franquiciamas-container .map-section img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 480px) {

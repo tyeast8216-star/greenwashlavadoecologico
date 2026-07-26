@@ -2297,7 +2297,7 @@ body p {
   font-size: 32px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   letter-spacing: 1px;
 }
 
@@ -4575,7 +4575,7 @@ body p {
 }
 
 .franquicia-texto .divisor-verde {
-  width: 90px;
+  width: 367px;
   height: 4px;
   background-color: #0fc925;
   margin-bottom: 15px;
@@ -4754,10 +4754,12 @@ body p {
   color: #e5e7eb;
   font-size: 0.9rem;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .cta-note strong {
   color: #ffffff;
+  white-space: nowrap;
 }
 
 .cta-phone span {
@@ -5381,7 +5383,7 @@ body p {
   /* Altura mínima para pantallas muy pequeñas */
   max-height: 400px;
   /* Altura máxima para pantallas muy grandes */
-  background-image: url('../images/bannerlocalindustrial.jpg');
+  background-image: url('../images/localcomercial.jpg');
   /* Usa la imagen de tu archivo verbatim */
   background-size: cover;
   /* Cubre todo el área sin deformarse */
@@ -6303,7 +6305,7 @@ body p {
 .franquiciamas-container {
   display: flex;
   justify-content: space-between;
-  padding: 40px 0px;
+  padding: 0px 30px;
   gap: 40px;
   font-family: Arial, sans-serif;
   color: #333;
@@ -6320,6 +6322,7 @@ body p {
 .franquiciamas-container .map-section {
   flex: 1;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .franquiciamas-container .map-section img {
