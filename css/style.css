@@ -1428,6 +1428,10 @@ body p {
   min-width: 300px;
 }
 
+.sistema-columna.sistema-texto {
+  padding-left: 25px;
+}
+
 .sistema-imagen img {
   width: 100%;
   height: auto;
@@ -1450,6 +1454,7 @@ body p {
 /* Estilos para el bloque de texto */
 .sistema-texto {
   text-align: left;
+  padding-left: 10px;
 }
 
 .timeline-swiper-outer .sistema-texto {
@@ -5041,6 +5046,10 @@ body p {
   padding: 0 20px;
 }
 
+.support-content {
+  max-width: 100%;
+}
+
 .support-grid {
   display: grid;
   grid-template-columns: 1fr 1.3fr;
@@ -5070,6 +5079,17 @@ body p {
   display: block;
 }
 
+.support-image3 img {
+  width: 100%;        /* Ocupa todo el ancho disponible del contenedor */
+  max-width: 400px;   /* No supera los 400px en pantallas grandes */
+  height: auto;       /* Mantiene la proporción original */
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: block;
+  margin-left: auto;  /* Centrado horizontal */
+  margin-right: auto; /* Centrado horizontal */
+}
 .support-content h2 {
   font-size: 1.8rem;
   color: #1f2937;
