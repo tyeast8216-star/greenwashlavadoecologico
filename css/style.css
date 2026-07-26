@@ -1674,7 +1674,7 @@ body p {
   }
 
   .img-logo-texto2 {
-  max-width: 340px;
+  max-width: 310px;
   margin-bottom: 30px;
 }
   .img-folleto {
@@ -5087,6 +5087,10 @@ body p {
   color: #111827;
 }
 
+.support-content .support-image{
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
 /* Botón de Escuchar Texto */
 .btn-audio {
   background-color: #0b6638;
@@ -5902,6 +5906,16 @@ body p {
 
 .form-boton-enviar:hover {
   background-color: #d68910;
+}
+
+.surface-list{
+  text-align: justify;
+  padding-right: 20px;
+}
+
+.support-list{
+  text-align: justify;
+  padding-right: 20px;
 }
 
 /* Diseño responsivo para pantallas pequeñas */
