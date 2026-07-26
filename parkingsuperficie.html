@@ -267,7 +267,7 @@
               Tu navegador no soporta la reproducción de videos.
             </video>
           </div>
-          <a href="./dossieres/parkingsuperficie.pdf" class="btn-download-pdf" download>
+          <a href="#" class="btn-download-pdf" id="btnOpenPdfModal">
             <span class="pdf-icon">📥</span> Descargar PDF
           </a>
         </div>
@@ -385,20 +385,113 @@
   </footer>
   </div>
 
+    <div class="pdf-modal-overlay" id="pdfModalOverlay" aria-hidden="true">
+    <div class="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+      <button class="pdf-modal-close" id="pdfModalClose" aria-label="Cerrar">×</button>
+      <h3 id="pdfModalTitle">Solicita el dossier</h3>
+      <p>Completa tus datos y te enviaremos la información por WhatsApp.</p>
+      <form id="pdfDownloadForm" novalidate>
+        <div class="pdf-form-group">
+          <label for="pdfNombre">Nombre</label>
+          <input type="text" id="pdfNombre" name="nombre" required>
+        </div>
+        <div class="pdf-form-group">
+          <label for="pdfApellido">Apellido</label>
+          <input type="text" id="pdfApellido" name="apellido" required>
+        </div>
+        <div class="pdf-form-group">
+          <label for="pdfTelefono">Teléfono</label>
+          <input type="tel" id="pdfTelefono" name="telefono" required>
+        </div>
+        <div class="pdf-form-group">
+          <label for="pdfCiudad">Ciudad</label>
+          <input type="text" id="pdfCiudad" name="ciudad" required>
+        </div>
+        <button type="submit" class="btn-download-pdf btn-download-submit">Enviar por WhatsApp</button>
+      </form>
+      <p id="pdfFormMessage" class="pdf-form-message" aria-live="polite"></p>
+    </div>
+  </div>
   <script>
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
         const item = header.parentElement;
-
-        // Opcional: Cerrar los demás al abrir uno nuevo
-        // document.querySelectorAll('.accordion-item').forEach(i => {
-        //     if(i !== item) i.classList.remove('active');
-        // });
-
         item.classList.toggle('active');
       });
     });
-  </script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('pdfModalOverlay');
+      const openBtn = document.getElementById('btnOpenPdfModal');
+      const closeBtn = document.getElementById('pdfModalClose');
+      const form = document.getElementById('pdfDownloadForm');
+      const message = document.getElementById('pdfFormMessage');
+      const whatsappNumber = '34603299299';
+
+      function openModal() {
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('pdf-modal-open');
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('pdf-modal-open');
+        form.reset();
+        if (message) message.textContent = '';
+      }
+
+      if (openBtn) {
+        openBtn.addEventListener('click', function (event) {
+          event.preventDefault();
+          openModal();
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const nombre = form.nombre.value.trim();
+          const apellido = form.apellido.value.trim();
+          const telefono = form.telefono.value.trim();
+          const ciudad = form.ciudad.value.trim();
+
+          if (!nombre || !apellido || !telefono || !ciudad) {
+            if (message) {
+              message.textContent = 'Por favor, completa todos los campos.';
+              message.style.color = '#b91c1c';
+            }
+            return;
+          }
+
+          const mensaje = `Hola, quiero recibir información del dossier de Parking Subterráneo Low Cost. Nombre: ${nombre} ${apellido}. Teléfono: ${telefono}. Ciudad: ${ciudad}.`;
+          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
+          window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+          if (message) {
+            message.textContent = 'Mensaje enviado por WhatsApp. Gracias.';
+            message.style.color = '#166534';
+          }
+
+          setTimeout(closeModal, 1000);
+        });
+      }
+    });
+  </script> 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
 </body>

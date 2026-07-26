@@ -1288,6 +1288,7 @@ body p {
 .welcome_section .img-box {
   text-align: right;
   overflow: hidden;
+  margin-bottom: -50px;
 }
 
 .welcome_section .img-box img {
@@ -5253,10 +5254,92 @@ body p {
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-download-pdf:hover {
   background-color: #043c2e;
+}
+
+.pdf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 999999;
+}
+
+.pdf-modal-overlay.active {
+  display: flex;
+}
+
+.pdf-modal {
+  background: #fff;
+  width: min(100%, 480px);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.pdf-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  color: #4b5563;
+}
+
+.pdf-modal h3 {
+  margin: 0 0 8px;
+  color: #064e3b;
+}
+
+.pdf-modal p {
+  margin: 0 0 16px;
+  color: #4b5563;
+}
+
+.pdf-form-group {
+  margin-bottom: 12px;
+}
+
+.pdf-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.pdf-form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.btn-download-submit {
+  margin-top: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.pdf-form-message {
+  min-height: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+body.pdf-modal-open {
+  overflow: hidden;
 }
 
 /* Lado Derecho: Acordeón */
