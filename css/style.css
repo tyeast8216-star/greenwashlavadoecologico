@@ -1728,16 +1728,16 @@ body p {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 18px;
-  color: #ff0202;
+  color: #ffffff;
   text-shadow: 0 6px 30px rgba(0, 0, 0, 0.35);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   padding: 20px 32px;
-  border-radius: 999px;
+  border-radius: 0px;
   border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(0, 0, 0, 0.18);
+  background: rgba(255, 0, 0, 0.913);
 }
 
 .seccion-aviso h2::before {
