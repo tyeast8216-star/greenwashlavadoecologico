@@ -4755,11 +4755,15 @@ body p {
   font-size: 0.9rem;
   margin-bottom: 30px;
   text-align: center;
+  display: inline-block;
 }
 
 .cta-note strong {
   color: #ffffff;
-  white-space: nowrap;
+  white-space: normal;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
 }
 
 .cta-phone span {
