@@ -459,7 +459,7 @@
           }
 
           const mensaje = `Hola, quiero recibir información del dossier de Parking Subterráneo Low Cost. Nombre: ${nombre} ${apellido}. Teléfono: ${telefono}. Ciudad: ${ciudad}.`;
-          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
+          const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(mensaje)}`
           window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 
           if (message) {
