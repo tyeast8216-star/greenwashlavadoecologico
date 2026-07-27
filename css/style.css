@@ -738,7 +738,8 @@ body p {
   }
 }
 
-.stand-slide .text-section h1 {
+.stand-slide .text-section h1,
+.stand-slide .text-section h2 {
   opacity: 0;
   transform: translateX(-36px);
 }
@@ -752,7 +753,8 @@ body p {
   transform: scale(0.9) translateY(12px) rotate(-3deg);
 }
 
-.slide.active .stand-slide .text-section h1 {
+.slide.active .stand-slide .text-section h1,
+.slide.active .stand-slide .text-section h2 {
   animation: standTextIn 700ms cubic-bezier(.22, .9, .26, 1) both;
   animation-delay: 0.22s;
 }
@@ -764,7 +766,8 @@ body p {
 
 /* Ajustes móviles: reducir tamaño de imagen y texto para pantallas pequeñas */
 @media (max-width: 768px) {
-  .stand-slide .text-section h1 {
+  .stand-slide .text-section h1,
+  .stand-slide .text-section h2 {
     font-size: 2rem;
   }
 
@@ -3480,7 +3483,8 @@ body p {
   margin-left: 90px;
 }
 
-.text-section h1 {
+.text-section h1,
+.text-section h2 {
   font-size: 3rem;
   font-weight: 800;
   line-height: 1.1;
@@ -3732,8 +3736,10 @@ body p {
 
   .title-main,
   .text-section h1,
+  .text-section h2,
   .car-slide .text-section h1,
-  .stand-slide .text-section h1 {
+  .stand-slide .text-section h1,
+  .stand-slide .text-section h2 {
     font-size: 1.8rem !important;
     line-height: 1.2;
     margin-bottom: 10px;
