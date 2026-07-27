@@ -1702,7 +1702,6 @@ body p {
   text-align: center;
   padding: 62px 32px;
   margin: 0 auto;
-  border-radius: 18px;
   border: 2px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
   position: relative;
@@ -1814,6 +1813,12 @@ body p {
   background-color: #064aa3;
 }
 
+/* 1. Caja de texto superior con borde */
+.caja-aviso p{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* 2. Bloque de la placa de certificación */
 .contenedor-placa {
   margin-bottom: 50px;
@@ -5550,7 +5555,7 @@ body.pdf-modal-open {
   width: 100%;
   /* Ajusta la altura según la proporción deseada, por ejemplo, 40vw (40% del ancho de la ventana) */
   height: 40vw;
-  min-height: 300px;
+  min-height: 200px;
   /* Altura mínima para pantallas muy pequeñas */
   max-height: 400px;
   /* Altura máxima para pantallas muy grandes */
