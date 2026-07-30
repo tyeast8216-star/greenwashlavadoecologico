@@ -4279,6 +4279,27 @@ body p {
   margin-bottom: 70px;
 }
 
+.banner-image-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.banner-image-section img {
+  width: min(100%, 350px);
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .banner-image-section {
+    display: block;
+  }
+}
+
 .overlay-empresa {
   width: 100%;
   height: 100%;
