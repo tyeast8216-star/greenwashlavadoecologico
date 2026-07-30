@@ -129,96 +129,109 @@
     </div>
   </section>
 
-  <!-- Sección de Contacto (Clases únicas y aisladas) -->
-  <section class="seccion-contacto-gw">
-    <!-- Título principal -->
-    <div class="contacto-titulo-principal">
-      <h2>¡Estamos aquí para ayudarle! Contacte con nosotros y resolveremos todas sus dudas.</h2>
-      <img src="./images/greenwashedif.jpeg" alt="Edificio Green Wash">
-    </div>
+  <main class="gw-contact-container">
 
-    <div class="contacto-contenido-grid">
-      <!-- Columna Izquierda: Información y Mascota -->
-      <div class="contacto-info-columna">
-        <a href="tel:920094338" class="contacto-item" style="text-decoration: none; color: inherit;">
+    <section class="gw-contact-info-card">
+      <div>
+        <h2>Información de contacto</h2>
+        <p>¡Estamos aquí para ayudarte! Contacta con nosotros y resolveremos todas sus dudas.</p>
+
+        <!-- Item Teléfono -->
+        <a class="gw-info-item" href="tel:+34920094338">
           <span class="contacto-icono">📞</span>
           <div>
-            <strong>Telefono</strong>
+            <span>Teléfono</span>
             <p>920 094 338</p>
           </div>
         </a>
 
-        <a href="https://wa.me/34603299299" target="_blank" style="text-decoration: none; color: inherit;">
-          <div class="contacto-item">
-            <svg style="margin-right: 2px;" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path
-                d="M20.52 3.48C18.3 1.26 15.35 0 12.11 0 5.63 0 .45 5.18.45 11.66c0 2.05.54 4.05 1.57 5.78L0 24l6.12-1.63c1.65.9 3.52 1.35 5.39 1.35 6.48 0 11.66-5.18 11.66-11.66 0-3.24-1.26-6.19-3.49-8.53Z"
-                fill="#25d366" />
-              <path
-                d="M17.65 14.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.86 1.06-1.06 1.28-.19.22-.38.25-.71.08-.33-.16-1.39-.51-2.65-1.64-.98-.88-1.63-1.96-1.82-2.29-.19-.33-.02-.51.14-.67.14-.14.33-.36.49-.54.16-.19.21-.33.33-.55.11-.22.06-.41-.03-.57-.09-.16-.74-1.78-1.01-2.44-.27-.64-.55-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.33-1.16 1.13-1.16 2.75 0 1.61 1.19 3.16 1.36 3.38.16.22 2.35 3.6 5.7 5.05.8.35 1.42.56 1.9.72.8.26 1.53.22 2.1.13.64-.1 1.92-.78 2.19-1.53.27-.74.27-1.38.19-1.52-.08-.16-.3-.25-.63-.41Z"
-                fill="#fff" />
-            </svg>
-            <div>
-              <strong>WhatsApp</strong>
-              <p>+34 603 299 299</p>
-            </div>
+        <!-- Item WhatsApp -->
+        <a class="gw-info-item" href="https://wa.me/34603299299" target="_blank" rel="noopener noreferrer">
+          <svg style="margin-right: 2px;" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M20.52 3.48C18.3 1.26 15.35 0 12.11 0 5.63 0 .45 5.18.45 11.66c0 2.05.54 4.05 1.57 5.78L0 24l6.12-1.63c1.65.9 3.52 1.35 5.39 1.35 6.48 0 11.66-5.18 11.66-11.66 0-3.24-1.26-6.19-3.49-8.53Z"
+              fill="#25d366" />
+            <path
+              d="M17.65 14.12c-.32-.16-1.92-.95-2.22-1.06-.3-.11-.52-.16-.74.16-.22.32-.86 1.06-1.06 1.28-.19.22-.38.25-.71.08-.33-.16-1.39-.51-2.65-1.64-.98-.88-1.63-1.96-1.82-2.29-.19-.33-.02-.51.14-.67.14-.14.33-.36.49-.54.16-.19.21-.33.33-.55.11-.22.06-.41-.03-.57-.09-.16-.74-1.78-1.01-2.44-.27-.64-.55-.55-.74-.56h-.63c-.22 0-.57.08-.87.41-.3.33-1.16 1.13-1.16 2.75 0 1.61 1.19 3.16 1.36 3.38.16.22 2.35 3.6 5.7 5.05.8.35 1.42.56 1.9.72.8.26 1.53.22 2.1.13.64-.1 1.92-.78 2.19-1.53.27-.74.27-1.38.19-1.52-.08-.16-.3-.25-.63-.41Z"
+              fill="#fff" />
+          </svg>
+          <div>
+            <span>WhatsApp</span>
+            <p>+34 603 299 299</p>
           </div>
         </a>
 
-        <a href="mailto:info@greenwash.es" style="text-decoration: none; color: inherit;">
-        <div class="contacto-item">
+        <!-- Item E-mail -->
+        <a class="gw-info-item" href="mailto:info@greenwash.es">
           <span class="contacto-icono">✉️</span>
           <div>
-            <strong>Email</strong>
+            <span>E-mail</span>
             <p>info@greenwash.es</p>
           </div>
-        </div>
         </a>
-        <!-- Mascota corporativa -->
-        <div class="contacto-mascota">
-          <img src="./images/mascotagw.png" alt="Mascota Green Wash">
-        </div>
       </div>
 
-      <!-- Columna Derecha: Formulario con tarjeta de fondo verde claro -->
-      <div class="contacto-formulario-caja">
-        <form class="formulario-contacto-gw">
-          <div class="form-fila-doble">
-            <div class="form-grupo">
-              <label for="nombre-contacto">Nombre</label>
-              <input type="text" id="nombre-contacto" name="nombre">
-            </div>
-            <div class="form-grupo">
-              <label for="modalidad-contacto">Modalidad de Implantación</label>
-              <select id="modalidad-contacto" name="modalidad">
-                <option value="parking">Parking Subterráneo</option>
-                <option value="industrial">Local Industrial</option>
-                <option value="superficie">Parking Superficie</option>
-                <option value="lowcost">Parking Low Cost</option>
-              </select>
-            </div>
+      <!-- Mascota -->
+      <div class="contacto-mascota">
+        <img src="./images/mascotagw.png" alt="Mascota Green Wash">
+      </div>
+    </section>
+
+    <!-- Bloque Derecho: Formulario -->
+    <section class="gw-contact-form-card">
+      <h2>Enviar Mensaje de contacto</h2>
+      <form action="#" method="POST">
+
+        <div class="gw-form-row">
+          <div class="gw-form-group">
+            <label for="gw-nombre">Nombre</label>
+            <input type="text" id="gw-nombre" name="nombre" placeholder="Nombre" required>
+          </div>
+          <div class="gw-form-group">
+            <label for="gw-apellidos">Apellidos</label>
+            <input type="text" id="gw-apellidos" name="apellidos" placeholder="Apellidos">
+          </div>
+        </div>
+
+        <div class="gw-form-row">
+          <!-- Select de Modalidad de Franquicia -->
+          <div class="gw-form-group">
+            <label for="gw-franquicia">Modalidad de Franquicia</label>
+            <select id="gw-franquicia" name="franquicia" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="parking">Parking Subterráneo</option>
+              <option value="industrial">Local Industrial</option>
+              <option value="superficie">Parking Superficie</option>
+              <option value="lowcost">Parking Low Cost</option>
+            </select>
           </div>
 
-          <div class="form-fila-doble">
-            <div class="form-grupo">
-              <label for="email-contacto">E-mail</label>
-              <input type="email" id="email-contacto" name="email">
-            </div>
-            <div class="form-grupo">
-              <label for="modalidad-contacto">Zona</label>
-              <select id="modalidad-contacto" name="zona">
-                <option value="parking">España</option>
-                <option value="industrial">Internacional</option>
-              </select>
-            </div>
+          <!-- Select de Zona -->
+          <div class="gw-form-group">
+            <label for="gw-zona">Zona</label>
+            <select id="gw-zona" name="zona" required>
+              <option value="" disabled selected>Seleccione...</option>
+              <option value="espana">España</option>
+              <option value="internacional">Internacional</option>
+            </select>
           </div>
+        </div>
 
-          <div class="form-grupo telefono-grupo">
-            <label for="telefono-contacto">Telefono</label>
-            <div class="telefono-input-row">
-              <select id="codigo-pais" name="codigo_pais" class="select-codigo-pais">
-                <option value="+34" selected>+34 España</option>
+        <div class="gw-form-row">
+          <!-- E-mail -->
+          <div class="gw-form-group" style="grid-column: 1 / -1;">
+            <label for="gw-email">E-mail</label>
+            <input type="email" id="gw-email" name="email" placeholder="E-mail" required>
+          </div>
+        </div>
+
+        <!-- Código de país y Teléfono solos en una línea -->
+        <div class="gw-form-group">
+          <label>Teléfono</label>
+          <div class="gw-phone-row">
+            <select id="gw-pais" name="codigo_pais" aria-label="Código de país">
+              <option value="+34" selected>+34 España</option>
                 <option value="+93">+93 Afganistán</option>
                 <option value="+358">+358 Aland Islands / Finlandia</option>
                 <option value="+355">+355 Albania</option>
@@ -410,21 +423,21 @@
                 <option value="+967">+967 Yemen</option>
                 <option value="+260">+260 Zambia</option>
                 <option value="+263">+263 Zimbabue</option>
-              </select>
-              <input type="tel" id="telefono-contacto" name="telefono" placeholder="612345678">
-            </div>
+            </select>
+            <input type="tel" id="gw-telefono" name="telefono" placeholder="Número de teléfono" required>
           </div>
+        </div>
 
-          <div class="form-grupo">
-            <label for="comentarios-contacto">Comentarios (opcional)</label>
-            <textarea id="comentarios-contacto" name="comentarios" rows="4"></textarea>
-          </div>
+        <div class="gw-form-group">
+          <label for="gw-mensaje">Mensaje</label>
+          <textarea id="gw-mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." required></textarea>
+        </div>
 
-          <button type="submit" class="form-boton-enviar">Enviar</button>
-        </form>
-      </div>
-    </div>
-  </section>
+        <button type="submit" class="gw-btn-submit">Enviar contactocontacto</button>
+      </form>
+    </section>
+
+  </main>
   <!-- Pie de página (Footer) -->
   <footer class="site-footer">
     <div class="site-footer-container">
