@@ -5920,6 +5920,39 @@ body.pdf-modal-open {
   font-weight: bold;
 }
 
+.contacto-titulo-principal img {
+  display: block;
+  width: min(100%, 820px);
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto 0;
+}
+
+@media (max-width: 768px) {
+  .contacto-titulo-principal h2 {
+    font-size: 22px;
+    padding: 0 10px;
+  }
+
+  .contacto-titulo-principal img {
+    width: min(100%, 420px);
+  }
+}
+
+@media (max-width: 500px) {
+  .contacto-titulo-principal {
+    margin-bottom: 30px;
+  }
+
+  .contacto-titulo-principal h2 {
+    font-size: 18px;
+  }
+
+  .contacto-titulo-principal img {
+    width: 100%;
+  }
+}
+
 /* Estructura de dos columnas */
 .contacto-contenido-grid {
   display: flex;
