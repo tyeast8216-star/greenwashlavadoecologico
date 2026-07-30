@@ -176,6 +176,63 @@
 
 }
 
+@media (max-width: 768px) {
+  .hero-banner3 {
+    height: 56vw;
+    min-height: 220px;
+    max-height: 280px;
+    background-size: cover;
+    background-position: center center;
+    background-color: #f5f5f5;
+  }
+
+  .hero-banner6,
+  .hero-banner4 {
+    height: 56vw;
+    min-height: 220px;
+    max-height: 280px;
+    background-size: cover;
+    background-position: center center;
+    background-color: #f5f5f5;
+  }
+
+  .hero-text-container {
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    max-width: 90%;
+  }
+
+  .hero-title2 {
+    font-size: clamp(1.25rem, 3.8vw, 1.7rem);
+    line-height: 1.15;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.85);
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-banner3 {
+    min-height: 180px;
+    max-height: 220px;
+  }
+
+  .hero-banner6,
+  .hero-banner4 {
+    min-height: 180px;
+    max-height: 220px;
+  }
+
+  .hero-text-container {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .hero-title2 {
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 576px) {
 
 
