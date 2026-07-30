@@ -439,18 +439,18 @@ body p {
   }
 
   .titulo-con-logo2 {
-  padding: 8px;
-  margin-bottom: 50px;
+    padding: 8px;
+    margin-bottom: 50px;
   }
 
   .logo-header3 {
-  display: block;
-  width: 60px;
-  height: auto;
-  margin: 0 auto;
-  margin-left: 20px;
-  margin-bottom: -20px;
-  opacity: 0;
+    display: block;
+    width: 60px;
+    height: auto;
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-bottom: -20px;
+    opacity: 0;
   }
 
   .navbar-toggler {
@@ -766,6 +766,7 @@ body p {
 
 /* Ajustes móviles: reducir tamaño de imagen y texto para pantallas pequeñas */
 @media (max-width: 768px) {
+
   .stand-slide .text-section h1,
   .stand-slide .text-section h2 {
     font-size: 2rem;
@@ -1481,7 +1482,7 @@ body p {
 }
 
 .sistema-texto .divisor-verde2 {
-  width:160px;
+  width: 160px;
   height: 4px;
   background-color: #23c823;
   margin: 0 0 20px 0;
@@ -1538,14 +1539,17 @@ body p {
 .seccion-ancelave2 {
   max-width: 1200px;
   margin: 60px auto;
-  padding: 40px 0 40px 0; /* Eliminamos el padding izquierdo (último valor) */
+  padding: 40px 0 40px 0;
+  /* Eliminamos el padding izquierdo (último valor) */
 }
 
 /* La imagen se pega al borde izquierdo */
 .seccion-ancelave2 img {
   margin-left: 0;
-  display: block; /* Evita espacios fantasma debajo de la imagen */
+  display: block;
+  /* Evita espacios fantasma debajo de la imagen */
 }
+
 /* Título Principal */
 .seccion-ancelave h2.titulo-principal {
   color: #006614;
@@ -1683,9 +1687,10 @@ body p {
   }
 
   .img-logo-texto2 {
-  max-width: 310px;
-  margin-bottom: 30px;
-}
+    max-width: 310px;
+    margin-bottom: 30px;
+  }
+
   .img-folleto {
     align-self: center;
     max-width: 100px;
@@ -1817,11 +1822,12 @@ body p {
 }
 
 /* 1. Caja de texto superior con borde */
-.caja-aviso p{
+.caja-aviso p {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 }
+
 /* 2. Bloque de la placa de certificación */
 .contenedor-placa {
   margin-bottom: 50px;
@@ -2496,10 +2502,13 @@ body p {
 }
 
 .btn-franquicia {
-  display: block; /* Cambia de inline-block a block para que acepte márgenes automáticos */
-  width: fit-content; /* O un ancho fijo (ej. 250px) para que no ocupe todo el ancho */
-  margin: 30px auto 0 auto; /* Arriba 20px, Derecha AUTO, Abajo 0, Izquierda AUTO */
-  
+  display: block;
+  /* Cambia de inline-block a block para que acepte márgenes automáticos */
+  width: fit-content;
+  /* O un ancho fijo (ej. 250px) para que no ocupe todo el ancho */
+  margin: 30px auto 0 auto;
+  /* Arriba 20px, Derecha AUTO, Abajo 0, Izquierda AUTO */
+
   /* ... el resto de tus estilos ... */
   background-color: #1ece2d;
   color: #ffffff;
@@ -2720,11 +2729,14 @@ body p {
 
 .contenedor-tarjetas {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   /* Espacia las tarjetas equitativamente */
   gap: 20px;
   /* Separación entre tarjetas */
   padding: 20px;
+  margin: 40px;
+  margin-bottom: 0px;
 }
 
 .tarjeta {
@@ -2732,8 +2744,9 @@ body p {
   /* Verde oscuro del diseño */
   color: white;
   padding: 20px;
-  flex: 1;
-  /* Hace que todas tengan el mismo ancho */
+  flex: 0 1 calc(33.333% - 13.333px);
+  max-width: calc(33.333% - 13.333px);
+  /* Hace que todas tengan el mismo ancho y se ajusten en dos filas */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3042,7 +3055,7 @@ body p {
 .history-text {
   font-size: 1.4rem !important;
   margin-top: 10px;
-  line-height: 1.0 !important; 
+  line-height: 1.0 !important;
   color: #fefefe;
   font-weight: 500;
 }
@@ -3433,11 +3446,14 @@ body p {
 }
 
 .header-flex {
-    display: flex;
-    align-items: center;    /* Los alinea verticalmente */
-    gap: 60px;               /* Reduce la distancia entre el signo y el texto (puedes probar con 0px o lo que prefieras) */
-    width: fit-content;     /* Hace que el contenedor mida solo lo que ocupan sus elementos juntos */
- }
+  display: flex;
+  align-items: center;
+  /* Los alinea verticalmente */
+  gap: 60px;
+  /* Reduce la distancia entre el signo y el texto (puedes probar con 0px o lo que prefieras) */
+  width: fit-content;
+  /* Hace que el contenedor mida solo lo que ocupan sus elementos juntos */
+}
 
 .hidro-text2 {
   position: absolute;
@@ -3461,7 +3477,7 @@ body p {
   padding-bottom: 15px;
   /* Da un respiro en la base */
   font-size: 18px;
-  text-shadow: 2px  2px 0 #000;
+  text-shadow: 2px 2px 0 #000;
   /* Ajuste sutil para balancear con el texto superior */
 }
 
@@ -3472,7 +3488,7 @@ body p {
   align-items: center;
   justify-content: center;
   font-size: 18px;
-  text-shadow: 2px  2px 0 #000;
+  text-shadow: 2px 2px 0 #000;
   /* Ajuste sutil para balancear con el texto superior */
 }
 
@@ -3679,11 +3695,15 @@ body p {
 
   .header-flex {
     display: flex;
-    align-items: center;    /* Los alinea verticalmente */
-    gap: 20px;               /* Reduce la distancia entre el signo y el texto (puedes probar con 0px o lo que prefieras) */
-    width: fit-content;     /* Hace que el contenedor mida solo lo que ocupan sus elementos juntos */
+    align-items: center;
+    /* Los alinea verticalmente */
+    gap: 20px;
+    /* Reduce la distancia entre el signo y el texto (puedes probar con 0px o lo que prefieras) */
+    width: fit-content;
+    /* Hace que el contenedor mida solo lo que ocupan sus elementos juntos */
     margin-bottom: -20px;
   }
+
   .slide {
     height: 100%;
     display: flex;
@@ -5153,16 +5173,22 @@ body p {
 }
 
 .support-image3 img {
-  width: 100%;        /* Ocupa todo el ancho disponible del contenedor */
-  max-width: 400px;   /* No supera los 400px en pantallas grandes */
-  height: auto;       /* Mantiene la proporción original */
+  width: 100%;
+  /* Ocupa todo el ancho disponible del contenedor */
+  max-width: 400px;
+  /* No supera los 400px en pantallas grandes */
+  height: auto;
+  /* Mantiene la proporción original */
   margin-bottom: 20px;
   margin-top: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   display: block;
-  margin-left: auto;  /* Centrado horizontal */
-  margin-right: auto; /* Centrado horizontal */
+  margin-left: auto;
+  /* Centrado horizontal */
+  margin-right: auto;
+  /* Centrado horizontal */
 }
+
 .support-content h2 {
   font-size: 1.8rem;
   color: #1f2937;
@@ -5181,10 +5207,11 @@ body p {
   color: #111827;
 }
 
-.support-content .support-image{
+.support-content .support-image {
   margin-top: 5px;
   margin-bottom: 20px;
 }
+
 /* Botón de Escuchar Texto */
 .btn-audio {
   background-color: #0b6638;
@@ -5672,7 +5699,7 @@ body.pdf-modal-open {
   /* Tamaño de fuente relativo al ancho de la pantalla */
   font-weight: bold;
   color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   /* Sombra para mayor contraste */
   margin: 0;
   line-height: 1.1;
@@ -5685,8 +5712,8 @@ body.pdf-modal-open {
   font-size: 4vw;
   /* Tamaño de fuente relativo al ancho de la pantalla */
   font-weight: bold;
-  color: #000;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
   /* Sombra para mayor contraste */
   margin: 0;
   line-height: 1.1;
@@ -5797,6 +5824,35 @@ body.pdf-modal-open {
   margin-bottom: 25px;
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.gw-images-between-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.gw-image-item {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.gw-image-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .gw-images-between-container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .caja-texto-detalles-gw p {
@@ -6134,12 +6190,12 @@ body.pdf-modal-open {
   background-color: #d68910;
 }
 
-.surface-list{
+.surface-list {
   text-align: justify;
   padding-right: 20px;
 }
 
-.support-list{
+.support-list {
   text-align: justify;
   padding-right: 20px;
 }
@@ -6949,186 +7005,211 @@ input:disabled+.slider {
 
 /*contacto v2*/
 .gw-contact-hero {
-        position: relative;
-        background: linear-gradient(rgba(27, 94, 32, 0.8), rgba(46, 125, 50, 0.7)), url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
-        color: #ffffff;
-        text-align: center;
-        padding: 80px 20px;
-    }
+  position: relative;
+  background: linear-gradient(rgba(27, 94, 32, 0.8), rgba(46, 125, 50, 0.7)), url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 20px;
+}
 
-    .gw-contact-hero h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        letter-spacing: 1px;
-    }
+.gw-contact-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
 
-    .gw-contact-hero p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-    }
+.gw-contact-hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
 
-    /* Contenedor Principal exclusivo */
-    .gw-contact-container {
-        max-width: 1100px;
-        margin: -40px auto 60px auto;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        padding: 0 20px;
-        position: relative;
-        z-index: 2;
-    }
+/* Contenedor Principal exclusivo */
+.gw-contact-container {
+  max-width: 1100px;
+  margin: -40px auto 60px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
 
-    /* Columna de Información exclusiva */
-    .gw-contact-info-card {
-        background: #ffffff;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
+/* Columna de Información exclusiva */
+.gw-contact-info-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-    .gw-contact-info-card h2 {
-        font-size: 1.8rem;
-        color: #1b5e20;
-        margin-bottom: 15px;
-    }
+.gw-contact-info-card h2 {
+  font-size: 1.8rem;
+  color: #1b5e20;
+  margin-bottom: 15px;
+}
 
-    .gw-contact-info-card > p {
-        color: #666666;
-        margin-bottom: 30px;
-        line-height: 1.5;
-    }
+.gw-contact-info-card>p {
+  color: #666666;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
 
-    .gw-info-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-    }
+.gw-info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-    .gw-info-item i {
-        font-size: 1.4rem;
-        color: #2e7d32;
-        width: 40px;
-    }
+/* Make contact items clickable without underline and keep colors */
+a.gw-info-item,
+a.gw-info-item:link,
+a.gw-info-item:visited {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+}
 
-    .gw-info-item div span {
-        display: block;
-        font-size: 0.85rem;
-        color: #888888;
-    }
+a.gw-info-item:hover,
+a.gw-info-item:active {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .gw-info-item div p {
-        font-size: 1rem;
-        color: #333333;
-        font-weight: 500;
-        margin: 0;
-    }
+/* Remove default focus outline but keep accessibility hint with a subtle box-shadow */
+a.gw-info-item:focus {
+  outline: none;
+  border-radius: 4px;
+}
 
-    .gw-mascot-container {
-        margin-top: 20px;
-        text-align: left;
-    }
+.gw-info-item i {
+  font-size: 1.4rem;
+  color: #2e7d32;
+  width: 40px;
+}
 
-    .gw-mascot-container img {
-        max-width: 80px;
-    }
+.gw-info-item div span {
+  display: block;
+  font-size: 0.85rem;
+  color: #888888;
+}
 
-    /* Columna de Formulario exclusiva */
-    .gw-contact-form-card {
-        background: #a8c9be;
-        padding: 40px;
-        border-radius: 12px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    }
+.gw-info-item div p {
+  font-size: 1rem;
+  color: #333333;
+  font-weight: 500;
+  margin: 0;
+}
 
-    .gw-contact-form-card h2 {
-        font-size: 1.8rem;
-        color: #1b5e20;
-        margin-bottom: 25px;
-    }
+.gw-mascot-container {
+  margin-top: 20px;
+  text-align: left;
+}
 
-    .gw-form-group {
-        margin-bottom: 20px;
-    }
+.gw-mascot-container img {
+  max-width: 80px;
+}
 
-    .gw-form-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
+/* Columna de Formulario exclusiva */
+.gw-contact-form-card {
+  background: #a8c9be;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
 
-    /* Estructura para combinar Código de país + Input de Teléfono solos en una línea */
-    .gw-phone-row {
-        display: grid;
-        grid-template-columns: 130px 1fr;
-        gap: 15px;
-        margin-bottom: 20px;
-    }
+.gw-contact-form-card h2 {
+  font-size: 1.8rem;
+  color: #1b5e20;
+  margin-bottom: 25px;
+}
 
-    .gw-contact-form-card label {
-        display: block;
-        font-size: 0.85rem;
-        color: #555555;
-        margin-bottom: 6px;
-        font-weight: 600;
-    }
+.gw-form-group {
+  margin-bottom: 20px;
+}
 
-    .gw-contact-form-card input,
-    .gw-contact-form-card select,
-    .gw-contact-form-card textarea {
-        width: 100%;
-        padding: 12px 15px;
-        border: 1px solid #cccccc;
-        border-radius: 6px;
-        font-size: 0.95rem;
-        background-color: #ffffff;
-        transition: all 0.3s ease;
-    }
+.gw-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
 
-    .gw-contact-form-card input:focus,
-    .gw-contact-form-card select:focus,
-    .gw-contact-form-card textarea:focus {
-        outline: none;
-        border-color: #2e7d32;
-        box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
-    }
+/* Estructura para combinar Código de país + Input de Teléfono solos en una línea */
+.gw-phone-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
 
-    .gw-contact-form-card textarea {
-        resize: vertical;
-        height: 120px;
-    }
+.gw-contact-form-card label {
+  display: block;
+  font-size: 0.85rem;
+  color: #555555;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
 
-    .gw-btn-submit {
-        background-color: #f39c12;
-        color: #ffffff;
-        border: none;
-        width: 100%;
-        padding: 14px;
-        font-size: 1rem;
-        font-weight: 600;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+.gw-contact-form-card input,
+.gw-contact-form-card select,
+.gw-contact-form-card textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
 
-    .gw-btn-submit:hover {
-        background-color: #1b5e20;
-    }
+.gw-contact-form-card input:focus,
+.gw-contact-form-card select:focus,
+.gw-contact-form-card textarea:focus {
+  outline: none;
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+}
 
-    /* Responsive */
-    @media (max-width: 768px) {
-        .gw-contact-container {
-            grid-template-columns: 1fr;
-            margin-top: 20px;
-        }
-        .gw-form-row {
-            grid-template-columns: 1fr;
-        }
-        .gw-phone-row {
-            grid-template-columns: 1fr;
-        }
-    }
+.gw-contact-form-card textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.gw-btn-submit {
+  background-color: #f39c12;
+  color: #ffffff;
+  border: none;
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gw-btn-submit:hover {
+  background-color: #1b5e20;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gw-contact-container {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+
+  .gw-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gw-phone-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
