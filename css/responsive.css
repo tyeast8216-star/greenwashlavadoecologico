@@ -187,7 +187,8 @@
   }
 
   .hero-banner6,
-  .hero-banner4 {
+  .hero-banner4,
+  .hero-banner5 {
     height: 56vw;
     min-height: 220px;
     max-height: 280px;
@@ -217,7 +218,8 @@
   }
 
   .hero-banner6,
-  .hero-banner4 {
+  .hero-banner4,
+  .hero-banner5 {
     min-height: 180px;
     max-height: 220px;
   }
