@@ -664,7 +664,8 @@ body p {
   animation-delay: 0.66s;
 }
 
-.slide.active .system-slide .text-section h1 {
+.slide.active .system-slide .text-section h1,
+.slide.active .system-slide .text-section h2 {
   animation: slideTextIn 700ms cubic-bezier(.22, .9, .26, 1) both;
   animation-delay: 0.9s;
 }
@@ -702,6 +703,7 @@ body p {
   color: #fff;
   font-weight: 700;
 }
+
 
 /* Animaciones para Slide 3: Stand Comercial (texto e imagen) */
 @keyframes standTextIn {
@@ -1414,7 +1416,7 @@ body p {
 .seccion-sistema {
   padding-top: 0;
   background-color: #fafafa;
-  margin-top: -60px;
+  margin-top: -40px;
 }
 
 /* Grid flexbox para las columnas */
@@ -1436,21 +1438,44 @@ body p {
   padding-left: 25px;
 }
 
+.sistema-imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.sistema-imagen {
+  flex: 1 1 280px;
+  max-width: 500px;
+}
+
 .sistema-imagen img {
   width: 100%;
   height: auto;
   border-radius: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   display: block;
 }
 
 /* Limitar tamaño en pantallas de escritorio y centrar la imagen */
 @media (min-width: 992px) {
+  .sistema-imagenes {
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .sistema-imagen {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 0;
+  }
+
   .seccion-sistema .sistema-imagen img {
     width: 100%;
-    max-width: 420px;
+    max-width: 100%;
     height: auto;
-    margin: 12px auto;
+    margin: 0;
     display: block;
   }
 }
@@ -1475,14 +1500,15 @@ body p {
 }
 
 .sistema-texto .divisor-verde {
-  width: 100px;
+  width: 120px;
   height: 4px;
   background-color: #23c823;
   margin: 0 0 20px 0;
+  margin-bottom: 40px;
 }
 
 .sistema-texto .divisor-verde2 {
-  width: 160px;
+  width: 310px;
   height: 4px;
   background-color: #23c823;
   margin: 0 0 20px 0;
@@ -1525,13 +1551,27 @@ body p {
   .sistema-texto p {
     text-align: left;
   }
+
+  .sistema-texto .divisor-verde {
+    width: 105px;
+    height: 4px;
+    background-color: #23c823;
+    margin: 0 0 20px 0;
+  }
+
+  .sistema-texto .divisor-verde2 {
+    width: 270px;
+    height: 4px;
+    background-color: #23c823;
+    margin: 0 0 20px 0;
+  }
 }
 
 
 /* Contenedor principal de la sección */
 .seccion-ancelave {
   max-width: 1200px;
-  margin: 60px auto;
+  margin: 10px auto;
   padding: 40px;
 }
 
@@ -1561,7 +1601,7 @@ body p {
 
 /* Línea verde decorativa debajo del título */
 .seccion-ancelave .divisor-verde {
-  width: 125px;
+  width: 145px;
   height: 4px;
   background-color: #17cb0d;
   margin-bottom: 30px;
@@ -1625,7 +1665,7 @@ body p {
 .enlace-web {
   color: #006644;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .enlace-web:hover {
@@ -1696,6 +1736,13 @@ body p {
     max-width: 100px;
     max-height: 200px;
     /* Centra el folleto en pantallas pequeñas */
+  }
+
+  .seccion-ancelave .divisor-verde {
+    width: 130px;
+    height: 4px;
+    background-color: #17cb0d;
+    margin-bottom: 30px;
   }
 
   .seccion-ancelave h2.titulo-principal {
@@ -2003,12 +2050,45 @@ body p {
   /* Ocupa todo el ancho disponible tras el padding */
 }
 
+.btn-tarjeta-categoria2 {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 10px 18px;
+  background-color: #62b132;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-tarjeta-categoria2:hover {
+  background-color: #4f9326;
+  color: #fff;
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  .btn-tarjeta-categoria2 {
+    display: none;
+  }
+}
+
 /* 6. Espaciado del SVG */
 .tarjeta-categoria2 svg {
   margin-bottom: 20px;
   /* Separa el icono del texto de abajo */
   display: block;
   /* Evita espacios fantasmas inferiores */
+}
+
+.tarjeta-categoria,
+.tarjeta-categoria:hover,
+.tarjeta-categoria:focus,
+.tarjeta-categoria:visited {
+  text-decoration: none;
 }
 
 .overlay-categoria h3 {
@@ -2019,6 +2099,7 @@ body p {
   text-align: center;
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 /* --- EFECTO HOVER (Animación al pasar el mouse) --- */
@@ -2027,6 +2108,52 @@ body p {
   /* Zoom sutil de la imagen */
 }
 
+@media (min-width: 993px) {
+  .tarjeta-categoria {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+  }
+
+  .tarjeta-categoria img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tarjeta-categoria .overlay-categoria {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, rgba(97, 177, 50, 0.95), rgba(31, 113, 100, 0.95));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .tarjeta-categoria .overlay-categoria h3 {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  .tarjeta-categoria .btn-tarjeta {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    display: inline-block;
+    margin: 0;
+  }
+}
 
 /* 4. El BOTÓN que vas a agregar en tu HTML (Oculto por defecto) */
 .tarjeta-categoria .btn-tarjeta {
@@ -2064,18 +2191,7 @@ body p {
    LA MAGIA DEL HOVER (INTERCAMBIO)
    =================================================== */
 
-/* Cuando pasas el mouse por la .tarjeta-categoria, oculta el texto */
-.tarjeta-categoria:hover h3,
-.tarjeta-categoria:hover .texto-encima {
-  opacity: 0;
-  visibility: hidden;
-}
-
-/* Cuando pasas el mouse por la .tarjeta-categoria, muestra el botón */
-.tarjeta-categoria:hover .btn-tarjeta {
-  opacity: 1;
-  visibility: visible;
-}
+/* El título permanece visible y el hover solo afecta al zoom de la imagen */
 
 /* --- DISEÑO RESPONSIVO (Móviles y Tablets) --- */
 @media (max-width: 992px) {
@@ -2280,6 +2396,10 @@ body p {
   font-weight: 300;
   margin-bottom: 30px;
   opacity: 0.9;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  padding-left: 30px;
 }
 
 /* Botón "Más información" */
@@ -2367,15 +2487,33 @@ body p {
   color: #000000;
 }
 
-/* Título principal */
-.process-title {
+/* Títulos de secciones */
+.process-section .process-title,
+.testimonios .process-title {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  margin-bottom: 30px;
   letter-spacing: 1px;
+  color: #000;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  font-family: 'Arial', sans-serif;
+  display: block;
 }
 
+.testimonios .linea-divisoria {
+  width: 200px;
+  height: 4px;
+  background-color: #23c823;
+}
+
+.process-content .linea-divisoria {
+  width: 670px;
+  height: 4px;
+  background-color: #23c823;
+  margin: 0px auto 40px auto;
+
+}
 /* Subtítulo */
 .process-subtitle {
   font-size: 18px;
@@ -2421,6 +2559,13 @@ body p {
     font-size: 15px;
     margin-bottom: 25px;
   }
+
+  .process-content .linea-divisoria {
+  width: 300px;
+  height: 4px;
+  background-color: #23c823;
+
+}
 }
 
 /* ===================================================
@@ -2811,7 +2956,24 @@ body p {
 }
 
 .contact_section .contact_heading h2 {
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #000;
+  margin: -40px 0 12px 0;
+  line-height: 1.2;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact_section .contact_heading .linea-divisoria {
+  width: 400px;
+  height: 4px;
+  background-color: #23c823;
+  margin: 0px auto 40px auto;
+}
+.contact_section .contact_heading p {
+  margin-top: 40px;
 }
 
 .contact_section form .form-control {
@@ -2826,6 +2988,39 @@ body p {
 
 .contact_section form .form-control#inputMessage {
   height: 120px;
+  padding-bottom: 30px;
+}
+
+.contact_section form .phone-input-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact_section form .phone-code-select {
+  flex: 0 0 110px;
+  max-width: 130px;
+  background-image: none;
+}
+
+.contact_section form .phone-input-group .form-control {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact_section .message-group {
+  position: relative;
+}
+
+.contact_section .message-counter {
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-size: 0.8rem;
+  color: #6c757d;
+  padding: 2px 6px;
+  border-radius: 4px;
+  pointer-events: none;
 }
 
 .contact_section form select.form-control {
@@ -2979,6 +3174,14 @@ body p {
   .final-section-map {
     height: 250px;
   }
+
+  
+.contact_section .contact_heading .linea-divisoria {
+  width: 300px;
+  height: 4px;
+  background-color: #23c823;
+  margin: 0px auto 40px auto;
+}
 }
 
 /* Contenedor Principal del Slider/Banner */
@@ -3036,6 +3239,14 @@ body p {
 .history-text-block {
   position: relative;
   z-index: 2;
+}
+
+.orla-img {
+  display: block;
+  width: min(220px, 100%);
+  height: auto;
+  margin: 14px 0 0;
+  border-radius: 12px;
 }
 
 .history-subtitle {
@@ -3676,6 +3887,33 @@ body p {
   font-size: 0.9rem;
   color: #ffffff;
   text-transform: uppercase;
+}
+
+@media (min-width: 993px) {
+  .system-slide .cylinders-section {
+    height: 360px;
+    gap: 24px;
+  }
+
+  .system-slide .cylinders-section .cylinder {
+    width: 92px;
+  }
+
+  .system-slide .cylinders-section .cylinder:nth-child(1) {
+    height: 300px !important;
+  }
+
+  .system-slide .cylinders-section .cylinder:nth-child(2) {
+    height: 250px !important;
+  }
+
+  .system-slide .cylinders-section .cylinder:nth-child(3) {
+    height: 200px !important;
+  }
+
+  .system-slide .cylinders-section .cylinder:nth-child(4) {
+    height: 150px !important;
+  }
 }
 
 @media (max-width: 992px) {
@@ -4493,8 +4731,8 @@ body p {
 }
 
 .linea-empresa2 {
-  width: 180px;
-  height: 3px;
+  width: 278px;
+  height: 4px;
   background-color: #23c823;
   /* Ajusta según el color de tu línea */
   margin: 10px 0 20px 0;
@@ -6722,6 +6960,11 @@ body.pdf-modal-open {
   gap: 20px;
   z-index: 1000;
   transition: transform 0.3s ease;
+  transform: translateY(100%);
+}
+
+.cookie-banner.visible {
+  transform: translateY(0);
 }
 
 .cookie-banner.hidden {

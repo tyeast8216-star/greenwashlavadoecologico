@@ -188,7 +188,7 @@
         <!-- Columna Izquierda: Video y Botón de PDF -->
         <div class="implantation-left">
           <div class="video-container">
-            <video controls poster="./images/greenwashabout.jpg">
+            <video controls controlsList="nodownload" poster="./images/greenwashabout.jpg" oncontextmenu="return false;">
               <source src="./videos/implantacion-negocio.mp4" type="video/mp4">
               Tu navegador no soporta la reproducción de videos.
             </video>
@@ -290,6 +290,65 @@
       </div>
     </div>
   </section>
+  <!-- BANNER DE COOKIES -->
+  <div id="cookieBanner" class="cookie-banner">
+    <div class="cookie-text">
+      <h3>🍪 Usamos cookies</h3>
+      <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios y analizar tu navegación. Puedes aceptar todas, rechazarlas o configurar tus preferencias.</p>
+    </div>
+    <div class="cookie-buttons">
+      <button class="btncookie btncookie-outline" id="btnConfig">Configurar</button>
+      <button class="btncookie btncookie-secondary" id="btnReject">Rechazar</button>
+      <button class="btncookie btncookie-primary" id="btnAcceptAll">Aceptar todas</button>
+    </div>
+  </div>
+
+  <!-- MODAL DE CONFIGURACIÓN -->
+  <div id="cookieModal" class="cookie-modal-overlay">
+    <div class="cookie-modal">
+      <div class="modal-header">
+        <h2>Configuración de Cookies</h2>
+        <button class="close-btn" id="btnCloseModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="cookie-option">
+          <div class="cookie-option-info">
+            <h4>Cookies Técnicas (Necesarias)</h4>
+            <p>Imprescindibles para el funcionamiento básico de la web. Siempre activas.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" checked disabled>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="cookie-option">
+          <div class="cookie-option-info">
+            <h4>Cookies de Análisis</h4>
+            <p>Nos ayudan a medir el tráfico y entender cómo interactúas con la página.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="analyticToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="cookie-option">
+          <div class="cookie-option-info">
+            <h4>Cookies de Publicidad</h4>
+            <p>Utilizadas para mostrarte anuncios relevantes basados en tus hábitos.</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="adsToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btncookie btncookie-outline" id="btnSavePreferences">Guardar mis preferencias</button>
+      </div>
+    </div>
+  </div>
   <!-- Pie de página (Footer) -->
   <footer class="site-footer">
     <div class="site-footer-container">
@@ -327,6 +386,7 @@
   </script>
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/cookies.js"></script>
 </body>
 
 </html>
