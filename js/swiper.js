@@ -2,10 +2,11 @@ const swiper = new Swiper('.timeline-swiper', {
   slidesPerView: 1.15,
   slidesPerGroup: 1,
   spaceBetween: 18,
-  loop: true,
+  loop: false,
   autoplay: {
     delay: 4000,
     disableOnInteraction: false,
+    stopOnLastSlide: true,
   },
   observer: true,
   observeParents: true,

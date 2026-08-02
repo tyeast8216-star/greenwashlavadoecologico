@@ -2029,9 +2029,9 @@ body p {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 3px;
-  border: 3px solid rgba(90, 245, 12, 0.343);
+  border: 3px solid rgba(87, 250, 5, 0.28);
   /* Te subí a 12px para que haga juego con el diseño moderno de la foto */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(21, 250, 5, 0.3);
 
   /* 3. El truco para centrar el SVG y alinear el texto */
   display: flex;
@@ -2044,11 +2044,43 @@ body p {
   margin: 0 auto;
 }
 
+
 /* 5. Aseguramos que el texto se mantenga alineado a la izquierda dentro de la tarjeta */
 .tarjeta-categoria2 p {
   text-align: left;
   width: 100%;
   /* Ocupa todo el ancho disponible tras el padding */
+}
+
+.btn-container882 {
+  display: flex;
+  align-items: center;      /* Alinea verticalmente al centro */
+  justify-content: space-between;  /* Centra horizontalmente en la tarjeta */
+  margin-top: 20px;             /* Espacio superior entre el texto y el botón */
+  width: 100%;                   /* Asegura que el contenedor ocupe todo el ancho disponible */
+  padding: 0 10px;              /* Distancia entre botón e imagen */
+}
+
+.iconos882{
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espacio entre los dos iconos */
+}
+.btn-container882 .btn-tarjeta {
+  display: inline-block;
+  width: auto;
+  margin: 0;                /* Cancela el margen que empuja la imagen abajo */
+}
+
+.btn-container882 img {
+  display: block;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .btn-container882 {
+    display: none !important;
+  }
 }
 
 .btn-tarjeta-categoria2 {
@@ -2897,6 +2929,12 @@ body p {
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.tarjeta .autor {
+  width: 100%;
+  text-align: left;
+  margin-top: 15px;
 }
 
 .tarjeta img {
@@ -4132,6 +4170,7 @@ body p {
     margin-top: 10px !important;
     transform: translateY(10px);
     max-height: 36px;
+    max-width: 40px;
     width: auto;
   }
 
@@ -4542,7 +4581,7 @@ body p {
   width: 100%;
   text-align: center;
   margin-bottom: 20px;
-  display: none;
+  display: block;
 }
 
 .banner-image-section img {
@@ -4551,12 +4590,6 @@ body p {
   height: auto;
   display: inline-block;
   border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-  .banner-image-section {
-    display: block;
-  }
 }
 
 .overlay-empresa {
@@ -6086,6 +6119,15 @@ body.pdf-modal-open {
   height: 250px;
   object-fit: cover;
   display: block;
+}
+
+.gw-image-caption {
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: #1b5e20;
+  background: #f6faf7;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
 @media (max-width: 768px) {
