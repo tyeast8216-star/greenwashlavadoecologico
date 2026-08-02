@@ -5857,7 +5857,7 @@ body.pdf-modal-open {
   height: 40vw;
   min-height: 200px;
   /* Altura mínima para pantallas muy pequeñas */
-  max-height: 400px;
+  max-height: 300px;
   /* Altura máxima para pantallas muy grandes */
   background-image: url('../images/localcomercial.jpg');
   /* Usa la imagen de tu archivo verbatim */
