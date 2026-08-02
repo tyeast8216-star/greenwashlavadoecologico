@@ -56,8 +56,8 @@
             </div>
             <div class="col-md-6 text-md-right d-none d-md-block">
               <div class="topbar-links">
-                <a href="#">ES</a>
-                <a href="#">FR</a>
+                <!--<a href="#">ES</a>
+                <a href="#">FR</a> -->
               </div>
             </div>
           </div>
@@ -464,7 +464,7 @@
           <input type="text" id="pdfNombre" name="nombre" required>
         </div>
         <div class="pdf-form-group">
-          <label for="pdfApellido">Apellido</label>
+          <label for="pdfApellido">Apellidos</label>
           <input type="text" id="pdfApellido" name="apellido" required>
         </div>
         <div class="pdf-form-group">
@@ -563,6 +563,18 @@
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/cookies.js"></script>
+  <script>
+    function toggleTopbarVisibility() {
+      var topbar = document.querySelector('.topbar');
+      if (!topbar) return;
+      var shouldHide = window.scrollY > 20;
+      topbar.classList.toggle('hide', shouldHide);
+    }
+
+    document.addEventListener('DOMContentLoaded', toggleTopbarVisibility);
+    window.addEventListener('scroll', toggleTopbarVisibility, { passive: true });
+    window.addEventListener('resize', toggleTopbarVisibility);
+  </script>
 </body>
 
 </html>
