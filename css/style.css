@@ -6651,6 +6651,16 @@ body.pdf-modal-open {
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+.blog-image-wrapper iframe,
+.blog-image-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
 
 .blog-card:hover .blog-image-wrapper img {
   transform: scale(1.05);
