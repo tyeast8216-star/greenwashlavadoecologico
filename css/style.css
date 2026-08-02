@@ -884,7 +884,7 @@ body p {
   border-radius: 50%;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
   z-index: 100001;
-  transition: transform 0.18s ease, box-shadow 0.18s ease, bottom 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .whatsapp-float:hover {
@@ -1187,8 +1187,8 @@ body p {
   position: fixed;
   right: 18px;
   bottom: 18px;
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background-color: #25d366;
   display: inline-flex;
@@ -1196,9 +1196,9 @@ body p {
   justify-content: center;
   color: #fff;
   text-decoration: none;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
   z-index: 11000;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .whatsapp-float:hover {
