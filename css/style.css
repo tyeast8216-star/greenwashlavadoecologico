@@ -194,7 +194,7 @@ body p {
   width: 200px;
   height: auto;
   margin: 0 auto;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .logo-header3 {
@@ -681,7 +681,7 @@ body p {
 }
 
 .interior-cylinder img {
-  max-width: 40px;
+  max-width: 60px;
   height: auto;
   margin-bottom: 6px;
 
@@ -2029,6 +2029,7 @@ body p {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 3px;
+  border: 1px solid rgba(90, 245, 12, 0.343);
   /* Te subí a 12px para que haga juego con el diseño moderno de la foto */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 
@@ -3556,7 +3557,7 @@ body p {
 }
 
 .title-main {
-  font-size: 4.5rem;
+  font-size: 3.2rem;
   font-weight: 800;
   text-transform: uppercase;
   line-height: 1.05;
@@ -3642,13 +3643,13 @@ body p {
 
 .hidro-text {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   width: 110px;
   transform: translate(-50%, -50%) rotate(-90deg);
   transform-origin: center;
   text-align: center;
-  font-size: 14px;
+  font-size: 20px;
   line-height: 1;
   white-space: nowrap;
   word-break: normal;
@@ -3668,13 +3669,13 @@ body p {
 
 .hidro-text2 {
   position: absolute;
-  top: 37%;
+  top: 45%;
   left: 50%;
   width: 110px;
   transform: translate(-50%, -50%) rotate(-90deg);
   transform-origin: center;
   text-align: center;
-  font-size: 14px;
+  font-size: 19px;
   line-height: 1;
   white-space: nowrap;
   word-break: normal;
@@ -3712,7 +3713,7 @@ body p {
 
 .text-section h1,
 .text-section h2 {
-  font-size: 3rem;
+  font-size: 3.07rem;
   font-weight: 800;
   line-height: 1.1;
   text-transform: uppercase;
