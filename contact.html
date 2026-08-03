@@ -222,6 +222,24 @@
           </div>
         </div>
 
+        <div id="gw-region-selects" class="gw-form-row d-none">
+          <div class="gw-form-group">
+            <label for="gw-provincia">Provincia</label>
+            <input type="text" id="gw-provincia" name="provincia" placeholder="Provincia" required>
+          </div>
+          <div class="gw-form-group">
+            <label for="gw-ciudad">Ciudad</label>
+            <input type="text" id="gw-ciudad" name="ciudad" placeholder="Ciudad" required>
+          </div>
+        </div>
+
+        <div id="gw-country-row" class="gw-form-row d-none">
+          <div class="gw-form-group">
+            <label for="gw-pais-internacional">País</label>
+            <input type="text" id="gw-pais-internacional" name="pais" placeholder="País" required>
+          </div>
+        </div>
+
         <div class="gw-form-row">
           <!-- E-mail -->
           <div class="gw-form-group" style="grid-column: 1 / -1;">
@@ -534,7 +552,40 @@
       topbar.classList.toggle('hide', shouldHide);
     }
 
-    document.addEventListener('DOMContentLoaded', toggleTopbarVisibility);
+    document.addEventListener('DOMContentLoaded', function() {
+      toggleTopbarVisibility();
+      var zonaSelect = document.getElementById('gw-zona');
+      var regionSelects = document.getElementById('gw-region-selects');
+      var countryRow = document.getElementById('gw-country-row');
+      var provinciaInput = document.getElementById('gw-provincia');
+      var ciudadInput = document.getElementById('gw-ciudad');
+      var paisInput = document.getElementById('gw-pais-internacional');
+
+      function updateRegionVisibility() {
+        var selectedZone = zonaSelect.value;
+        var showSpainFields = selectedZone === 'espana';
+        var showInternationalField = selectedZone === 'internacional';
+
+        regionSelects.classList.toggle('d-none', !showSpainFields);
+        countryRow.classList.toggle('d-none', !showInternationalField);
+
+        provinciaInput.required = showSpainFields;
+        ciudadInput.required = showSpainFields;
+        paisInput.required = showInternationalField;
+
+        if (!showSpainFields) {
+          provinciaInput.value = '';
+          ciudadInput.value = '';
+        }
+        if (!showInternationalField) {
+          paisInput.value = '';
+        }
+      }
+
+      zonaSelect.addEventListener('change', updateRegionVisibility);
+      updateRegionVisibility();
+      toggleTopbarVisibility();
+    });
     window.addEventListener('scroll', toggleTopbarVisibility, { passive: true });
     window.addEventListener('resize', toggleTopbarVisibility);
   </script>

@@ -4587,9 +4587,17 @@ body p {
 .banner-image-section img {
   width: min(100%, 350px);
   max-width: 100%;
+  margin-top: -30px;
   height: auto;
   display: inline-block;
   border-radius: 8px;
+}
+
+@media (min-width: 992px) {
+  .banner-image-section img {
+    width: min(100%, 650px);
+    margin-bottom: 40px;
+  }
 }
 
 .overlay-empresa {
