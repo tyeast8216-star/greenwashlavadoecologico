@@ -228,8 +228,8 @@
             <input type="text" id="gw-provincia" name="provincia" placeholder="Provincia" required>
           </div>
           <div class="gw-form-group">
-            <label for="gw-ciudad">Ciudad</label>
-            <input type="text" id="gw-ciudad" name="ciudad" placeholder="Ciudad" required>
+            <label for="gw-poblacion">Población</label>
+            <input type="text" id="gw-poblacion" name="poblacion" placeholder="Poblacion" required>
           </div>
         </div>
 
@@ -558,7 +558,7 @@
       var regionSelects = document.getElementById('gw-region-selects');
       var countryRow = document.getElementById('gw-country-row');
       var provinciaInput = document.getElementById('gw-provincia');
-      var ciudadInput = document.getElementById('gw-ciudad');
+      var poblacionInput = document.getElementById('gw-poblacion');
       var paisInput = document.getElementById('gw-pais-internacional');
 
       function updateRegionVisibility() {
@@ -570,12 +570,12 @@
         countryRow.classList.toggle('d-none', !showInternationalField);
 
         provinciaInput.required = showSpainFields;
-        ciudadInput.required = showSpainFields;
+        poblacionInput.required = showSpainFields;
         paisInput.required = showInternationalField;
 
         if (!showSpainFields) {
           provinciaInput.value = '';
-          ciudadInput.value = '';
+          poblacionInput.value = '';
         }
         if (!showInternationalField) {
           paisInput.value = '';
