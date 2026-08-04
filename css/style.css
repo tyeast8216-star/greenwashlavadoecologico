@@ -307,11 +307,13 @@ body p {
 }
 
 .new-nav .navbar-nav .nav-link:hover,
-.new-nav .navbar-nav .nav-link.active {
+.new-nav .navbar-nav .nav-link.active,
+.new-nav .navbar-nav .nav-item.active .nav-link {
   color: #3eb843;
 }
 
-.new-nav .navbar-nav .nav-link.active {
+.new-nav .navbar-nav .nav-link.active,
+.new-nav .navbar-nav .nav-item.active .nav-link {
   font-weight: 600;
   padding: 0 16px;
   text-transform: uppercase;
@@ -528,7 +530,8 @@ body p {
   }
 
   .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link.active {
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-item.active .nav-link {
     background: #f3fef5;
     color: #1f6b47;
   }
@@ -1853,7 +1856,7 @@ body p {
   color: #ffffff;
   font-weight: 300;
   padding: 8px 0px;
-  font-size: 2.49rem;
+  font-size: 2.30rem;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
@@ -2057,9 +2060,9 @@ body p {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 3px;
-  border: 3px solid rgba(87, 250, 5, 0.068);
+  border: 3px solid rgba(87, 250, 5, 0.354);
   /* Te subí a 12px para que haga juego con el diseño moderno de la foto */
-  box-shadow: 10px 15px 15px rgba(21, 250, 5, 0.143);
+  box-shadow: 0px 0px 30px rgba(21, 250, 5, 0.291);
 
   /* 3. El truco para centrar el SVG y alinear el texto */
   display: flex;
@@ -2835,6 +2838,13 @@ body p {
   border-color: #f9fcfb;
 }
 
+.linea-divisoria442 {
+  width: 34rem;
+  height: 4px;
+  background-color: #1ece2d;
+  /* El azul de tu tienda */
+  margin: 0 auto 20px auto;
+}
 .linea-divisoria {
   width: 37rem;
   height: 4px;
@@ -2842,6 +2852,7 @@ body p {
   /* El azul de tu tienda */
   margin: 0 auto 20px auto;
 }
+
 
 .linea-divisoriap {
   font-size: 16px;
@@ -7694,10 +7705,17 @@ a.gw-info-item:focus {
   .gw-phone-row {
     grid-template-columns: 1fr;
   }
+  .linea-divisoria442 {
+  width: 18rem;
+}
 }
 
 /* VERSION PARA TABLET IPAD MINI */
 @media screen and (min-width: 768px) and (max-width: 998px) {
+  .seccion-franquicia{
+    margin-right: 10px;
+    margin-left: 10px;
+  }
   .system-slide .text-section p {
     text-align: center;
     margin: 0 auto;
@@ -7884,6 +7902,17 @@ a.gw-info-item:focus {
   .hero_area {
     height: 90vh;
   }
+
+  /* 1. El contenedor del Banner Principal */
+.franquicia-master {
+  background-image: url('../images/franquiciamaster1280.png');
+}
 }
 
+@media (min-width: 1024px) and (max-width: 1279px) {
+  /* 1. El contenedor del Banner Principal */
+.franquicia-master {
+  background-image: url('../images/franquiciamaster1024.png');
+}
+}
 /*# sourceMappingURL=style.css.map */
