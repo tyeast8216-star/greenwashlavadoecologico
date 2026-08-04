@@ -80,7 +80,20 @@
     });
   }
 
+  function setActiveNavbarLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.new-nav .navbar-nav .nav-link');
+
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute('href').split('/').pop();
+      if (linkPage === currentPage || (currentPage === 'index.html' && linkPage === 'index.html')) {
+        link.classList.add('active');
+      }
+    });
+  }
+
   window.addEventListener('DOMContentLoaded', () => {
     applyConsentState();
+    setActiveNavbarLink();
   });
 })();

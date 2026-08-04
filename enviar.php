@@ -1,4 +1,109 @@
 <?php
+function smtp_send($host, $port, $username, $password, $secure, $from, $to, $subject, $body, $additionalHeaders = []) {
+    $transportHost = $host;
+    $transportPort = $port;
+    $protocol = '';
+    if ($secure === 'ssl') {
+        $protocol = 'ssl://';
+    }
+
+    $connection = stream_socket_client($protocol . $transportHost . ':' . $transportPort, $errno, $errstr, 30);
+    if (!$connection) {
+        return false;
+    }
+    stream_set_timeout($connection, 30);
+
+    $getResponse = function () use ($connection) {
+        $response = '';
+        while (($line = fgets($connection, 515)) !== false) {
+            $response .= $line;
+            if (isset($line[3]) && $line[3] === ' ') {
+                break;
+            }
+        }
+        return $response;
+    };
+
+    $sendCommand = function ($command, $expectedCodes = [250]) use ($connection, $getResponse) {
+        fwrite($connection, $command . "\r\n");
+        $response = $getResponse();
+        $code = (int) substr($response, 0, 3);
+        return in_array($code, $expectedCodes, true);
+    };
+
+    $initial = $getResponse();
+    if (strpos($initial, '220') !== 0) {
+        fclose($connection);
+        return false;
+    }
+
+    $hostname = gethostname() ?: 'localhost';
+    if (!$sendCommand("EHLO $hostname", [250])) {
+        fclose($connection);
+        return false;
+    }
+
+    if ($secure === 'tls') {
+        if (!$sendCommand('STARTTLS', [220])) {
+            fclose($connection);
+            return false;
+        }
+        if (!stream_socket_enable_crypto($connection, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+            fclose($connection);
+            return false;
+        }
+        if (!$sendCommand("EHLO $hostname", [250])) {
+            fclose($connection);
+            return false;
+        }
+    }
+
+    if ($username !== '') {
+        if (!$sendCommand('AUTH LOGIN', [334])) {
+            fclose($connection);
+            return false;
+        }
+        if (!$sendCommand(base64_encode($username), [334])) {
+            fclose($connection);
+            return false;
+        }
+        if (!$sendCommand(base64_encode($password), [235])) {
+            fclose($connection);
+            return false;
+        }
+    }
+
+    if (!$sendCommand("MAIL FROM:<$from>", [250])) {
+        fclose($connection);
+        return false;
+    }
+    if (!$sendCommand("RCPT TO:<$to>", [250, 251])) {
+        fclose($connection);
+        return false;
+    }
+    if (!$sendCommand('DATA', [354])) {
+        fclose($connection);
+        return false;
+    }
+
+    $headers = array_merge([
+        'From: ' . $from,
+        'Reply-To: ' . $from,
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Subject: ' . $subject,
+    ], $additionalHeaders);
+
+    $message = implode("\r\n", $headers) . "\r\n\r\n" . $body . "\r\n.";
+    fwrite($connection, $message . "\r\n");
+    $response = $getResponse();
+    $code = (int) substr($response, 0, 3);
+    $sendCommand('QUIT', [221]);
+    fclose($connection);
+
+    return $code === 250;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = trim($_POST['nombre'] ?? '');
     $apellidos = trim($_POST['apellidos'] ?? '');
@@ -31,11 +136,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     $cuerpo .= "Mensaje:\n$mensaje\n";
 
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $smtpHost = 'smtp.tuservidor.com';
+    $smtpPort = 587;
+    $smtpUser = 'usuario@tudominio.com';
+    $smtpPass = 'tu_contraseña';
+    $smtpSecure = 'tls'; // 'tls', 'ssl' o ''
+    $smtpFrom = 'info@greenwash.es';
 
-    mail($destinatario, $asunto, $cuerpo, $headers);
+    $sent = smtp_send(
+        $smtpHost,
+        $smtpPort,
+        $smtpUser,
+        $smtpPass,
+        $smtpSecure,
+        $smtpFrom,
+        $destinatario,
+        $asunto,
+        $cuerpo,
+        [
+            'Reply-To: ' . $email,
+        ]
+    );
+
+    $mensajeEnviado = $sent ? '¡Mensaje enviado correctamente!' : 'No se pudo enviar el mensaje. Por favor, inténtalo más tarde.';
 
     echo '<!DOCTYPE html>';
     echo '<html lang="es">';
@@ -47,8 +170,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo '</head>';
     echo '<body>';
     echo '  <div class="box">';
-    echo '    <h2>¡Mensaje enviado correctamente!</h2>';
-    echo '    <p>Gracias por contactar con Green Wash. Nos pondremos en contacto contigo pronto.</p>';
+    echo '    <h2>' . htmlspecialchars($mensajeEnviado, ENT_QUOTES, 'UTF-8') . '</h2>';
+    if (!$sent) {
+        echo '    <p>Hubo un problema al enviar el correo. Por favor, revisa la configuración SMTP.</p>';
+    } else {
+        echo '    <p>Gracias por contactar con Green Wash. Nos pondremos en contacto contigo pronto.</p>';
+    }
     echo '    <a class="btn" href="index.html">Volver al inicio</a>';
     echo '  </div>';
     echo '</body>';

@@ -438,12 +438,14 @@
         del sector, por su vocación internacional y que apuesta por desarrollar un auténtico sistema de franquicias
         fuera de sus fronteras con las mismas garantías de servicio y de apoyo que ya ofrece en España.</p>
       <div class="video-contenedor">
-        <!-- Reemplaza 'video1.mp4' por tu archivo o usa una etiqueta <iframe> si es de YouTube -->
-        <video controls controlsList="nodownload" playsinline webkit-playsinline poster="./images/greenwashabout.jpg"
-          oncontextmenu="return false;">
-          <source src="./videos/video5.mp4" type="video/mp4">
-          Tu navegador no soporta este video.
-        </video>
+            <!-- Cabecera del vídeo -->
+            <div class="video-header">Propuesta comercial</div>
+            <!-- Reemplaza 'video1.mp4' por tu archivo o usa una etiqueta <iframe> si es de YouTube -->
+            <video controls controlsList="nodownload" playsinline webkit-playsinline poster="./images/greenwashabout.jpg"
+              oncontextmenu="return false;">
+              <source src="./videos/video5.mp4" type="video/mp4">
+              Tu navegador no soporta este video.
+            </video>
       </div>
       <a href="franquiciamaster.html" class="btn-franquicia">Leer más</a>
     </div>
@@ -468,7 +470,7 @@
 
       <!-- Bloque Video 2 -->
       <div class="video-card">
-        <h2 class="video-title">AHORRO DE AGUA</h2>
+        <h2 class="video-title2">AHORRO DE AGUA</h2>
         <div class="video-wrapper">
           <!-- Reemplaza 'video2.mp4' por tu archivo -->
           <video controls controlsList="nodownload" playsinline webkit-playsinline poster="./images/poster2.png"
@@ -521,39 +523,38 @@
       <!-- Tarjeta 1 -->
       <article class="tarjeta">
         <div class="icono-comillas">❝</div>
-        <img src="./images/client3.png" alt="Foto Franquiciado">
+        <img src="./images/cliente1index.png" alt="Foto Franquiciado">
         <p>Desde el principio la atención fue muy cercana y transparente. Ellos llevaron a cabo directamente la
           negociación con el centro comercial y me consiguieron las mejores condiciones posibles.
 
           Durante el curso de formación aprendí todo lo necesario y ante cualquier duda tienen profesionales que con una
           simple llamada te echan una mano en aspectos comerciales, técnicos, informáticos…</p>
-        <p class="autor"><strong>Justo García</strong><br>Franquiciado, <strong>Green Wash</strong> Valladolid</p>
+        <p class="autor"><strong>Javier García.</strong><br>Franquiciado, <strong>Green Wash</strong> Madrid</p>
       </article>
       <!-- Repite este bloque para las otras tarjetas -->
       <!-- Tarjeta 1 -->
       <article class="tarjeta">
         <div class="icono-comillas">❝</div>
-        <img src="./images/client3.png" alt="Foto Franquiciado">
+        <img src="./images/cliente2index.png" alt="Foto Franquiciado">
         <p>Estamos muy contentos con la franquicia <strong>Green Wash</strong>
 
           Su software de gestión te permite controlar a distancia lo que está ocurriendo en tu negocio.
 
           Yo empecé montando un centro y ahora cuento con dos.</p>
-        <p class="autor"><strong>Olga Vianney Mamani Callisaya</strong><br>Franquiciada, Green Wash C.C. Maquinista y
-          C.C. Splau</p>
+        <p class="autor"><strong>Olga Vianney</strong><br>Franquiciada, <strong>Green Wash</strong> Barcelona</p>
       </article>
       <!-- Repite este bloque para las otras tarjetas -->
       <!-- Tarjeta 1 -->
       <article class="tarjeta">
         <div class="icono-comillas">❝</div>
-        <img src="./images/client3.png" alt="Foto Franquiciado">
+        <img src="./images/cliente3index.png" alt="Foto Franquiciado">
         <p>Valoración siempre buena, utilizamos buenos productos con un acabado perfecto con un método de trabajo
           optimo.
 
           La mejor calidad de cara al cliente con una alta fidelización.
 
           Siempre contando con el soporte de la central en cualquier duda o necesidad eventual.</p>
-        <p class="autor"><strong>Cristian Cabrera Fenoy</strong><br>Franquiciado, Green Wash Arenas Barcelona</p>
+        <p class="autor"><strong>Pedro Leonardo Riveros</strong><br>Franquiciado, <strong>Green Wash</strong> Canarias</p>
       </article>
       <!-- Repite este bloque para las otras tarjetas -->
     </div>
@@ -568,15 +569,20 @@
       </p>
     </div>
     <div class="container">
-      <form>
+      <form action="enviar.php" method="post">
+        <input type="hidden" name="apellidos" value="" />
+        <input type="hidden" name="zona" value="" />
+        <input type="hidden" name="provincia" value="" />
+        <input type="hidden" name="ciudad" value="" />
+        <input type="hidden" name="pais" value="" />
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputName4">Nombre/Apellidos</label>
-            <input type="text" class="form-control" id="inputName4" />
+            <input type="text" class="form-control" id="inputName4" name="nombre" />
           </div>
           <div class="form-group col-md-6">
             <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" />
+            <input type="email" class="form-control" id="inputEmail4" name="email" />
           </div>
 
         </div>
@@ -584,7 +590,7 @@
           <div class="form-group col-md-6">
             <label for="inputNumber4">Número de teléfono</label>
             <div class="phone-input-group">
-              <select class="form-control phone-code-select" id="countryCodeSelect" aria-label="Código de país">
+              <select class="form-control phone-code-select" id="countryCodeSelect" name="codigo_pais" aria-label="Código de país">
                 <option value="+34">+34 España</option>
                 <option value="+93">+93 Afganistán</option>
                 <option value="+358">+358 Aland Islands / Finlandia</option>
@@ -778,12 +784,12 @@
                 <option value="+260">+260 Zambia</option>
                 <option value="+263">+263 Zimbabue</option>
               </select>
-              <input type="tel" class="form-control" id="inputNumber4" maxlength="12" />
+              <input type="tel" class="form-control" id="inputNumber4" name="telefono" maxlength="12" />
             </div>
           </div>
           <div class="form-group col-md-6">
             <label for="inputState">Seleccionar modalidad</label>
-            <select id="inputState" class="form-control">
+            <select id="inputState" class="form-control" name="franquicia">
               <option selected=""></option>
               <option>Parking Subterraneo</option>
               <option>Local / Industrial</option>
@@ -795,7 +801,7 @@
         </div>
         <div class="form-group message-group">
           <label for="inputMessage">Mensaje</label>
-          <input type="text" class="form-control" id="inputMessage" placeholder="" maxlength="1000" />
+          <input type="text" class="form-control" id="inputMessage" name="mensaje" placeholder="" maxlength="1000" />
           <small id="messageCounter" class="message-counter">0 / 1000 caracteres</small>
         </div>
     </div>

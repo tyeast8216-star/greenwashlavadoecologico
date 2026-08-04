@@ -201,7 +201,8 @@ body p {
   display: block;
   width: 100px;
   height: auto;
-  margin: 0 auto 20px 0;
+  margin: 0 auto 15px 0;
+  margin-right: -15px;
   opacity: 1;
   transform: translateY(0) scale(1);
   transition: opacity 0.35s ease, transform 0.35s ease;
@@ -301,17 +302,24 @@ body p {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-color: #06bf34;
-  /* Color naranja */
   text-decoration-thickness: 3px;
-  /* Grosor de la línea */
   text-underline-offset: 40px;
-  /* Separación del texto */
 }
-
 
 .new-nav .navbar-nav .nav-link:hover,
 .new-nav .navbar-nav .nav-link.active {
   color: #3eb843;
+}
+
+.new-nav .navbar-nav .nav-link.active {
+  font-weight: 600;
+  padding: 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: underline;
+  text-decoration-color: #06bf34;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 40px;
 }
 
 .new-nav .navbar-toggler {
@@ -1326,7 +1334,7 @@ body p {
 }
 
 .categorias-header .linea-divisoria {
-  width: 43rem;
+  width: 34rem;
   height: 4px;
   background-color: #1ece2d;
   /* El azul de tu tienda */
@@ -1665,7 +1673,7 @@ body p {
 .enlace-web {
   color: #006644;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 23px;
 }
 
 .enlace-web:hover {
@@ -1814,24 +1822,38 @@ body p {
   position: relative;
   width: 100%;
   max-width: 500px;
-  /* Ancho máximo similar al diseño original */
   margin: 0 auto;
-  /* Fondo blanco mientras pones el vídeo o si carga */
-  overflow: hidden;
-  /* Proporción de 16:9 para vídeos */
-  aspect-ratio: 16 / 9;
+  overflow: visible;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
 }
 
 /* El elemento de video en sí */
 .video-contenedor video,
 .video-contenedor iframe {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
+}
+
+/* Encabezado fijo sobre el vídeo que ocupa el mismo ancho */
+.video-contenedor {
+  position: relative;
+}
+.video-contenedor .video-header {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  padding: 8px 0px;
+  font-size: 2.49rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 /* ==========================================
@@ -1846,6 +1868,9 @@ body p {
     font-size: 22px;
   }
 
+  .video-contenedor .video-header {
+  font-size: 1.87rem;
+}
   .seccion-aviso p {
     font-size: 14px;
     margin-bottom: 20px;
@@ -2029,9 +2054,9 @@ body p {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 3px;
-  border: 3px solid rgba(87, 250, 5, 0.146);
+  border: 3px solid rgba(87, 250, 5, 0.068);
   /* Te subí a 12px para que haga juego con el diseño moderno de la foto */
-  box-shadow: 0 4px 15px rgba(21, 250, 5, 0.065);
+  box-shadow: 10px 15px 15px rgba(21, 250, 5, 0.143);
 
   /* 3. El truco para centrar el SVG y alinear el texto */
   display: flex;
@@ -2154,7 +2179,7 @@ body p {
 
   .tarjeta-categoria img {
     width: 100%;
-    height: 230px;
+    height: 250px;
     object-fit: cover;
     display: block;
   }
@@ -2285,7 +2310,7 @@ body p {
 
 /* Estilos de los Títulos */
 .video-title {
-  color: #1b5e20;
+  color: #000000;
   font-size: clamp(18px, 2.2vw, 24px);
   font-weight: 800;
   text-transform: uppercase;
@@ -2303,11 +2328,35 @@ body p {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 120px;
+  width: 307px;
   height: 3px;
-  background-color: #000000;
+  background-color: rgb(30, 206, 45);;
 }
 
+/* Estilos de los Títulos */
+.video-title2 {
+  color: #000000;
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Línea decorativa debajo del título */
+.video-title2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 255px;
+  height: 3px;
+  background-color: rgb(30, 206, 45);;
+}
 /* Contenedor del video para control de proporciones y bordes */
 .video-wrapper {
   width: 100%;
@@ -2366,6 +2415,15 @@ body p {
     margin-top: 12px;
     border-radius: 6px;
   }
+
+  /* Línea decorativa debajo del título */
+.video-title2::after {
+  width: 190px;
+}
+  /* Línea decorativa debajo del título */
+.video-title::after {
+  width: 230px;
+}
 }
 
 
@@ -2535,13 +2593,13 @@ body p {
 }
 
 .testimonios .linea-divisoria {
-  width: 200px;
+  width: 900px !important;
   height: 4px;
   background-color: #23c823;
 }
 
 .process-content .linea-divisoria {
-  width: 670px;
+  width: 720px;
   height: 4px;
   background-color: #23c823;
   margin: 0px auto 40px auto;
@@ -2597,7 +2655,12 @@ body p {
   width: 300px;
   height: 4px;
   background-color: #23c823;
+  }
 
+  .testimonios .linea-divisoria {
+  width: 350px !important;
+  height: 4px;
+  background-color: #23c823;
 }
 }
 
@@ -3006,7 +3069,7 @@ body p {
 }
 
 .contact_section .contact_heading .linea-divisoria {
-  width: 400px;
+  width: 630px;
   height: 4px;
   background-color: #23c823;
   margin: 0px auto 40px auto;
@@ -6113,6 +6176,22 @@ body.pdf-modal-open {
   object-fit: cover;
 }
 
+/* Figura con pie de foto para las imágenes de la sección industrial */
+.image-figure {
+  margin: 0;
+}
+.image-figure img {
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+}
+.figure-caption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555555;
+  text-align: center;
+}
+
 /* Columna derecha: Contenido de texto */
 .content-column {
   flex: 1.2;
@@ -6278,17 +6357,17 @@ body.pdf-modal-open {
 
 .franquiciados-titulo-container h2 {
   font-size: 24px;
-  color: #007a4d;
+  color: #000000;
   text-transform: uppercase;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .titulo-subrayado-gw {
-  width: 450px;
+  width: 695px;
   max-width: 80%;
   height: 3px;
-  background-color: #007a4d;
+  background-color: #1ece2d;
   margin: 0 auto;
 }
 
@@ -6686,7 +6765,7 @@ body.pdf-modal-open {
 
 .blog-subtitle {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: 2rem;
   font-weight: 600;
   color: #0066cc;
   text-transform: uppercase;
@@ -6832,6 +6911,9 @@ body.pdf-modal-open {
     grid-template-columns: 1fr;
   }
 
+  .blog-subtitle {
+  font-size: 1rem;
+  }
   .blog-header h2 {
     font-size: 1.8rem;
   }
@@ -7001,12 +7083,26 @@ body.pdf-modal-open {
   }
 }
 
+.orla1992{
+  width:150px;
+  height:180px;
+}
+.instagramlogo{
+  width: 40px;
+  height: 40px;
+}
+
+.logo-instagram{
+display: flex;
+justify-content: center;
+gap: 10px;
+}
 .instagramfeed {
   margin-bottom: 40px;
 }
 
 .instagram-section {
-  padding: 80px 20px;
+  padding: 0px 20px;
 }
 
 /* Estilos exclusivos para el contenedor principal */
@@ -7059,8 +7155,7 @@ body.pdf-modal-open {
 .franquiciamas-footer {
   text-align: center;
   padding: 40px 0px;
-  background-color: #fafafa;
-  border-top: 1px solid #eee;
+  background-color: #ffff;
   font-family: Arial, sans-serif;
 }
 
@@ -7076,9 +7171,8 @@ body.pdf-modal-open {
 }
 
 .franquiciamas-footer .dossier-card img {
-  width: 120px;
+  width: 230px;
   height: auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .franquiciamas-footer .dossier-card p {

@@ -46,7 +46,7 @@
           <div class="row align-items-center">
             <div class="col-md-6">
               <div class="topbar-info">
-               <!--  <svg xmlns="http://www.w3.org/2000/svg"
+                <!--  <svg xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512">!Font Awesome Free v7.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.
                   <path
                     d="M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z" />
@@ -153,19 +153,21 @@
     <div class="map-section">
       <!-- Reemplaza la ruta por tu imagen real -->
       <img src="./images/mapaconpaises.png" alt="Mapa mundial de presencia de franquicias">
+      <!-- Sección Inferior (Opcional, incluye el llamado a la acción y el dossier) -->
+      <div class="franquiciamas-footer">
+        <h2>Únase a la franquicia líder en lavado ecológico.<br>¡Ahora es el momento perfecto!</h2>
+        <div class="dossier-card">
+          <!-- Reemplaza la ruta por tu imagen real -->
+          <img src="./images/dossierfranquiciamaster.png" alt="Dossier Franquicia Máster">
+          <p>Dossier Franquicia Máster</p>
+        </div>
+      </div>
     </div>
-    
+
+
   </div>
 
-  <!-- Sección Inferior (Opcional, incluye el llamado a la acción y el dossier) -->
-  <div class="franquiciamas-footer">
-    <h2>Únase a la franquicia líder en lavado ecológico.<br>¡Ahora es el momento perfecto!</h2>
-    <div class="dossier-card">
-      <!-- Reemplaza la ruta por tu imagen real -->
-      <img src="./images/dossierfranquiciamaster.jpg" alt="Dossier Franquicia Máster">
-      <p>Dossier Franquicia Máster</p>
-    </div>
-  </div>
+
 
   <!-- Barra Verde de Llamada a la Acción -->
   <section class="green-promo-bar2">
@@ -188,12 +190,13 @@
         <!-- Columna Izquierda: Video y Botón de PDF -->
         <div class="implantation-left">
           <div class="video-container">
-            <video controls controlsList="nodownload" poster="./images/greenwashabout.jpg" oncontextmenu="return false;">
+            <video controls controlsList="nodownload" poster="./images/greenwashabout.jpg"
+              oncontextmenu="return false;">
               <source src="./videos/implantacion-negocio.mp4" type="video/mp4">
               Tu navegador no soporta la reproducción de videos.
             </video>
           </div>
-          <a href="./docs/implantacion-negocio.pdf" class="btn-download-pdf" download>
+          <a href="#" class="btn-download-pdf" id="btnOpenPdfModal">
             <span class="pdf-icon">📥</span> Descargar PDF
           </a>
         </div>
@@ -294,7 +297,8 @@
   <div id="cookieBanner" class="cookie-banner">
     <div class="cookie-text">
       <h3>🍪 Usamos cookies</h3>
-      <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios y analizar tu navegación. Puedes aceptar todas, rechazarlas o configurar tus preferencias.</p>
+      <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios y analizar tu navegación. Puedes
+        aceptar todas, rechazarlas o configurar tus preferencias.</p>
     </div>
     <div class="cookie-buttons">
       <button class="btncookie btncookie-outline" id="btnConfig">Configurar</button>
@@ -358,7 +362,7 @@
         <p>Green Wash - Lavado Ecologico © 2026. Todos los derechos reservados.</p>
       </div>
 
-       <!-- Derecha: Enlaces Legales -->
+      <!-- Derecha: Enlaces Legales -->
       <div class="site-footer-links">
         <a href="index.html">Inicio</a>
         <a href="avisolegal.html">Aviso Legal</a>
@@ -384,6 +388,113 @@
       });
     });
   </script>
+  <div class="pdf-modal-overlay" id="pdfModalOverlay" aria-hidden="true">
+    <div class="pdf-modal" role="dialog" aria-modal="true" aria-labelledby="pdfModalTitle">
+      <button class="pdf-modal-close" id="pdfModalClose" aria-label="Cerrar">×</button>
+      <h3 id="pdfModalTitle">Solicita el dossier</h3>
+      <p>Completa tus datos y te enviaremos la información por WhatsApp.</p>
+      <form id="pdfDownloadForm" novalidate>
+        <div class="pdf-form-group">
+          <label for="pdfNombre">Nombre</label>
+          <input type="text" id="pdfNombre" name="nombre" required>
+        </div>
+        <div class="pdf-form-group">
+          <label for="pdfApellido">Apellidos</label>
+          <input type="text" id="pdfApellido" name="apellido" required>
+        </div>
+        <div class="pdf-form-group">
+          <label for="pdfTelefono">Teléfono</label>
+          <input type="tel" id="pdfTelefono" name="telefono" required>
+        </div>
+        <div class="pdf-form-group">
+          <label for="pdfCiudad">Ciudad</label>
+          <input type="text" id="pdfCiudad" name="ciudad" required>
+        </div>
+        <button type="submit" class="btn-download-pdf btn-download-submit">Enviar por WhatsApp</button>
+      </form>
+      <p id="pdfFormMessage" class="pdf-form-message" aria-live="polite"></p>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const modal = document.getElementById('pdfModalOverlay');
+      const openBtn = document.getElementById('btnOpenPdfModal');
+      const closeBtn = document.getElementById('pdfModalClose');
+      const form = document.getElementById('pdfDownloadForm');
+      const message = document.getElementById('pdfFormMessage');
+      const whatsappNumber = '34603299299';
+
+      function openModal() {
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('pdf-modal-open');
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('pdf-modal-open');
+        form.reset();
+        if (message) message.textContent = '';
+      }
+
+      if (openBtn) {
+        openBtn.addEventListener('click', function (event) {
+          event.preventDefault();
+          openModal();
+        });
+      }
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', function (event) {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const nombre = form.nombre.value.trim();
+          const apellido = form.apellido.value.trim();
+          const telefono = form.telefono.value.trim();
+          const ciudad = form.ciudad.value.trim();
+
+          if (!nombre || !apellido || !telefono || !ciudad) {
+            if (message) {
+              message.textContent = 'Por favor, completa todos los campos.';
+              message.style.color = '#b91c1c';
+            }
+            return;
+          }
+
+          const mensaje = `Hola, quiero recibir información del dossier de Parking Subterráneo Low Cost. Nombre: ${nombre} ${apellido}. Teléfono: ${telefono}. Ciudad: ${ciudad}.`;
+          const whatsappUrl = `https://api.whatsapp.com/share?phone=${whatsappNumber}&text=${encodeURIComponent(mensaje)}`;
+          window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
+          if (message) {
+            message.textContent = 'Mensaje enviado por WhatsApp. Gracias.';
+            message.style.color = '#166534';
+          }
+
+          setTimeout(closeModal, 1000);
+        });
+      }
+    });
+  </script> 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="js/cookies.js"></script>
