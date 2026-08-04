@@ -69,7 +69,7 @@ body p {
 .hero_area {
   position: relative;
   overflow: hidden;
-  height: 120vh;
+  height: 110vh;
   background: -webkit-gradient(linear, left top, right top, from(#ffffff), to(#ffffff));
   background: linear-gradient(to right, #ffffff, #ffffff);
 }
@@ -774,6 +774,7 @@ body p {
   animation-delay: 0.52s;
 }
 
+
 /* Ajustes móviles: reducir tamaño de imagen y texto para pantallas pequeñas */
 @media (max-width: 768px) {
 
@@ -1334,7 +1335,7 @@ body p {
 }
 
 .categorias-header .linea-divisoria {
-  width: 34rem;
+  width: 43rem;
   height: 4px;
   background-color: #1ece2d;
   /* El azul de tu tienda */
@@ -1844,6 +1845,7 @@ body p {
 .video-contenedor {
   position: relative;
 }
+
 .video-contenedor .video-header {
   width: 100%;
   box-sizing: border-box;
@@ -1869,8 +1871,9 @@ body p {
   }
 
   .video-contenedor .video-header {
-  font-size: 1.87rem;
-}
+    font-size: 1.87rem;
+  }
+
   .seccion-aviso p {
     font-size: 14px;
     margin-bottom: 20px;
@@ -2079,22 +2082,30 @@ body p {
 
 .btn-container882 {
   display: flex;
-  align-items: center;      /* Alinea verticalmente al centro */
-  justify-content: space-between;  /* Centra horizontalmente en la tarjeta */
-  margin-top: 20px;             /* Espacio superior entre el texto y el botón */
-  width: 100%;                   /* Asegura que el contenedor ocupe todo el ancho disponible */
-  padding: 0 10px;              /* Distancia entre botón e imagen */
+  align-items: center;
+  /* Alinea verticalmente al centro */
+  justify-content: space-between;
+  /* Centra horizontalmente en la tarjeta */
+  margin-top: 20px;
+  /* Espacio superior entre el texto y el botón */
+  width: 100%;
+  /* Asegura que el contenedor ocupe todo el ancho disponible */
+  padding: 0 10px;
+  /* Distancia entre botón e imagen */
 }
 
-.iconos882{
+.iconos882 {
   display: flex;
   align-items: center;
-  gap: 8px; /* Espacio entre los dos iconos */
+  gap: 8px;
+  /* Espacio entre los dos iconos */
 }
+
 .btn-container882 .btn-tarjeta {
   display: inline-block;
   width: auto;
-  margin: 0;                /* Cancela el margen que empuja la imagen abajo */
+  margin: 0;
+  /* Cancela el margen que empuja la imagen abajo */
 }
 
 .btn-container882 img {
@@ -2330,7 +2341,8 @@ body p {
   transform: translateX(-50%);
   width: 307px;
   height: 3px;
-  background-color: rgb(30, 206, 45);;
+  background-color: rgb(30, 206, 45);
+  ;
 }
 
 /* Estilos de los Títulos */
@@ -2355,8 +2367,10 @@ body p {
   transform: translateX(-50%);
   width: 255px;
   height: 3px;
-  background-color: rgb(30, 206, 45);;
+  background-color: rgb(30, 206, 45);
+  ;
 }
+
 /* Contenedor del video para control de proporciones y bordes */
 .video-wrapper {
   width: 100%;
@@ -2417,13 +2431,14 @@ body p {
   }
 
   /* Línea decorativa debajo del título */
-.video-title2::after {
-  width: 190px;
-}
+  .video-title2::after {
+    width: 190px;
+  }
+
   /* Línea decorativa debajo del título */
-.video-title::after {
-  width: 230px;
-}
+  .video-title::after {
+    width: 230px;
+  }
 }
 
 
@@ -2605,6 +2620,7 @@ body p {
   margin: 0px auto 40px auto;
 
 }
+
 /* Subtítulo */
 .process-subtitle {
   font-size: 18px;
@@ -2652,16 +2668,16 @@ body p {
   }
 
   .process-content .linea-divisoria {
-  width: 300px;
-  height: 4px;
-  background-color: #23c823;
+    width: 300px;
+    height: 4px;
+    background-color: #23c823;
   }
 
   .testimonios .linea-divisoria {
-  width: 350px !important;
-  height: 4px;
-  background-color: #23c823;
-}
+    width: 350px !important;
+    height: 4px;
+    background-color: #23c823;
+  }
 }
 
 /* ===================================================
@@ -3074,6 +3090,7 @@ body p {
   background-color: #23c823;
   margin: 0px auto 40px auto;
 }
+
 .contact_section .contact_heading p {
   margin-top: 40px;
 }
@@ -3277,13 +3294,13 @@ body p {
     height: 250px;
   }
 
-  
-.contact_section .contact_heading .linea-divisoria {
-  width: 300px;
-  height: 4px;
-  background-color: #23c823;
-  margin: 0px auto 40px auto;
-}
+
+  .contact_section .contact_heading .linea-divisoria {
+    width: 300px;
+    height: 4px;
+    background-color: #23c823;
+    margin: 0px auto 40px auto;
+  }
 }
 
 /* Contenedor Principal del Slider/Banner */
@@ -4109,7 +4126,7 @@ body p {
   /* --- 4. Slide 1: Mapa (Redimensionado sin romper) --- */
   .map-wrapper {
     width: 100%;
-    max-width: 300px;
+    max-width: 100%;
     /* Evita que ocupe toda la pantalla */
     height: auto;
     min-height: auto;
@@ -5541,17 +5558,18 @@ body p {
 }
 
 .support-text {
-    flex: 1 1 260px;
-    min-width: 220px;
-    max-width: 280px;
-    text-align: left;
-  }
+  flex: 1 1 260px;
+  min-width: 220px;
+  max-width: 280px;
+  text-align: left;
+}
 
-  .support-image3 {
-    flex: 0 0 520px;
-    width: 100%;
-    max-width: 520px;
-  }
+.support-image3 {
+  flex: 0 0 520px;
+  width: 100%;
+  max-width: 520px;
+}
+
 .support-image3 img {
   width: 100%;
   height: auto;
@@ -6180,11 +6198,13 @@ body.pdf-modal-open {
 .image-figure {
   margin: 0;
 }
+
 .image-figure img {
   display: block;
   width: 100%;
   border-radius: 8px;
 }
+
 .figure-caption {
   margin-top: 8px;
   font-size: 14px;
@@ -6821,6 +6841,7 @@ body.pdf-modal-open {
   object-fit: cover;
   transition: transform 0.5s ease;
 }
+
 .blog-image-wrapper iframe,
 .blog-image-wrapper img {
   position: absolute;
@@ -6912,8 +6933,9 @@ body.pdf-modal-open {
   }
 
   .blog-subtitle {
-  font-size: 1rem;
+    font-size: 1rem;
   }
+
   .blog-header h2 {
     font-size: 1.8rem;
   }
@@ -7083,20 +7105,22 @@ body.pdf-modal-open {
   }
 }
 
-.orla1992{
-  width:150px;
-  height:180px;
+.orla1992 {
+  width: 150px;
+  height: 180px;
 }
-.instagramlogo{
+
+.instagramlogo {
   width: 40px;
   height: 40px;
 }
 
-.logo-instagram{
-display: flex;
-justify-content: center;
-gap: 10px;
+.logo-instagram {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
+
 .instagramfeed {
   margin-bottom: 40px;
 }
@@ -7690,6 +7714,196 @@ a.gw-info-item:focus {
 
   .gw-phone-row {
     grid-template-columns: 1fr;
+  }
+}
+
+/* VERSION PARA TABLET IPAD MINI */
+@media screen and (min-width: 768px) and (max-width: 998px) {
+  .system-slide .text-section p {
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 17px;
+    display: inline-block;
+  }
+
+  .stand-slide .booth-side .stand-image,
+  .stand-slide .booth-side img {
+    width: auto !important;
+    max-width: 520px !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+
+  .stand-slide .text-section {
+    display: block;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    /* Quita el margin-right: 0px */
+  }
+
+  .stand-slide .text-section h2 {
+    display: block;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 30px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .car-slide .main-title {
+    margin-top: 0px;
+  }
+
+  .car-slide .image-side img {
+    max-width: 100%;
+  }
+
+  .history-slide .header-flex {
+    text-align: center;
+    /* Centra el texto internamente */
+    margin: 0 auto;
+    /* Centra la caja de 50% dentro del elemento padre */
+  }
+
+  .history-slide .history-text {
+    width: 50%;
+    display: block;
+    text-align: center;
+    /* Centra el texto internamente */
+    margin: 0 auto;
+    /* Centra la caja de 50% dentro del elemento padre */
+  }
+
+  /* Fuerza al contenedor .row de Bootstrap a apilar las columnas */
+  #welcome_section .row {
+    flex-direction: column !important;
+  }
+
+  /* Asegura que cada columna dentro del row ocupe el 100% */
+  #welcome_section .row>div {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .contact-block-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* <- Añade esto para centrar los elementos dentro */
+    gap: 30px;
+    font-family: sans-serif;
+    margin-top: 50px;
+
+    /* Para asegurar que el contenedor se centre en la pantalla */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Busca esta regla en tu style.css (~línea 1303) */
+  .welcome_section .img-box {
+    text-align: center;
+    /* <- Cambia 'right' por 'center' */
+    overflow: hidden;
+    margin-top: 30px;
+    margin-bottom: -50px;
+  }
+
+  .grid-categorias {
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px;
+  }
+
+  .franquicia-master-content {
+    margin-right: 20%;
+    padding-right: 0;
+    /* Aplica un filtro negro transparente (0.5 o 0.7 según qué tan oscuro lo quieras) */
+  }
+
+  .franquicia-master::before {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  }
+
+  .franquicia-master img {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .categorias-header .linea-divisoria {
+    width: 43rem;
+    height: 4px;
+    background-color: #1ece2d;
+    /* El azul de tu tienda */
+    margin: 0 auto 20px auto;
+  }
+
+  /* Línea decorativa debajo del título */
+  .video-title::after {
+    width: 230px;
+  }
+
+  .video-title2::after {
+    width: 200px;
+  }
+
+  .testimonios .linea-divisoria {
+    width: 500px !important;
+  }
+
+  .process-content .linea-divisoria {
+    width: 500px;
+  }
+  
+  .tarjeta-categoria {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+  }
+
+  .tarjeta-categoria img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tarjeta-categoria .overlay-categoria {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    padding: 8px 18px;
+    background: linear-gradient(135deg, rgba(97, 177, 50, 0.95), rgba(31, 113, 100, 0.95));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .tarjeta-categoria .overlay-categoria h3 {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+}
+
+@media (max-width: 1280px) {
+  .hero_area {
+    height: 90vh;
   }
 }
 
