@@ -48,8 +48,40 @@
     updateWhatsappState();
   }
 
+  function canUseLocalStorage() {
+    try {
+      const testKey = '__cookieConsentTest__';
+      window.localStorage.setItem(testKey, testKey);
+      window.localStorage.removeItem(testKey);
+      return true;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function getConsent() {
+    if (canUseLocalStorage()) {
+      var stored = window.localStorage.getItem('cookieConsent');
+      return stored === '' ? null : stored;
+    }
+    const cookieMatch = document.cookie.match(/(?:^|; )cookieConsent=([^;]+)/);
+    if (!cookieMatch) return null;
+    var value = decodeURIComponent(cookieMatch[1]);
+    return value === '' ? null : value;
+  }
+
+  function setConsent(value) {
+    if (canUseLocalStorage()) {
+      window.localStorage.setItem('cookieConsent', value);
+    } else {
+      var date = new Date();
+      date.setTime(date.getTime() + (365 * 24 * 60 * 60 * 1000));
+      document.cookie = 'cookieConsent=' + encodeURIComponent(value) + ';expires=' + date.toUTCString() + ';path=/';
+    }
+  }
+
   function applyConsentState() {
-    const consent = localStorage.getItem('cookieConsent');
+    const consent = getConsent();
     if (consent !== null) {
       closeBanner();
     } else {
@@ -59,14 +91,14 @@
 
   if (btnAcceptAll) {
     btnAcceptAll.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'all');
+      setConsent('all');
       closeBanner();
     });
   }
 
   if (btnReject) {
     btnReject.addEventListener('click', () => {
-      localStorage.setItem('cookieConsent', 'rejected');
+      setConsent('rejected');
       closeBanner();
     });
   }
