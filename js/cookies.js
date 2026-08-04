@@ -2,7 +2,8 @@
   const banner = document.getElementById('cookieBanner');
   const modal = document.getElementById('cookieModal');
 
-  if (!banner || !modal) return;
+  // banner is required to show cookie notice; modal is optional
+  if (!banner) return;
 
   const btnAcceptAll = document.getElementById('btnAcceptAll');
   const btnReject = document.getElementById('btnReject');
@@ -12,26 +13,39 @@
   const analyticToggle = document.getElementById('analyticToggle');
   const adsToggle = document.getElementById('adsToggle');
 
-  function updateWhatsappPosition() {
+  function updateWhatsappState() {
     const whatsapp = document.querySelector('.whatsapp-float');
     if (!whatsapp || !banner) return;
-    const bannerVisible = !banner.classList.contains('hidden');
-    const offset = bannerVisible ? banner.offsetHeight + 18 : 18;
-    whatsapp.style.bottom = offset + 'px';
+    if (banner.classList.contains('visible')) {
+      whatsapp.style.display = 'none';
+    } else {
+      whatsapp.style.display = 'inline-flex';
+      whatsapp.style.bottom = '18px';
+    }
   }
 
   function closeBanner() {
     banner.classList.remove('visible');
     banner.classList.add('hidden');
-    modal.classList.remove('active');
-    updateWhatsappPosition();
+    if (modal) modal.classList.remove('active');
+    // After the CSS transition hides the banner, set display:none to remove its layout footprint
+    var onTransitionEnd = function () {
+      banner.style.display = 'none';
+      banner.removeEventListener('transitionend', onTransitionEnd);
+      updateWhatsappState();
+    };
+    banner.addEventListener('transitionend', onTransitionEnd);
+    // Also update immediately as a fallback
+    updateWhatsappState();
   }
 
   function showBanner() {
+    // Make sure banner is part of layout before animating in
+    banner.style.display = 'flex';
     banner.classList.remove('hidden');
     banner.classList.add('visible');
-    modal.classList.remove('active');
-    updateWhatsappPosition();
+    if (modal) modal.classList.remove('active');
+    updateWhatsappState();
   }
 
   function applyConsentState() {
