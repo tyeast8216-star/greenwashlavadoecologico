@@ -7196,7 +7196,7 @@ body.pdf-modal-open {
 
 /* COOKIES */
 /* --- BANNER INFERIOR --- */
-.cookie-banner {
+.site-notice {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -7215,15 +7215,15 @@ body.pdf-modal-open {
   transform: translateY(100%);
 }
 
-.cookie-banner.visible {
+.site-notice.visible {
   transform: translateY(0);
 }
 
-.cookie-banner.hidden {
+.site-notice.hidden {
   transform: translateY(100%);
 }
 
-.cookie-text h3 {
+.consent-text h3 {
   margin: 0 0 8px 0;
   font-size: 1.1rem;
   display: flex;
@@ -7231,21 +7231,21 @@ body.pdf-modal-open {
   gap: 8px;
 }
 
-.cookie-text p {
+.consent-text p {
   margin: 0;
   font-size: 0.9rem;
   color: #aaaaaa;
   line-height: 1.4;
 }
 
-.cookie-buttons {
+.consent-buttons {
   display: flex;
   gap: 10px;
   flex-shrink: 0;
 }
 
 /* --- BOTONES --- */
-.btncookie {
+.consent-btn {
   padding: 10px 16px;
   font-size: 0.9rem;
   font-weight: 600;
@@ -7255,37 +7255,37 @@ body.pdf-modal-open {
   transition: background 0.2s;
 }
 
-.btncookie-outline {
+.consent-btn-outline {
   background: transparent;
   color: #e0e0e0;
   border-color: #333333;
 }
 
-.btncookie-outline:hover {
+.consent-btn-outline:hover {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.btncookie-secondary {
+.consent-btn-secondary {
   background: #2a2a2a;
   color: #e0e0e0;
   border-color: #333333;
 }
 
-.btncookie-secondary:hover {
+.consent-btn-secondary:hover {
   background: #353535;
 }
 
-.btncookie-primary {
+.consent-btn-primary {
   background: #14f43d;
   color: #fff;
 }
 
-.btncookie-primary:hover {
+.consent-btn-primary:hover {
   background: #14f43d;
 }
 
 /* --- MODAL DE CONFIGURACIÓN --- */
-.cookie-modal-overlay {
+.consent-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -7301,12 +7301,12 @@ body.pdf-modal-open {
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-.cookie-modal-overlay.active {
+.consent-modal-overlay.active {
   opacity: 1;
   visibility: visible;
 }
 
-.cookie-modal {
+.consent-modal {
   background: #1e1e1e;
   color: #e0e0e0;
   width: 90%;
@@ -7434,24 +7434,24 @@ input:disabled+.slider {
 
 /* --- DISEÑO RESPONSIVO MÓVIL --- */
 @media (max-width: 768px) {
-  .cookie-banner {
+  .site-notice {
     flex-direction: column;
     align-items: stretch;
     padding: 16px;
   }
 
-  .cookie-buttons {
+  .consent-buttons {
     flex-direction: column;
     gap: 8px;
   }
 
-  .btncookie {
+  .consent-btn {
     width: 100%;
     text-align: center;
     padding: 12px;
   }
 
-  .cookie-modal {
+  .consent-modal {
     width: 95%;
     max-height: 95vh;
   }
@@ -7916,3 +7916,4 @@ a.gw-info-item:focus {
 }
 }
 /*# sourceMappingURL=style.css.map */
+

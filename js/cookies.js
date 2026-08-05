@@ -1,8 +1,8 @@
 (function () {
-  const banner = document.getElementById('cookieBanner');
-  const modal = document.getElementById('cookieModal');
+  const banner = document.getElementById('siteNotice');
+  const modal = document.getElementById('consentModal');
 
-  // banner is required to show cookie notice; modal is optional
+  // banner is required to show consent notice; modal is optional
   if (!banner) return;
 
   const btnAcceptAll = document.getElementById('btnAcceptAll');
