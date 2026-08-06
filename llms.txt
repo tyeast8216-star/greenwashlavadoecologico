@@ -1,0 +1,22 @@
+# Green Wash
+
+## Descripción
+Green Wash es una franquicia de lavado ecológico de coches especializada en soluciones sostenibles con bajo consumo de agua y servicios de negocio para franquiciados.
+
+## Páginas principales
+- Inicio: https://greenwashlavadoecologico.onrender.com/
+- Empresa: https://greenwashlavadoecologico.onrender.com/about.html
+- Franquicias: https://greenwashlavadoecologico.onrender.com/service.html
+- Servicios: https://greenwashlavadoecologico.onrender.com/servicios.html
+- Contacto: https://greenwashlavadoecologico.onrender.com/contact.html
+- Blog: https://greenwashlavadoecologico.onrender.com/blog.html
+
+## Contenido clave
+- Lavado ecológico de coches
+- Franquicias Green Wash
+- Soluciones sostenibles para centros de lavado
+- Información legal y protección de datos
+
+## Enlaces útiles
+- Aviso legal: https://greenwashlavadoecologico.onrender.com/avisolegal.html
+- Protección de datos: https://greenwashlavadoecologico.onrender.com/protecciondatos.html
