@@ -1,5 +1,8 @@
 <?php
-function smtp_send($host, $port, $username, $password, $secure, $from, $fromName, $replyTo, $to, $subject, $body, $additionalHeaders = []) {
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
+function smtp_send($host, $port, $username, $password, $secure, $from, $fromName, $replyTo, $to, $subject, $body, &$errorMessage = null, $additionalHeaders = []) {
     $transportHost = $host;
     $transportPort = $port;
     $protocol = '';
@@ -9,11 +12,13 @@ function smtp_send($host, $port, $username, $password, $secure, $from, $fromName
 
     $connection = stream_socket_client($protocol . $transportHost . ':' . $transportPort, $errno, $errstr, 30);
     if (!$connection) {
+        $errorMessage = 'Connection failed: ' . $errno . ' - ' . $errstr;
         return false;
     }
     stream_set_timeout($connection, 30);
 
-    $getResponse = function () use ($connection) {
+    $lastResponse = '';
+    $getResponse = function () use ($connection, &$lastResponse) {
         $response = '';
         while (($line = fgets($connection, 515)) !== false) {
             $response .= $line;
@@ -21,38 +26,45 @@ function smtp_send($host, $port, $username, $password, $secure, $from, $fromName
                 break;
             }
         }
+        $lastResponse = $response;
         return $response;
     };
 
-    $sendCommand = function ($command, $expectedCodes = [250]) use ($connection, $getResponse) {
+    $sendCommand = function ($command, $expectedCodes = [250]) use ($connection, $getResponse, &$lastResponse) {
         fwrite($connection, $command . "\r\n");
         $response = $getResponse();
         $code = (int) substr($response, 0, 3);
+        $lastResponse = $response;
         return in_array($code, $expectedCodes, true);
     };
 
     $initial = $getResponse();
     if (strpos($initial, '220') !== 0) {
+        $errorMessage = 'SMTP banner not received or invalid: ' . trim($initial);
         fclose($connection);
         return false;
     }
 
     $hostname = gethostname() ?: 'localhost';
     if (!$sendCommand("EHLO $hostname", [250])) {
+        $errorMessage = 'EHLO failed: ' . trim($lastResponse);
         fclose($connection);
         return false;
     }
 
     if ($secure === 'tls') {
         if (!$sendCommand('STARTTLS', [220])) {
+            $errorMessage = 'STARTTLS failed: ' . trim($lastResponse);
             fclose($connection);
             return false;
         }
         if (!stream_socket_enable_crypto($connection, true, STREAM_CRYPTO_METHOD_TLS_CLIENT)) {
+            $errorMessage = 'Unable to enable TLS crypto';
             fclose($connection);
             return false;
         }
         if (!$sendCommand("EHLO $hostname", [250])) {
+            $errorMessage = 'EHLO after STARTTLS failed: ' . trim($lastResponse);
             fclose($connection);
             return false;
         }
@@ -60,28 +72,34 @@ function smtp_send($host, $port, $username, $password, $secure, $from, $fromName
 
     if ($username !== '') {
         if (!$sendCommand('AUTH LOGIN', [334])) {
+            $errorMessage = 'AUTH LOGIN failed: ' . trim($lastResponse);
             fclose($connection);
             return false;
         }
         if (!$sendCommand(base64_encode($username), [334])) {
+            $errorMessage = 'AUTH username failed: ' . trim($lastResponse);
             fclose($connection);
             return false;
         }
         if (!$sendCommand(base64_encode($password), [235])) {
+            $errorMessage = 'AUTH password failed: ' . trim($lastResponse);
             fclose($connection);
             return false;
         }
     }
 
     if (!$sendCommand("MAIL FROM:<$from>", [250])) {
+        $errorMessage = 'MAIL FROM failed: ' . trim($lastResponse);
         fclose($connection);
         return false;
     }
     if (!$sendCommand("RCPT TO:<$to>", [250, 251])) {
+        $errorMessage = 'RCPT TO failed: ' . trim($lastResponse);
         fclose($connection);
         return false;
     }
     if (!$sendCommand('DATA', [354])) {
+        $errorMessage = 'DATA command failed: ' . trim($lastResponse);
         fclose($connection);
         return false;
     }
@@ -102,7 +120,12 @@ function smtp_send($host, $port, $username, $password, $secure, $from, $fromName
     $sendCommand('QUIT', [221]);
     fclose($connection);
 
-    return $code === 250;
+    if ($code !== 250) {
+        $errorMessage = 'Message sending failed: ' . trim($response);
+        return false;
+    }
+
+    return true;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -181,6 +204,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $smtpFrom = 'info@greenwash.es';
     $smtpFromName = 'Nuevo Expediente Greenwash';
 
+    $errorMessage = '';
     $sent = smtp_send(
         $smtpHost,
         $smtpPort,
@@ -192,7 +216,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $email,
         $destinatario,
         $asunto,
-        $cuerpo
+        $cuerpo,
+        $errorMessage
     );
 
     if ($sent) {
@@ -200,6 +225,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
+    @file_put_contents(__DIR__ . '/enviar-error.log', date('[Y-m-d H:i:s] ') . $errorMessage . ' | POST: ' . json_encode($_POST, JSON_UNESCAPED_UNICODE) . PHP_EOL, FILE_APPEND);
     header('Location: mensaje-rechazado.html');
     exit;
 }
