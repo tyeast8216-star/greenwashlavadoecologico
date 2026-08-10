@@ -195,7 +195,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cuerpo
     );
 
-    $mensajeEnviado = $sent ? '¡Mensaje enviado correctamente!' : 'No se pudo enviar el mensaje. Por favor, inténtalo más tarde.';
+    if ($sent) {
+        header('Location: gracias.html');
+        exit;
+    }
+
+    $mensajeEnviado = 'No se pudo enviar el mensaje. Por favor, inténtalo más tarde.';
 
     echo '<!DOCTYPE html>';
     echo '<html lang="es">';
@@ -208,11 +213,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo '<body>';
     echo '  <div class="box">';
     echo '    <h2>' . htmlspecialchars($mensajeEnviado, ENT_QUOTES, 'UTF-8') . '</h2>';
-    if (!$sent) {
-        echo '    <p>Hubo un problema al enviar el correo. Por favor, revisa la configuración SMTP.</p>';
-    } else {
-        echo '    <p>Gracias por contactar con Green Wash. Nos pondremos en contacto contigo pronto.</p>';
-    }
+    echo '    <p>Hubo un problema al enviar el correo. Por favor, revisa la configuración SMTP.</p>';
     echo '    <a class="btn" href="index.html">Volver al inicio</a>';
     echo '  </div>';
     echo '</body>';
