@@ -200,24 +200,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $mensajeEnviado = 'No se pudo enviar el mensaje. Por favor, inténtalo más tarde.';
-
-    echo '<!DOCTYPE html>';
-    echo '<html lang="es">';
-    echo '<head>';
-    echo '  <meta charset="utf-8">';
-    echo '  <meta name="viewport" content="width=device-width, initial-scale=1">';
-    echo '  <title>Mensaje enviado</title>';
-    echo '  <style>body{font-family:Arial,sans-serif;background:#f4f8f7;padding:40px;} .box{max-width:600px;margin:0 auto;background:#fff;padding:30px;border-radius:10px;box-shadow:0 3px 10px rgba(0,0,0,.1);} .btn{display:inline-block;margin-top:20px;padding:10px 16px;background:#1f7164;color:#fff;text-decoration:none;border-radius:6px;}</style>';
-    echo '</head>';
-    echo '<body>';
-    echo '  <div class="box">';
-    echo '    <h2>' . htmlspecialchars($mensajeEnviado, ENT_QUOTES, 'UTF-8') . '</h2>';
-    echo '    <p>Hubo un problema al enviar el correo. Por favor, revisa la configuración SMTP.</p>';
-    echo '    <a class="btn" href="index.html">Volver al inicio</a>';
-    echo '  </div>';
-    echo '</body>';
-    echo '</html>';
+    header('Location: mensaje-rechazado.html');
     exit;
 }
 ?>
