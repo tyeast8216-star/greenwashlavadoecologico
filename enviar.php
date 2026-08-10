@@ -173,13 +173,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cuerpo = "Formulario enviado desde la web.\n\n" . print_r($_POST, true);
     }
 
-    $smtpHost = 'smtp.tuservidor.com';
+    $smtpHost = 'live.smtp.mailtrap.io';
     $smtpPort = 587;
-    $smtpUser = 'usuario@tudominio.com';
-    $smtpPass = 'tu_contraseña';
-    $smtpSecure = 'tls'; // 'tls', 'ssl' o ''
+    $smtpUser = 'api';
+    $smtpPass = '637d9590095561795eb197f80c1f96ee'; // Pega aquí el token que generaste
+    $smtpSecure = 'tls'; 
     $smtpFrom = 'info@greenwash.es';
-    $smtpFromName = 'Nuevo Expediente GreenWash';
+    $smtpFromName = 'Nuevo Expediente Greenwash';
 
     $sent = smtp_send(
         $smtpHost,
