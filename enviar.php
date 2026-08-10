@@ -1,5 +1,5 @@
 <?php
-function smtp_send($host, $port, $username, $password, $secure, $from, $to, $subject, $body, $additionalHeaders = []) {
+function smtp_send($host, $port, $username, $password, $secure, $from, $fromName, $replyTo, $to, $subject, $body, $additionalHeaders = []) {
     $transportHost = $host;
     $transportPort = $port;
     $protocol = '';
@@ -86,9 +86,10 @@ function smtp_send($host, $port, $username, $password, $secure, $from, $to, $sub
         return false;
     }
 
+    $fromHeader = $fromName ? ($fromName . ' <' . $from . '>') : $from;
     $headers = array_merge([
-        'From: ' . $from,
-        'Reply-To: ' . $from,
+        'From: ' . $fromHeader,
+        'Reply-To: ' . ($replyTo ?: $from),
         'MIME-Version: 1.0',
         'Content-Type: text/plain; charset=UTF-8',
         'Subject: ' . $subject,
@@ -105,36 +106,72 @@ function smtp_send($host, $port, $username, $password, $secure, $from, $to, $sub
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nombre = trim($_POST['nombre'] ?? '');
-    $apellidos = trim($_POST['apellidos'] ?? '');
-    $franquicia = trim($_POST['franquicia'] ?? '');
-    $zona = trim($_POST['zona'] ?? '');
-    $provincia = trim($_POST['provincia'] ?? '');
-    $ciudad = trim($_POST['ciudad'] ?? '');
-    $pais = trim($_POST['pais'] ?? '');
-    $email = trim($_POST['email'] ?? '');
-    $codigoPais = trim($_POST['codigo_pais'] ?? '');
-    $telefono = trim($_POST['telefono'] ?? '');
-    $mensaje = trim($_POST['mensaje'] ?? '');
+    function normalizeText($value) {
+        return trim(preg_replace('/\s+/u', ' ', strip_tags((string) $value)));
+    }
 
-    $destinatario = 'info@greenwash.es';
-    $asunto = 'Nuevo mensaje de contacto desde la web';
+    function buildMailBody(array $post) {
+        $fieldLabels = [
+            'nombre' => 'Nombre',
+            'apellidos' => 'Apellidos',
+            'franquicia' => 'Modalidad de Franquicia',
+            'zona' => 'Zona',
+            'provincia' => 'Provincia',
+            'poblacion' => 'Población',
+            'ciudad' => 'Ciudad',
+            'pais' => 'País',
+            'email' => 'Email',
+            'codigo_pais' => 'Código de país',
+            'telefono' => 'Teléfono',
+            'mensaje' => 'Mensaje',
+        ];
 
-    $cuerpo = "Nombre: $nombre $apellidos\n";
-    $cuerpo .= "Email: $email\n";
-    $cuerpo .= "Teléfono: $codigoPais $telefono\n";
-    $cuerpo .= "Modalidad de Franquicia: $franquicia\n";
-    $cuerpo .= "Zona: $zona\n";
-    if ($provincia !== '') {
-        $cuerpo .= "Provincia: $provincia\n";
+        $bodyLines = [];
+        foreach ($fieldLabels as $key => $label) {
+            if (!isset($post[$key])) {
+                continue;
+            }
+            $value = trim($post[$key]);
+            if ($value === '') {
+                continue;
+            }
+            $bodyLines[] = $label . ': ' . normalizeText($value);
+        }
+
+        foreach ($post as $key => $value) {
+            if (array_key_exists($key, $fieldLabels)) {
+                continue;
+            }
+            $value = trim($value);
+            if ($value === '') {
+                continue;
+            }
+            $label = ucwords(str_replace(['_', '-'], [' ', ' '], $key));
+            $bodyLines[] = $label . ': ' . normalizeText($value);
+        }
+
+        return implode("\n", $bodyLines);
     }
-    if ($ciudad !== '') {
-        $cuerpo .= "Ciudad: $ciudad\n";
+
+    $zonaRaw = trim($_POST['zona'] ?? '');
+    $zona = normalizeText($zonaRaw);
+    $zonaLabel = [
+        'espana' => 'España',
+        'internacional' => 'Internacional',
+    ][$zonaRaw] ?? $zona;
+
+    $provincia = normalizeText($_POST['provincia'] ?? '');
+    $poblacion = normalizeText($_POST['poblacion'] ?? $_POST['ciudad'] ?? '');
+    $pais = normalizeText($_POST['pais'] ?? '');
+    $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL) ?: '';
+
+    $destinatario = 'expedientes@greenwash.es';
+    $asunto = 'Nuevo Candidato GW: ' . $zonaLabel . ' - ' . $provincia . ' - ' . $poblacion . ' - ' . $pais;
+    $cuerpo = buildMailBody($_POST);
+
+    if ($cuerpo === '') {
+        $cuerpo = "Formulario enviado desde la web.\n\n" . print_r($_POST, true);
     }
-    if ($pais !== '') {
-        $cuerpo .= "País: $pais\n";
-    }
-    $cuerpo .= "Mensaje:\n$mensaje\n";
 
     $smtpHost = 'smtp.tuservidor.com';
     $smtpPort = 587;
@@ -142,6 +179,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $smtpPass = 'tu_contraseña';
     $smtpSecure = 'tls'; // 'tls', 'ssl' o ''
     $smtpFrom = 'info@greenwash.es';
+    $smtpFromName = 'Nuevo Expediente GreenWash';
 
     $sent = smtp_send(
         $smtpHost,
@@ -150,12 +188,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $smtpPass,
         $smtpSecure,
         $smtpFrom,
+        $smtpFromName,
+        $email,
         $destinatario,
         $asunto,
-        $cuerpo,
-        [
-            'Reply-To: ' . $email,
-        ]
+        $cuerpo
     );
 
     $mensajeEnviado = $sent ? '¡Mensaje enviado correctamente!' : 'No se pudo enviar el mensaje. Por favor, inténtalo más tarde.';
