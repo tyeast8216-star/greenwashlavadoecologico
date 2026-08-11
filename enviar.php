@@ -197,10 +197,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     $smtpHost = 'greenwash-es.correoseguro.dinaserver.com';
-    $smtpPort = 587;
+    $smtpPort = 465;
     $smtpUser = 'smtp@greenwash.es';
     $smtpPass = 'BC8zH3:3*1]6'; // Pega aquí el token que generaste
-    $smtpSecure = 'tls'; 
+    $smtpSecure = 'ssl'; 
     $smtpFrom = 'smtp@greenwash.es';
     $smtpFromName = 'Nuevo Expediente Greenwash';
 
