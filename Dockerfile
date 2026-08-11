@@ -7,6 +7,6 @@ RUN a2enmod rewrite
 COPY . /var/www/html/
 
 # Dar permisos adecuados
-RUN chown -www-data:www-data /var/www/html -R
+RUN chown www-data:www-data /var/www/html -R
 
 EXPOSE 80
