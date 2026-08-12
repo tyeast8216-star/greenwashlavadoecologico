@@ -2475,7 +2475,7 @@ body p {
 .cta-banner {
   position: relative;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 0px;
   min-height: 400px;
   /* Altura regulable según prefieras */
   display: flex;
