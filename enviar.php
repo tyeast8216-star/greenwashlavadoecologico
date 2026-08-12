@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pais = normalizeText($_POST['pais'] ?? '');
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL) ?: '';
 
-    $destinatario = 'tyeast8217@gmail.com';
+    $destinatario = 'expendientes@greenwash.es';
     $asunto = 'Nuevo Candidato GW: ' . $zonaLabel . ' - ' . $provincia . ' - ' . $poblacion . ' - ' . $pais;
     $cuerpo = buildMailBody($_POST);
 

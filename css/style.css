@@ -1582,9 +1582,8 @@ body p {
 
 /* Contenedor principal de la sección */
 .seccion-ancelave {
-  max-width: 1200px;
-  margin: 10px auto;
-  padding: 40px;
+  margin: 20px auto;
+  padding:30px;
 }
 
 /* Contenedor principal ajustado */
@@ -1646,6 +1645,32 @@ body p {
 .contenedor-boton {
   margin-top: 30px;
   margin-bottom: 15px;
+}
+
+.boton-dossier{
+  display: flex;  
+  align-items: center;
+  margin-top: -20px;
+  margin-bottom: 30px;
+  justify-content: center;  
+}
+.btn-descargadossier {
+  display: inline-block;
+  background-color: #17cb0d;
+  /* Azul corporativo ancelave */
+  color: #ffffff;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-descargadossier:hover {
+  background-color: #1b6216;
 }
 
 .btn-ancelave {
@@ -4657,10 +4682,18 @@ body p {
 /* end footer section*/
 
 /* segunda pagina */
+.banner-empresa2 {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin-bottom: 70px;
+}
 
 .banner-empresa {
   width: 100%;
-  height: 400px;
+  height: 250px;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -6551,7 +6584,7 @@ body.pdf-modal-open {
 }
 
 .contacto-mascota img {
-  max-width: 200px;
+  max-width: 300px;
   height: auto;
 }
 
@@ -6759,7 +6792,7 @@ body.pdf-modal-open {
 
 /* Contenedor principal */
 .blog-section {
-  padding: 80px 20px;
+  padding: 20px 20px;
 }
 
 .blog-container {
