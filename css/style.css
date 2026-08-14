@@ -508,10 +508,12 @@ body p {
   .navbar-nav .nav-link {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     width: 100%;
     height: 50px;
-    padding: 0 40px;
+    padding: 0 18px;
+    box-sizing: border-box;
+    white-space: nowrap;
     font-weight: 600;
     color: #1f6b47 !important;
     text-transform: uppercase;
