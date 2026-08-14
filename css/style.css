@@ -2,7 +2,9 @@ html,
 body {
   overflow-x: hidden;
 }
-
+a{
+  text-decoration: none;
+}
 body {
   font-family: "Poppins", sans-serif;
   color: #0c0c0c;
@@ -1586,7 +1588,7 @@ body p {
 /* Contenedor principal de la sección */
 .seccion-ancelave {
   margin: 20px auto;
-  padding:30px;
+  padding: 30px;
 }
 
 /* Contenedor principal ajustado */
@@ -1650,13 +1652,14 @@ body p {
   margin-bottom: 15px;
 }
 
-.boton-dossier{
-  display: flex;  
+.boton-dossier {
+  display: flex;
   align-items: center;
   margin-top: -20px;
   margin-bottom: 30px;
-  justify-content: center;  
+  justify-content: center;
 }
+
 .btn-descargadossier {
   display: inline-block;
   background-color: #17cb0d;
@@ -2873,6 +2876,7 @@ body p {
   /* El azul de tu tienda */
   margin: 0 auto 20px auto;
 }
+
 .linea-divisoria {
   width: 37rem;
   height: 4px;
@@ -5615,8 +5619,10 @@ body p {
   flex: 1 1 260px;
   min-width: 220px;
   max-width: 280px;
-  text-align: justify !important;    /* 👈 Justificado para Ordenador */
-  text-justify: inter-word;          /* Distribuye mejor el espacio entre palabras */
+  text-align: justify !important;
+  /* 👈 Justificado para Ordenador */
+  text-justify: inter-word;
+  /* Distribuye mejor el espacio entre palabras */
 }
 
 /* 5. Imágenes Generales y Bloques */
@@ -5670,10 +5676,13 @@ body p {
   }
 
   .support-text {
-    flex: 0 1 auto !important;   /* 👈 Anula los 260px de alto forzado */
-    max-width: 100% !important;  /* 👈 Permite que el texto use todo el ancho del móvil */
+    flex: 0 1 auto !important;
+    /* 👈 Anula los 260px de alto forzado */
+    max-width: 100% !important;
+    /* 👈 Permite que el texto use todo el ancho del móvil */
     min-width: 0 !important;
-    text-align: center;          /* Centra el texto en pantallas pequeñas */
+    text-align: center;
+    /* Centra el texto en pantallas pequeñas */
   }
 
   .support-image3 {
@@ -5683,6 +5692,7 @@ body p {
     margin: 0 auto;
   }
 }
+
 /* Botón de Escuchar Texto */
 .btn-audio {
   background-color: #0b6638;
@@ -7814,17 +7824,19 @@ a.gw-info-item:focus {
   .gw-phone-row {
     grid-template-columns: 1fr;
   }
+
   .linea-divisoria442 {
-  width: 18rem;
-}
+    width: 18rem;
+  }
 }
 
 /* VERSION PARA TABLET IPAD MINI */
 @media screen and (min-width: 768px) and (max-width: 998px) {
-  .seccion-franquicia{
+  .seccion-franquicia {
     margin-right: 10px;
     margin-left: 10px;
   }
+
   .system-slide .text-section p {
     text-align: center;
     margin: 0 auto;
@@ -7968,7 +7980,7 @@ a.gw-info-item:focus {
   .process-content .linea-divisoria {
     width: 500px;
   }
-  
+
   .tarjeta-categoria {
     height: auto;
     display: flex;
@@ -8013,49 +8025,244 @@ a.gw-info-item:focus {
   }
 
   /* 1. El contenedor del Banner Principal */
-.franquicia-master {
-  background-image: url('../images/franquiciamaster1280.png');
-}
+  .franquicia-master {
+    background-image: url('../images/franquiciamaster1280.png');
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1279px) {
+
   /* 1. El contenedor del Banner Principal */
-.franquicia-master {
-  background-image: url('../images/franquiciamaster1024.png');
-}
+  .franquicia-master {
+    background-image: url('../images/franquiciamaster1024.png');
+  }
 }
 
 .gracias-section {
-        padding: 60px 20px;
-        text-align: center;
-        font-family: Arial, sans-serif;
-    }
+  padding: 60px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
 
-    .gracias-container {
-        max-width: 800px;
-        margin: 0 auto;
-    }
+.gracias-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-    .gracias-section h2 {
-        font-size: 28px;
-        color: #333;
-        margin-bottom: 15px;
-        font-weight: normal;
-    }
+.gracias-section h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
 
-    .gracias-subtext {
-        font-size: 20px;
-        color: #555;
-        margin-bottom: 40px;
-        text-align: center !important;
-    }
+.gracias-subtext {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 40px;
+  text-align: center !important;
+}
 
-    .gracias-imagen img {
-        width: 100%;
-        max-width: 700px;
-        height: auto;
-        border-radius: 4px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+.gracias-imagen img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Utilidad para ocultar elementos */
+.d-none {
+  display: none !important;
+}
+
+/* Contenedor Principal */
+.contacto-main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 40px auto 60px auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+/* Tarjetas de Información y Formulario */
+.contacto-info-card,
+.contacto-form-card {
+  background: #ffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.contacto-form-card {
+  background: #a8c9be;
+}
+
+.contacto-info-card h2,
+.contacto-form-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.contacto-info-card p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+/* Items de Contacto (Teléfono, WhatsApp, Email) */
+.contacto-info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.contacto-info-item:hover {
+  background: #f9f9f9;
+  text-decoration: none;
+}
+
+.contacto-icono {
+  font-size: 24px;
+}
+
+.contacto-info-item span:first-of-type {
+  font-size: 0.85rem;
+  color: #888;
+  display: block;
+}
+
+.contacto-info-item p {
+  margin: 0;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Mascota */
+.contacto-mascota {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.contacto-mascota img {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+
+/* Estructura del Formulario */
+.contacto-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contacto-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.contacto-form-group input,
+.contacto-form-group select,
+.contacto-form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.contacto-form-group input:focus,
+.contacto-form-group select:focus,
+.contacto-form-group textarea:focus {
+  border-color: #25d366;
+}
+
+.contacto-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Fila de Teléfono y Código de País */
+.contacto-phone-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.contacto-phone-row select {
+  flex: 0 0 140px;
+}
+
+.contacto-phone-row input {
+  flex: 1;
+}
+
+/* Botón de Envío */
+.contacto-btn-submit {
+  background-color: #ff9800; /* O el color corporativo que prefieras */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.contacto-btn-submit:hover {
+  background-color: #e68900;
+}
+
+/* ==========================================
+   Media Queries para Dispositivos Móviles
+   ========================================== */
+@media (max-width: 768px) {
+  .contacto-main-container {
+    grid-template-columns: 1fr; /* Pasa a una sola columna */
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+  .contacto-form-row {
+    grid-template-columns: 1fr; /* Apila los campos dobles en móviles */
+  }
+
+  .contacto-phone-row {
+    flex-direction: column; /* Apila el selector de país y el input de teléfono */
+  }
+
+  .contacto-phone-row select {
+    flex: 1;
+    width: 100%;
+  }
+
+  .contacto-info-card,
+  .contacto-form-card {
+    padding: 20px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
-
