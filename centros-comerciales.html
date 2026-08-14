@@ -9,11 +9,13 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="Mensaje de gracias por contactar con nosotros, Green Wash" />
-  <meta name="description" content="Gracias por contactar con Green Wash. Nos pondremos en contacto contigo pronto." />
+  <meta name="keywords"
+    content="centros comerciales, Green Wash, franquicia, información sobre modelos de franquicias en centros comerciales" />
+  <meta name="description"
+    content="Descubre los modelos de franquicias de Green Wash en centros comerciales y cómo pueden beneficiarte" />
   <meta name="author" content="Green Wash" />
 
-  <title>Gracias - Green Wash</title>
+  <title>Centros Comerciales | Green Wash</title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
@@ -68,7 +70,8 @@
           <div class="col-12">
             <nav class="navbar navbar-expand-lg navbar-light new-nav">
               <a class="navbar-brand" href="index.html">
-                <img  loading="lazy" decoding="async" src="./images/logogreenwash.png" alt="Logo GW Lavado Ecologico" class="logo-header" />
+                <img loading="lazy" decoding="async" src="./images/logogreenwash.png" alt="Logo GW Lavado Ecologico"
+                  class="logo-header" />
               </a>
               <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -115,7 +118,7 @@
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="franquiciados-privado.html">Franquiciados</a>
-                  </li> 
+                  </li>
                 </ul>
               </div>
               <!-- Backdrop para off-canvas móvil -->
@@ -127,21 +130,26 @@
     </header>
   </div>
 
-<section class="gracias-section">
-    <div class="gracias-container">
-        <h2>Su mensaje no ha sido enviado.</h2>
-        <p class="gracias-subtext">Intente nuevamente el proceso de envío.</p>
-        
-        <div class="gracias-imagen">
-            <img src="./images/greenwashabout.jpg" alt="Green Wash Lavado Ecológico">
-        </div>
+  <section class="banner-empresa">
+    <div class="overlay-empresa">
+      <h1>CENTROS COMERCIALES</h1>
+      <p class="subtitle">Sección dedicada modelos de franquicia en Centros Comerciales</p>
+      <div class="linea-empresa"></div>
     </div>
-</section>
+  </section>
+
+  <section class="banner-image-section">
+    <img loading="lazy" decoding="async" src="./images/greenwashedif.jpeg" alt="Edificio Green Wash"
+      class="banner-empresa-img" />
+  </section>
+
+
   <!-- BANNER DE COOKIES -->
   <div id="siteNotice" class="site-notice">
     <div class="consent-text">
       <h3>🍪 Usamos cookies</h3>
-      <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios y analizar tu navegación. Puedes aceptar todas, rechazarlas o configurar tus preferencias.</p>
+      <p>Utilizamos cookies propias y de terceros para mejorar nuestros servicios y analizar tu navegación. Puedes
+        aceptar todas, rechazarlas o configurar tus preferencias.</p>
     </div>
     <div class="consent-buttons">
       <button class="consent-btn consent-btn-outline" id="btnConfig">Configurar</button>
@@ -216,12 +224,54 @@
     </div>
   </footer>
   </div>
-
+  </div>
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script defer type="text/javascript" src="js/cookies.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>
+    const PRIVATE_ACCESS_PASSWORD = 'greenwash2026';
+    const privateModal = document.getElementById('privateAccessModal');
+    const privatePageContent = document.getElementById('privatePageContent');
+    const privatePasswordInput = document.getElementById('privatePasswordInput');
+    const privateAccessBtn = document.getElementById('privateAccessBtn');
+    const privateAccessError = document.getElementById('privateAccessError');
+
+    function unlockPrivateAccess() {
+      if (!privateModal || !privatePageContent) return;
+      privateModal.style.display = 'none';
+      privatePageContent.style.display = 'block';
+      if (privatePasswordInput) {
+        privatePasswordInput.value = '';
+      }
+      if (privateAccessError) {
+        privateAccessError.textContent = '';
+      }
+    }
+
+    function showAccessDenied() {
+      if (!privateAccessError) return;
+      privateAccessError.textContent = 'Contraseña incorrecta. Acceso denegado.';
+      privateAccessError.style.display = 'block';
+      if (privatePasswordInput) {
+        privatePasswordInput.value = '';
+        privatePasswordInput.focus();
+      }
+    }
+
+    function validatePrivateAccess() {
+      if (!privatePasswordInput) return;
+      const typedPassword = privatePasswordInput.value.trim();
+
+      if (typedPassword === PRIVATE_ACCESS_PASSWORD) {
+        unlockPrivateAccess();
+        return;
+      }
+
+      showAccessDenied();
+    }
+
     function toggleTopbarVisibility() {
       var topbar = document.querySelector('.topbar');
       if (!topbar) return;
@@ -229,7 +279,58 @@
       topbar.classList.toggle('hide', shouldHide);
     }
 
-    document.addEventListener('DOMContentLoaded', toggleTopbarVisibility);
+    document.addEventListener('DOMContentLoaded', function () {
+      toggleTopbarVisibility();
+      if (privateAccessBtn) {
+        privateAccessBtn.addEventListener('click', validatePrivateAccess);
+      }
+      if (privatePasswordInput) {
+        privatePasswordInput.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter') {
+            validatePrivateAccess();
+          }
+        });
+      }
+
+      var zonaSelect = document.getElementById('gw-zona');
+      var regionSelects = document.getElementById('gw-region-selects');
+      var countryRow = document.getElementById('gw-country-row');
+      var provinciaInput = document.getElementById('gw-provincia');
+      var poblacionInput = document.getElementById('gw-poblacion');
+      var paisInput = document.getElementById('gw-pais-internacional');
+      var formTimestamp = document.getElementById('gw-form-ts');
+
+      if (formTimestamp) {
+        formTimestamp.value = Math.floor(Date.now() / 1000);
+      }
+
+      function updateRegionVisibility() {
+        var selectedZone = zonaSelect.value;
+        var showSpainFields = selectedZone === 'espana';
+        var showInternationalField = selectedZone === 'internacional';
+
+        regionSelects.classList.toggle('d-none', !showSpainFields);
+        countryRow.classList.toggle('d-none', !showInternationalField);
+
+        provinciaInput.required = showSpainFields;
+        poblacionInput.required = showSpainFields;
+        paisInput.required = showInternationalField;
+
+        if (!showSpainFields) {
+          provinciaInput.value = '';
+          poblacionInput.value = '';
+        }
+        if (!showInternationalField) {
+          paisInput.value = '';
+        }
+      }
+
+      if (zonaSelect) {
+        zonaSelect.addEventListener('change', updateRegionVisibility);
+        updateRegionVisibility();
+      }
+      toggleTopbarVisibility();
+    });
     window.addEventListener('scroll', toggleTopbarVisibility, { passive: true });
     window.addEventListener('resize', toggleTopbarVisibility);
   </script>
@@ -237,5 +338,3 @@
 
 </html>
 <script defer src="js/nav-active.js"></script>
-
-

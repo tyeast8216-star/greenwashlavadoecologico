@@ -288,6 +288,7 @@ body p {
   padding: 0 10px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  white-space: nowrap;
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -2085,7 +2086,7 @@ body p {
   background-color: #ffffff;
   padding: 30px;
   border-radius: 3px;
-  border: 3px solid rgba(87, 250, 5, 0.354);
+  /*border: 3px solid rgba(87, 250, 5, 0.19);*/
   /* Te subí a 12px para que haga juego con el diseño moderno de la foto */
   box-shadow: 0px 0px 30px rgba(21, 250, 5, 0.291);
 
