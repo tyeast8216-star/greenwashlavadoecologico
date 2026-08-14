@@ -7317,6 +7317,79 @@ body.pdf-modal-open {
   background: #14f43d;
 }
 
+.private-access-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 18, 14, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+}
+
+.private-access-box {
+  width: min(100%, 420px);
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  padding: 32px 28px;
+  text-align: center;
+}
+
+.private-access-box h2 {
+  margin: 0 0 12px;
+  color: #1f7164;
+  font-size: 2rem;
+}
+
+.private-access-box p {
+  margin: 0 0 18px;
+  color: #4d4d4d;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.private-access-box input {
+  width: 100%;
+  border: 1px solid #c9d5d1;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  outline: none;
+}
+
+.private-access-box input:focus {
+  border-color: #1f7164;
+  box-shadow: 0 0 0 3px rgba(31, 113, 100, 0.12);
+}
+
+.private-access-box button {
+  width: 100%;
+  border: none;
+  background: linear-gradient(135deg, #1f7164, #2d8b7d);
+  color: #ffffff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.private-access-box button:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.private-access-error {
+  display: none;
+  color: #b42318;
+  font-weight: 700;
+  margin-top: 14px;
+  min-height: 20px;
+}
+
 /* --- MODAL DE CONFIGURACIÓN --- */
 .consent-modal-overlay {
   position: fixed;

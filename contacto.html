@@ -450,9 +450,19 @@
           </div>
         </div>
 
+        <div class="gw-form-group d-none" aria-hidden="true">
+          <label for="gw-website">Website</label>
+          <input type="text" id="gw-website" name="website" autocomplete="off" tabindex="-1">
+        </div>
+        <input type="hidden" id="gw-form-ts" name="form_ts" value="">
+
         <div class="gw-form-group">
           <label for="gw-mensaje">Mensaje</label>
-          <textarea id="gw-mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." maxlength="100" required></textarea>
+          <textarea id="gw-mensaje" name="mensaje" placeholder="Escribe tu mensaje aquí..." maxlength="500" required></textarea>
+        </div>
+
+        <div class="gw-form-group">
+          <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
         </div>
 
         <button type="submit" class="gw-btn-submit">Enviar contacto</button>
@@ -460,6 +470,11 @@
     </section>
 
   </main>
+
+  <div style="padding: 0 20px 40px; text-align: center;">
+    <a href="franquiciados-privado.html" style="display: inline-block; background: #1f7164; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 10px; font-weight: 700; box-shadow: 0 8px 20px rgba(31,113,100,0.25);">Acceder a franquiciados privados</a>
+  </div>
+
   <!-- BANNER DE COOKIES -->
   <div id="siteNotice" class="site-notice">
     <div class="consent-text">
@@ -544,6 +559,7 @@
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script defer type="text/javascript" src="js/cookies.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>
     function toggleTopbarVisibility() {
       var topbar = document.querySelector('.topbar');
@@ -560,6 +576,11 @@
       var provinciaInput = document.getElementById('gw-provincia');
       var poblacionInput = document.getElementById('gw-poblacion');
       var paisInput = document.getElementById('gw-pais-internacional');
+      var formTimestamp = document.getElementById('gw-form-ts');
+
+      if (formTimestamp) {
+        formTimestamp.value = Math.floor(Date.now() / 1000);
+      }
 
       function updateRegionVisibility() {
         var selectedZone = zonaSelect.value;

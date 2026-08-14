@@ -105,9 +105,12 @@ function smtp_send($host, $port, $username, $password, $secure, $from, $fromName
     }
 
     $fromHeader = $fromName ? ($fromName . ' <' . $from . '>') : $from;
+    $fromHeader = str_replace(["\r", "\n"], '', $fromHeader);
+    $replyTo = str_replace(["\r", "\n"], '', trim((string) ($replyTo ?: $from)));
+    $subject = str_replace(["\r", "\n"], '', trim((string) $subject));
     $headers = array_merge([
         'From: ' . $fromHeader,
-        'Reply-To: ' . ($replyTo ?: $from),
+        'Reply-To: ' . $replyTo,
         'MIME-Version: 1.0',
         'Content-Type: text/plain; charset=UTF-8',
         'Subject: ' . $subject,
@@ -176,6 +179,85 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return implode("\n", $bodyLines);
     }
 
+    function sanitizeHeader($value) {
+        return str_replace(["\r", "\n"], '', trim((string) $value));
+    }
+
+    function verifyRecaptcha($token, $remoteIp, &$error = null) {
+        $secret = 'YOUR_RECAPTCHA_SECRET_KEY';
+        $token = trim((string) $token);
+        if ($token === '') {
+            $error = 'Missing reCAPTCHA token';
+            return false;
+        }
+        if ($secret === 'YOUR_RECAPTCHA_SECRET_KEY') {
+            $error = 'reCAPTCHA secret key not configured';
+            return false;
+        }
+
+        $endpoint = 'https://www.google.com/recaptcha/api/siteverify';
+        $payload = http_build_query([
+            'secret' => $secret,
+            'response' => $token,
+            'remoteip' => $remoteIp,
+        ]);
+
+        $options = [
+            'http' => [
+                'method' => 'POST',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n",
+                'content' => $payload,
+                'timeout' => 10,
+            ],
+        ];
+
+        $response = @file_get_contents($endpoint, false, stream_context_create($options));
+        if ($response === false) {
+            $error = 'reCAPTCHA verification request failed';
+            return false;
+        }
+
+        $result = json_decode($response, true);
+        if (!is_array($result)) {
+            $error = 'Invalid reCAPTCHA response';
+            return false;
+        }
+
+        if (empty($result['success'])) {
+            $error = 'reCAPTCHA verification failed: ' . json_encode($result);
+            return false;
+        }
+
+        return true;
+    }
+
+    function isSpamSubmission(array $post, array $server) {
+        $honeypot = trim($post['website'] ?? '');
+        if ($honeypot !== '') {
+            return true;
+        }
+
+        $userAgent = trim($server['HTTP_USER_AGENT'] ?? '');
+        if ($userAgent === '') {
+            return true;
+        }
+
+        $formTs = intval($post['form_ts'] ?? 0);
+        if ($formTs > 0) {
+            $age = time() - $formTs;
+            if ($age < 3 || $age > 86400) {
+                return true;
+            }
+        }
+
+        $message = trim($post['mensaje'] ?? '');
+        if ($message !== '' && mb_strlen($message, 'UTF-8') > 500) {
+            return true;
+        }
+
+        return false;
+    }
+
     $zonaRaw = trim($_POST['zona'] ?? '');
     $zona = normalizeText($zonaRaw);
     $zonaLabel = [
@@ -187,9 +269,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $poblacion = normalizeText($_POST['poblacion'] ?? $_POST['ciudad'] ?? '');
     $pais = normalizeText($_POST['pais'] ?? '');
     $email = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL) ?: '';
+    $recaptchaToken = trim($_POST['g-recaptcha-response'] ?? '');
+    $recaptchaError = '';
+
+    if (!verifyRecaptcha($recaptchaToken, $_SERVER['REMOTE_ADDR'] ?? '', $recaptchaError)) {
+        @file_put_contents(__DIR__ . '/enviar-error.log', date('[Y-m-d H:i:s] ') . 'reCAPTCHA rejection: ' . $recaptchaError . ' | POST: ' . json_encode($_POST, JSON_UNESCAPED_UNICODE) . PHP_EOL, FILE_APPEND);
+        header('Location: mensaje-rechazado.html');
+        exit;
+    }
+
+    if (isSpamSubmission($_POST, $_SERVER)) {
+        @file_put_contents(__DIR__ . '/enviar-error.log', date('[Y-m-d H:i:s] ') . 'Spam rejection | POST: ' . json_encode($_POST, JSON_UNESCAPED_UNICODE) . PHP_EOL, FILE_APPEND);
+        header('Location: mensaje-rechazado.html');
+        exit;
+    }
 
     $destinatario = 'expendientes@greenwash.es';
-    $asunto = 'Nuevo Candidato GW: ' . $zonaLabel . ' - ' . $provincia . ' - ' . $poblacion . ' - ' . $pais;
+    $asunto = 'Nuevo Candidato GW: ' . sanitizeHeader($zonaLabel . ' - ' . $provincia . ' - ' . $poblacion . ' - ' . $pais);
     $cuerpo = buildMailBody($_POST);
 
     if ($cuerpo === '') {
