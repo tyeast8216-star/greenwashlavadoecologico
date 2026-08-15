@@ -21,6 +21,19 @@
     return;
   }
 
+  var franchisePages = [
+    'local-industrial.html',
+    'parking-subterraneo.html',
+    'parking-superficie.html',
+    'parking-low-cost.html',
+    'franquicia-master.html'
+  ];
+
+  if(franchisePages.indexOf(path) !== -1){
+    setActiveByHref('franquicias.html');
+    return;
+  }
+
   // For other pages, try to match exact file
   var matched = setActiveByHref(path);
   if(!matched){

@@ -2,9 +2,11 @@ html,
 body {
   overflow-x: hidden;
 }
-a{
+
+a {
   text-decoration: none;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   color: #0c0c0c;
@@ -1661,11 +1663,13 @@ body p {
 }
 
 .btn-descargadossier {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   background-color: #17cb0d;
-  /* Azul corporativo ancelave */
   color: #ffffff;
-  padding: 14px 28px;
+  padding: 20px 28px;
   text-decoration: none;
   font-weight: bold;
   font-size: 15px;
@@ -1673,10 +1677,34 @@ body p {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  line-height: 1.2;
+  margin-top: 30px;
 }
 
 .btn-descargadossier:hover {
   background-color: #1b6216;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: block;
+  color: #ffffff;
+}
+
+.btn-descargadossier span {
+  display: inline-block;
+}
+
+.btn-descargadossier svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
 }
 
 .btn-ancelave {
@@ -4884,6 +4912,7 @@ body p {
   }
 }
 
+.banner-empresa2 .overlay-empresa h1 {}
 
 .contenedor-texto {
   flex: 1;
@@ -5819,6 +5848,149 @@ body p {
   font-weight: 700;
 }
 
+.private-banner {
+  position: relative;
+  margin: 0 auto 30px;
+  width: min(100%, 1200px);
+  padding: 0 20px;
+}
+
+.private-banner-inner {
+  background-image: linear-gradient(90deg, rgba(10, 62, 49, 0.84), rgba(22, 130, 102, 0.72)), url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1400&q=80');
+  background-size: cover;
+  background-position: center;
+  border-radius: 24px;
+  padding: 52px 30px;
+  box-shadow: 0 18px 35px rgba(13, 56, 40, 0.12);
+  color: #ffffff;
+}
+
+.private-banner-inner .eyebrow {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+}
+
+.private-banner-inner h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 2vw + 1rem, 3rem);
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.private-banner-inner p:last-child {
+  margin: 0;
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.private-downloads {
+  padding: 70px 20px 40px;
+  background: linear-gradient(180deg, #f6faf7 0%, #ffffff 100%);
+}
+
+.private-downloads-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #1f7164;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.private-downloads-header h2 {
+  margin: 0;
+  color: #0f2d25;
+  font-size: clamp(2rem, 2vw + 1rem, 2.8rem);
+  font-weight: 800;
+}
+
+.private-downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.download-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid rgba(18, 97, 71, 0.12);
+  border-radius: 18px;
+  padding: 30px 24px 24px;
+  box-shadow: 0 18px 36px rgba(13, 56, 40, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.download-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 42px rgba(13, 56, 40, 0.12);
+}
+
+.download-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(22, 176, 96, 0.12), rgba(31, 113, 100, 0.14));
+  color: #1f7164;
+  margin-bottom: 20px;
+}
+
+.download-card-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.download-card-body h3 {
+  margin: 0 0 12px;
+  color: #0e2f2a;
+  font-size: 1.7rem;
+  line-height: 1.2;
+}
+
+.download-card-body p {
+  margin: 0 0 24px;
+  color: #4c5b57;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.download-button {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #17cb0d;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+  background: #139f0f;
+  color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
 /* Cuadrícula de 2 columnas */
 .implantation-grid {
   display: grid;
@@ -6249,6 +6421,13 @@ body.pdf-modal-open {
   text-align: center;
 }
 
+.figure-caption2 {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555555;
+  text-align: end;
+}
+
 /* Columna derecha: Contenido de texto */
 .content-column {
   flex: 1.2;
@@ -6593,6 +6772,7 @@ body.pdf-modal-open {
 
 .contacto-mascota {
   margin-top: 20px;
+  padding-top: 40px;
   text-align: left;
 }
 
@@ -7142,8 +7322,8 @@ body.pdf-modal-open {
 }
 
 .orla1992 {
-  width: 150px;
-  height: 180px;
+  width: 100px;
+  height: 130px;
 }
 
 .instagramlogo {
@@ -8086,6 +8266,7 @@ a.gw-info-item:focus {
   margin: 40px auto 60px auto;
   box-sizing: border-box;
   padding: 0 20px;
+  overflow: hidden;
 }
 
 /* Tarjetas de Información y Formulario */
@@ -8096,7 +8277,9 @@ a.gw-info-item:focus {
   border-radius: 8px;
   box-sizing: border-box;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
+
 .contacto-form-card {
   background: #a8c9be;
 }
@@ -8157,6 +8340,40 @@ a.gw-info-item:focus {
   max-width: 100%;
   height: auto;
   max-height: 200px;
+}
+
+.contacto-cta {
+  margin-top: 22px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.contacto-cta p {
+  margin: 0 0 14px;
+  color: #2c3e3a;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.contacto-cta-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #1e7b69 0%, #154f53 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 20px rgba(25, 95, 86, 0.18);
+}
+
+.contacto-cta-btn:hover {
+  text-decoration: none;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(25, 95, 86, 0.22);
 }
 
 /* Estructura del Formulario */
@@ -8221,7 +8438,8 @@ a.gw-info-item:focus {
 
 /* Botón de Envío */
 .contacto-btn-submit {
-  background-color: #ff9800; /* O el color corporativo que prefieras */
+  background-color: #ff9800;
+  /* O el color corporativo que prefieras */
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -8242,17 +8460,20 @@ a.gw-info-item:focus {
    ========================================== */
 @media (max-width: 768px) {
   .contacto-main-container {
-    grid-template-columns: 1fr; /* Pasa a una sola columna */
+    grid-template-columns: 1fr;
+    /* Pasa a una sola columna */
     padding: 10px;
     margin: 20px auto;
   }
 
   .contacto-form-row {
-    grid-template-columns: 1fr; /* Apila los campos dobles en móviles */
+    grid-template-columns: 1fr;
+    /* Apila los campos dobles en móviles */
   }
 
   .contacto-phone-row {
-    flex-direction: column; /* Apila el selector de país y el input de teléfono */
+    flex-direction: column;
+    /* Apila el selector de país y el input de teléfono */
   }
 
   .contacto-phone-row select {
@@ -8265,4 +8486,112 @@ a.gw-info-item:focus {
     padding: 20px;
   }
 }
-/*# sourceMappingURL=style.css.map */
+
+.contacto-form-group .g-recaptcha {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 400px) {
+  .g-recaptcha {
+    transform: scale(0.77);
+    transform-origin: 0 0;
+  }
+}
+
+.estrellas-valoracion img {
+  width: 100%;
+  max-width: 120px;
+  /* Ajusta este valor según lo pequeña o grande que la quieras */
+  height: auto;
+  display: block;
+  margin: 0 auto 15px auto;
+  /* Centra la imagen y le da separación abajo */
+}
+
+.acceso-franquiciados {
+  padding: 0 0px 40px;
+  text-align: left;
+  text-decoration: none;
+}
+
+.boton-accesoprivado {
+  display: inline-block;
+  background: #1f7164;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(31, 113, 100, 0.25);
+}
+
+.boton-accesoprivado svg {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  fill: #ffffff;
+}
+
+.banda-logotipo {
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(90deg, #f5faf6 0%, #edf7f0 100%);
+  border-top: 1px solid rgba(31, 113, 100, 0.12);
+  border-bottom: 1px solid rgba(31, 113, 100, 0.12);
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 30px;
+  position: relative;
+  box-sizing: border-box;
+  max-width: calc(100vw - 40px);
+}
+
+.logotipo-container {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  width: max-content;
+  min-width: 100%;
+  padding: 16px 0;
+  animation: logo-marquee 20s linear infinite;
+  will-change: transform;
+}
+
+.logo-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  max-width: 180px;
+  height: 58px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(31, 113, 100, 0.08);
+  box-shadow: 0 8px 18px rgba(16, 41, 30, 0.04);
+}
+
+.logo-item img {
+  max-width: 92px;
+  max-height: 30px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.logo-item span {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #295d52;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@keyframes logo-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
