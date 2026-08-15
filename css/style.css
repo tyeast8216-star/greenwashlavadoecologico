@@ -4513,64 +4513,115 @@ body p {
   }
 }
 
+.social-footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.social-link {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.social-link:hover,
+.social-link:focus-visible {
+  transform: translateY(-2px);
+  background: #ffffff;
+  color: #1f7164;
+  border-color: #ffffff;
+}
+
+.social-link svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+  display: block;
+}
+
 /* --- Pie de Página (Footer) --- */
 .site-footer {
   background-color: #3eb843;
-  padding: 30px 20px;
+  padding: 18px 20px;
   border-top: 1px solid #3eb843;
-  /* Línea sutil de separación superior */
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .site-footer-container {
-  max-width: 1200px;
+  max-width: 1260px;
   width: 100%;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  justify-content: space-between;
+  gap: 18px;
 }
 
-/* Estilo del texto del copyright */
-.site-footer-copyright p {
-  color: #ffffff;
-  font-size: 0.85rem;
-}
-
-/* Estilo de la lista de enlaces */
+.site-footer-copyright,
 .site-footer-links {
   display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer-copyright {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.site-footer-copyright p {
+  color: #ffffff;
+  font-size: 0.82rem;
+  margin: 0;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.site-footer-links {
+  flex: 1 1 auto;
+  gap: 12px;
+  flex-wrap: nowrap;
 }
 
 .site-footer-links a {
   color: #fcfcfc;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .site-footer-links a:hover {
   color: #ffffff;
-  /* Al pasar el mouse se ilumina en blanco */
 }
 
-/* --- Ajuste Responsivo para Móviles --- */
 @media (max-width: 768px) {
+  .site-footer {
+    padding: 16px 14px 18px;
+  }
+
   .site-footer-container {
-    flex-direction: column-reverse;
-    /* En móvil el copyright baja y los enlaces suben */
-    text-align: center;
-    gap: 15px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .site-footer-copyright p,
+  .site-footer-links a {
+    white-space: normal;
+    text-align: center !important;
   }
 
   .site-footer-links {
-    justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 10px 14px;
   }
 }
 
