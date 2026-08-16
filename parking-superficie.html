@@ -244,7 +244,7 @@
           </div>
           <div class="support-image3">
             <!-- Nota: Cambiado de .jfif a .jpg por compatibilidad -->
-            <img  loading="lazy" decoding="async" src="./images/greenwashabout.jpg" alt="Montaje e instalación técnica del centro de lavado" loading="lazy">
+            <img  loading="lazy" decoding="async" src="./images/negociacion.jfif" alt="Montaje e instalación técnica del centro de lavado" loading="lazy">
           </div>
         </li>
         <!-- Ítem 3 -->
@@ -255,7 +255,7 @@
           </div>
           <div class="support-image3">
             <!-- Nota: Cambiado de .jfif a .jpg por compatibilidad -->
-            <img  loading="lazy" decoding="async" src="./images/greenwashabout.jpg" alt="Montaje e instalación técnica del centro de lavado" loading="lazy">
+            <img  loading="lazy" decoding="async" src="./images/slidersuperficie.jpg" alt="Montaje e instalación técnica del centro de lavado" loading="lazy">
           </div>
         </li>
         <!-- Ítem 3 -->
@@ -393,7 +393,7 @@
               <div class="accordion-content">
                 <!-- Contenedor con la imagen flotada a la izquierda -->
                 <div class="content-with-image">
-                  <img  loading="lazy" decoding="async" src="./images/formacion.jpg" alt="Plan de Negocios Green Wash">
+                  <img  loading="lazy" decoding="async" src="./images/softwaregestion.jpg" alt="Plan de Negocios Green Wash">
                   <p>​En Green Wash sabemos que cualquier franquiciado necesita una formación adecuada. Y nosotros
                     cuidamos al máximo esta importante cuestión. Contar con una experiencia de más de 30 años dentro del
                     sector nos convierte en expertos en lo que estamos haciendo. Solo nosotros podemos ofrecerte el
@@ -566,6 +566,8 @@
       var currentIndex = items.findIndex(function (item) {
         return item.classList.contains('active');
       });
+      var autoplayMs = 3500;
+      var autoplayId;
 
       if (currentIndex < 0) {
         currentIndex = 0;
@@ -585,23 +587,43 @@
         }
       }
 
+      function goToNext() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+      }
+
+      function startAutoplay() {
+        clearInterval(autoplayId);
+        autoplayId = setInterval(goToNext, autoplayMs);
+      }
+
       if (prevBtn) {
         prevBtn.addEventListener('click', function () {
-          if (currentIndex === 0) return;
-          currentIndex -= 1;
+          clearInterval(autoplayId);
+          currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
           updateCarousel();
+          startAutoplay();
         });
       }
 
       if (nextBtn) {
         nextBtn.addEventListener('click', function () {
-          if (currentIndex === items.length - 1) return;
-          currentIndex += 1;
-          updateCarousel();
+          clearInterval(autoplayId);
+          goToNext();
+          startAutoplay();
         });
       }
 
+      carousel.addEventListener('mouseenter', function () {
+        clearInterval(autoplayId);
+      });
+
+      carousel.addEventListener('mouseleave', function () {
+        startAutoplay();
+      });
+
       updateCarousel();
+      startAutoplay();
     });</script>
   <script>
     document.querySelectorAll('.accordion-header').forEach(header => {

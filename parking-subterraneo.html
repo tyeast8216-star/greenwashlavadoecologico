@@ -557,6 +557,8 @@
       var currentIndex = items.findIndex(function (item) {
         return item.classList.contains('active');
       });
+      var autoplayMs = 3500;
+      var autoplayId;
 
       if (currentIndex < 0) {
         currentIndex = 0;
@@ -566,6 +568,7 @@
         items.forEach(function (item, index) {
           item.classList.toggle('active', index === currentIndex);
         });
+
         if (prevBtn) {
           prevBtn.classList.toggle('disabled', currentIndex === 0);
           prevBtn.setAttribute('aria-disabled', currentIndex === 0 ? 'true' : 'false');
@@ -576,23 +579,43 @@
         }
       }
 
+      function goToNext() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+      }
+
+      function startAutoplay() {
+        clearInterval(autoplayId);
+        autoplayId = setInterval(goToNext, autoplayMs);
+      }
+
       if (prevBtn) {
         prevBtn.addEventListener('click', function () {
-          if (currentIndex === 0) return;
-          currentIndex -= 1;
+          clearInterval(autoplayId);
+          currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
           updateCarousel();
+          startAutoplay();
         });
       }
 
       if (nextBtn) {
         nextBtn.addEventListener('click', function () {
-          if (currentIndex === items.length - 1) return;
-          currentIndex += 1;
-          updateCarousel();
+          clearInterval(autoplayId);
+          goToNext();
+          startAutoplay();
         });
       }
 
+      carousel.addEventListener('mouseenter', function () {
+        clearInterval(autoplayId);
+      });
+
+      carousel.addEventListener('mouseleave', function () {
+        startAutoplay();
+      });
+
       updateCarousel();
+      startAutoplay();
     });
   </script>
 </body>

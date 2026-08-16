@@ -448,6 +448,75 @@
       <p id="pdfFormMessage" class="pdf-form-message" aria-live="polite"></p>
     </div>
   </div>
+  <script>document.addEventListener('DOMContentLoaded', function () {
+      var carousel = document.querySelector('.parking-section .carousel');
+      if (!carousel) return;
+
+      var items = Array.prototype.slice.call(carousel.querySelectorAll('.carousel-item'));
+      var prevBtn = carousel.querySelector('.carousel-control.prev');
+      var nextBtn = carousel.querySelector('.carousel-control.next');
+      var currentIndex = items.findIndex(function (item) {
+        return item.classList.contains('active');
+      });
+      var autoplayMs = 3500;
+      var autoplayId;
+
+      if (currentIndex < 0) {
+        currentIndex = 0;
+      }
+
+      function updateCarousel() {
+        items.forEach(function (item, index) {
+          item.classList.toggle('active', index === currentIndex);
+        });
+        if (prevBtn) {
+          prevBtn.classList.toggle('disabled', currentIndex === 0);
+          prevBtn.setAttribute('aria-disabled', currentIndex === 0 ? 'true' : 'false');
+        }
+        if (nextBtn) {
+          nextBtn.classList.toggle('disabled', currentIndex === items.length - 1);
+          nextBtn.setAttribute('aria-disabled', currentIndex === items.length - 1 ? 'true' : 'false');
+        }
+      }
+
+      function goToNext() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+      }
+
+      function startAutoplay() {
+        clearInterval(autoplayId);
+        autoplayId = setInterval(goToNext, autoplayMs);
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          clearInterval(autoplayId);
+          currentIndex = currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
+          updateCarousel();
+          startAutoplay();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          clearInterval(autoplayId);
+          goToNext();
+          startAutoplay();
+        });
+      }
+
+      carousel.addEventListener('mouseenter', function () {
+        clearInterval(autoplayId);
+      });
+
+      carousel.addEventListener('mouseleave', function () {
+        startAutoplay();
+      });
+
+      updateCarousel();
+      startAutoplay();
+    });</script>
   <script>
     document.querySelectorAll('.accordion-header').forEach(header => {
       header.addEventListener('click', () => {
