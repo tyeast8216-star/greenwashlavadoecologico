@@ -5717,13 +5717,25 @@ body p {
 .support-text {
   flex: 1 1 260px;
   min-width: 220px;
-  max-width: 280px;
   text-align: justify !important;
   /* 👈 Justificado para Ordenador */
-  text-justify: inter-word;
   /* Distribuye mejor el espacio entre palabras */
 }
 
+.support-text {
+  flex: 1 1 260px;
+  min-width: 220px;
+  text-align: justify !important;
+  /* 👈 Justificado para Ordenador */
+  /* Distribuye mejor el espacio entre palabras */
+}
+
+.support-text h4{
+  justify-content:left;
+  text-align: left;
+  /* 👈 Justificado para Ordenador */
+  /* Distribuye mejor el espacio entre palabras */
+}
 /* 5. Imágenes Generales y Bloques */
 .support-content .support-image {
   margin-top: 5px;
