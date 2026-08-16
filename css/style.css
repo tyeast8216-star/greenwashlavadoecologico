@@ -4884,6 +4884,15 @@ body p {
     min-height: auto;
   }
 
+  .banner-image-section {
+    margin-top: 2px;
+    margin-bottom: 4px;
+  }
+
+  .banner-image-section img {
+    margin-top: 0;
+  }
+
   .overlay-empresa {
     padding: 20px 18px;
   }
@@ -8729,6 +8738,7 @@ a.gw-info-item:focus {
     margin: 20px auto;
   }
 
+
   .solicitud-form-row {
     grid-template-columns: 1fr;
   }
@@ -8753,6 +8763,14 @@ a.gw-info-item:focus {
     margin: 20px auto;
   }
 
+  .contacto-form-card {
+    order: 1;
+  }
+
+  .contacto-info-card {
+    order: 2;
+  }
+
   .contacto-form-row {
     grid-template-columns: 1fr;
     /* Apila los campos dobles en móviles */
@@ -8771,6 +8789,20 @@ a.gw-info-item:focus {
   .contacto-info-card,
   .contacto-form-card {
     padding: 20px;
+  }
+
+  .acceso-franquiciados {
+    order: 3;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .boton-accesoprivado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
