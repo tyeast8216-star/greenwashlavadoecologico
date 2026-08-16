@@ -1468,13 +1468,32 @@ body p {
 .sistema-imagen {
   flex: 1 1 280px;
   max-width: 500px;
+  width: 100%;
 }
 
 .sistema-imagen img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
   border-radius: 15px;
   margin-bottom: 0;
+  display: block;
+}
+
+.image-figure {
+  flex: 1 1 280px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0;
+}
+
+.image-figure img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 15px;
   display: block;
 }
 
@@ -6893,7 +6912,7 @@ body.pdf-modal-open {
 
 .contacto-mascota {
   margin-top: 20px;
-  padding-top: 40px;
+  padding-top: 20px;
   text-align: left;
 }
 
@@ -8377,6 +8396,119 @@ a.gw-info-item:focus {
   display: none !important;
 }
 
+/* Formulario de solicitud: estilos aislados para no afectar a contacto.html */
+.solicitud-main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 800px;
+  width: 100%;
+  margin: 40px auto 60px auto;
+  box-sizing: border-box;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.solicitud-form-card {
+  background: #f4f9f7;
+  padding: 30px;
+  border-radius: 18px;
+  box-sizing: border-box;
+  box-shadow: 0 18px 40px rgba(15, 77, 65, 0.08);
+  overflow: hidden;
+}
+
+.solicitud-form-card h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #1d5d53;
+  text-align: center;
+}
+
+.solicitud-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.solicitud-form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.solicitud-form-group label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 7px;
+  color: #214f46;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.solicitud-form-group input,
+.solicitud-form-group select,
+.solicitud-form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid rgba(20, 93, 79, 0.18);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #1d2e2a;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.solicitud-form-group input:focus,
+.solicitud-form-group select:focus,
+.solicitud-form-group textarea:focus {
+  border-color: #1f7a68;
+  box-shadow: 0 0 0 4px rgba(31, 122, 104, 0.12);
+}
+
+.solicitud-form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.solicitud-phone-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.solicitud-phone-row select {
+  flex: 0 0 140px;
+}
+
+.solicitud-phone-row input {
+  flex: 1;
+}
+
+.solicitud-btn-submit {
+  background: linear-gradient(135deg, #1e7b69 0%, #154f53 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  letter-spacing: 0.02em;
+  box-shadow: 0 14px 26px rgba(21, 79, 83, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.solicitud-btn-submit:hover {
+  background: linear-gradient(135deg, #1b6d5f 0%, #143f48 100%);
+  box-shadow: 0 16px 28px rgba(21, 79, 83, 0.22);
+  transform: translateY(-1px);
+}
+
 /* Contenedor Principal */
 .contacto-main-container {
   display: grid;
@@ -8409,7 +8541,7 @@ a.gw-info-item:focus {
 .contacto-form-card h2 {
   margin-bottom: 15px;
   font-size: 1.5rem;
-  color: #333;
+  color: #a8c9be;;
 }
 
 .contacto-info-card p {
@@ -8580,6 +8712,28 @@ a.gw-info-item:focus {
    Media Queries para Dispositivos Móviles
    ========================================== */
 @media (max-width: 768px) {
+  .solicitud-main-container {
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+  .solicitud-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .solicitud-phone-row {
+    flex-direction: column;
+  }
+
+  .solicitud-phone-row select {
+    flex: 1;
+    width: 100%;
+  }
+
+  .solicitud-form-card {
+    padding: 20px;
+  }
+
   .contacto-main-container {
     grid-template-columns: 1fr;
     /* Pasa a una sola columna */
@@ -8662,7 +8816,7 @@ a.gw-info-item:focus {
   border-bottom: 1px solid rgba(31, 113, 100, 0.12);
   overflow: hidden;
   white-space: nowrap;
-  margin-top: 30px;
+  margin-top: 50px;
   position: relative;
   box-sizing: border-box;
   max-width: calc(100vw - 40px);
