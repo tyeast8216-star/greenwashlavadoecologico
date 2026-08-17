@@ -4559,6 +4559,7 @@ body p {
 }
 
 .social-link {
+  position: relative;
   width: 36px;
   height: 36px;
   display: grid;
@@ -4568,6 +4569,35 @@ body p {
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
   transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+.social-link::after {
+  content: attr(aria-label);
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(14, 22, 31, 0.9);
+  color: #ffffff;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+  z-index: 10;
+}
+
+.social-link:hover::after,
+.social-link:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 .social-link:hover,
