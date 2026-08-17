@@ -1853,6 +1853,9 @@ body p {
   .seccion-ancelave h2.titulo-principal {
     font-size: 24px;
   }
+  .franquicia-texto .divisor-verde {
+    width: 320px !important;
+  }
 }
 
 /* Sección de Aviso Importante con fondo verde corporativo fuerte */
@@ -5754,12 +5757,13 @@ body p {
   /* Distribuye mejor el espacio entre palabras */
 }
 
-.support-text h4{
-  justify-content:left;
+.support-text h4 {
+  justify-content: left;
   text-align: left;
   /* 👈 Justificado para Ordenador */
   /* Distribuye mejor el espacio entre palabras */
 }
+
 /* 5. Imágenes Generales y Bloques */
 .support-content .support-image {
   margin-top: 5px;
@@ -8449,7 +8453,7 @@ a.gw-info-item:focus {
   background: #D1EBD8;
   padding: 50px;
   border-radius: 18px;
-  margin:40px;
+  margin: 40px;
   margin-top: 0;
   box-sizing: border-box;
   box-shadow: 0 18px 40px rgba(15, 77, 65, 0.08);
@@ -8936,11 +8940,16 @@ a.gw-info-item:focus {
 }
 
 @keyframes logo-marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
-.orla-container{
+.orla-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
