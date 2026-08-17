@@ -5563,16 +5563,21 @@ body p {
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #f3f3f3;
+  aspect-ratio: 4 / 3;
+  max-height: 520px;
 }
 
 .carousel-inner {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  height: 100%;
 }
 
 .carousel-item {
   min-width: 100%;
   display: none;
+  height: 100%;
   /* Ocultar todos por defecto */
 }
 
@@ -5581,10 +5586,13 @@ body p {
   /* Mostrar solo el activo */
 }
 
-.carousel-item img {
+.carousel-item img,
+.carousel-item video {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+  background: #eaeaea;
 }
 
 /* Indicadores (puntos) */

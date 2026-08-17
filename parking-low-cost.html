@@ -148,10 +148,13 @@
         <div class="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img  loading="lazy" decoding="async" src="./images/sliderowcost.jpg" alt="Parking Subterraneo low cost obra gris">
+              <video autoplay muted repeat playsinline preload="metadata" poster="./images/sliderowcost.jpg" aria-label="Video del parking low cost">
+                <source src="./videos/parkinglowcost.MP4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+              </video>
             </div>
             <div class="carousel-item">
-              <img  loading="lazy" decoding="async" src="./images/sliderlowcost1.jpg" alt="Parking subterraneo low cost completo">
+              <img loading="lazy" decoding="async" src="./images/sliderlowcost1.jpg" alt="Parking subterraneo low cost completo">
             </div>
             <!-- Aquí irían más elementos .carousel-item para un carrusel real -->
           </div>
@@ -562,7 +565,7 @@
       var currentIndex = items.findIndex(function (item) {
         return item.classList.contains('active');
       });
-      var autoplayMs = 2500;
+      var autoplayMs = 5000;
       var autoplayId;
 
       if (currentIndex < 0) {
@@ -571,7 +574,19 @@
 
       function updateCarousel() {
         items.forEach(function (item, index) {
-          item.classList.toggle('active', index === currentIndex);
+          var isActive = index === currentIndex;
+          item.classList.toggle('active', isActive);
+
+          var video = item.querySelector('video');
+          if (video) {
+            if (isActive) {
+              video.currentTime = 0;
+              video.play().catch(function () {});
+            } else {
+              video.pause();
+              video.currentTime = 0;
+            }
+          }
         });
 
         if (prevBtn) {
