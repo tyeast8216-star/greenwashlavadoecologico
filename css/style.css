@@ -8434,6 +8434,8 @@ a.gw-info-item:focus {
   background: #D1EBD8;
   padding: 50px;
   border-radius: 18px;
+  margin:40px;
+  margin-top: 0;
   box-sizing: border-box;
   box-shadow: 0 18px 40px rgba(15, 77, 65, 0.08);
   overflow: hidden;
@@ -8857,7 +8859,7 @@ a.gw-info-item:focus {
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  fill: #ffffff;
+  fill: #D9D941;
 }
 
 .banda-logotipo {
