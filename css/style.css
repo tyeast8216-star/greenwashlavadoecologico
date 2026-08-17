@@ -1535,10 +1535,25 @@ body p {
   margin-left: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sistema-icon {
+  width: 26px;
+  height: 26px;
+  color: #006644;
+  flex-shrink: 0;
+}
+
+.sistema-icon--small {
+  width: 22px;
+  height: 22px;
 }
 
 .sistema-texto .divisor-verde {
-  width: 120px;
+  width: 155px;
   height: 4px;
   background-color: #23c823;
   margin: 0 0 20px 0;
@@ -1546,7 +1561,7 @@ body p {
 }
 
 .sistema-texto .divisor-verde2 {
-  width: 310px;
+  width: 405px;
   height: 4px;
   background-color: #23c823;
   margin: 0 0 20px 0;
@@ -1583,7 +1598,7 @@ body p {
   }
 
   .sistema-texto h2 {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .sistema-texto p {
@@ -1591,14 +1606,14 @@ body p {
   }
 
   .sistema-texto .divisor-verde {
-    width: 105px;
+    width: 120px;
     height: 4px;
     background-color: #23c823;
     margin: 0 0 20px 0;
   }
 
   .sistema-texto .divisor-verde2 {
-    width: 270px;
+    width: 300px;
     height: 4px;
     background-color: #23c823;
     margin: 0 0 20px 0;
