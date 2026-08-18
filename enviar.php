@@ -317,6 +317,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     if ($sent) {
+        $crmUrl = 'https://tu-crm.com/api/guardar_expediente.php';
+
+        $crmData = [
+            'nombre'     => trim((string)($_POST['nombre'] ?? '')),
+            'apellidos'  => trim((string)($_POST['apellidos'] ?? '')),
+            'email'      => trim((string)($_POST['email'] ?? '')),
+            'telefono'   => trim((string)($_POST['telefono'] ?? '')),
+            'pais'       => trim((string)($_POST['pais'] ?? '')),
+            'poblacion'  => trim((string)($_POST['poblacion'] ?? $_POST['ciudad'] ?? '')),
+            'provincia'  => trim((string)($_POST['provincia'] ?? '')),
+            'zona'       => trim((string)($_POST['zona'] ?? '')),
+            'recibido'   => 'Web',
+            'comentario' => trim((string)($_POST['mensaje'] ?? $_POST['comentario'] ?? '')),
+        ];
+
+        $ch = curl_init($crmUrl);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($crmData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+        $crmResponse = curl_exec($ch);
+        $crmHttpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($crmHttpCode >= 400) {
+            @file_put_contents(__DIR__ . '/crm-error.log', date('[Y-m-d H:i:s] ') . 'CRM error: ' . $crmResponse . PHP_EOL, FILE_APPEND);
+        }
+
         header('Location: gracias.html');
         exit;
     }
