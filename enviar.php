@@ -183,14 +183,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         return str_replace(["\r", "\n"], '', trim((string) $value));
     }
 
+    function getRecaptchaSecretKey() {
+        $candidates = [
+            getenv('RECAPTCHA_SECRET_KEY'),
+            getenv('GOOGLE_RECAPTCHA_SECRET_KEY'),
+            getenv('RECAPTCHA_KEY'),
+            $_ENV['RECAPTCHA_SECRET_KEY'] ?? null,
+            $_SERVER['RECAPTCHA_SECRET_KEY'] ?? null,
+            $_SERVER['GOOGLE_RECAPTCHA_SECRET_KEY'] ?? null,
+        ];
+
+        foreach ($candidates as $candidate) {
+            if (is_string($candidate) && trim($candidate) !== '') {
+                return trim($candidate);
+            }
+        }
+
+        return '';
+    }
+
     function verifyRecaptcha($token, $remoteIp, &$error = null) {
-        $secret = 'YOUR_RECAPTCHA_SECRET_KEY';
+        $secret = getRecaptchaSecretKey();
         $token = trim((string) $token);
         if ($token === '') {
             $error = 'Missing reCAPTCHA token';
             return false;
         }
-        if ($secret === 'YOUR_RECAPTCHA_SECRET_KEY') {
+        if ($secret === '') {
             $error = 'reCAPTCHA secret key not configured';
             return false;
         }
@@ -292,13 +311,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cuerpo = "Formulario enviado desde la web.\n\n" . print_r($_POST, true);
     }
 
-    $smtpHost = 'greenwash-es.correoseguro.dinaserver.com';
-    $smtpPort = 465;
-    $smtpUser = 'smtp@greenwash.es';
-    $smtpPass = 'BC8zH3:3*1]6'; // Pega aquí el token que generaste
-    $smtpSecure = 'ssl'; 
-    $smtpFrom = 'smtp@greenwash.es';
-    $smtpFromName = 'Nuevo Expediente Greenwash';
+    $smtpHost     = 'smtp.servidor-correo.net';
+    $smtpPort     = 465; // O 587 según el que uses (si es 465, ssl está bien)
+    $smtpUser     = 'info@gwecologico.com';
+    $smtpPass     = 'GreenWash2026'; 
+    $smtpSecure   = 'ssl'; 
+    $smtpFrom     = 'info@gwecologico.com'; // <-- Corregido (mismo correo que el user)
+    $smtpFromName = 'Nuevo Expediente Green Wash';        // <-- Corregido (nombre limpio)
 
     $errorMessage = '';
     $sent = smtp_send(
