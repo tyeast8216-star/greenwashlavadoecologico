@@ -3,6 +3,42 @@ body {
   overflow-x: hidden;
 }
 
+/* Entrada progresiva de tarjetas al entrar en el viewport */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(52px) scale(0.94) rotate(1deg);
+  filter: blur(8px);
+  transition: opacity 850ms ease, transform 850ms cubic-bezier(.16, 1, .3, 1), filter 850ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.reveal-from-left {
+  transform: translateX(-52px) translateY(30px) scale(0.94) rotate(-1deg);
+}
+
+.scroll-reveal.reveal-from-right {
+  transform: translateX(52px) translateY(30px) scale(0.94) rotate(1deg);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1) rotate(0);
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .scroll-reveal.reveal-from-left,
+  .scroll-reveal.reveal-from-right,
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
+
 a {
   text-decoration: none;
 }

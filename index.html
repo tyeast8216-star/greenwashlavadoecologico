@@ -1026,6 +1026,45 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      const cards = document.querySelectorAll(
+        '.tarjeta-categoria, .tarjeta-categoria2, .video-card, .testimonios .tarjeta'
+      );
+
+      if (!cards.length) return;
+
+      cards.forEach((card, index) => {
+        card.classList.add('scroll-reveal');
+        card.style.setProperty('--reveal-delay', `${(index % 3) * 100}ms`);
+
+        if (index % 2 === 1) {
+          card.classList.add('reveal-from-right');
+        } else {
+          card.classList.add('reveal-from-left');
+        }
+      });
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        cards.forEach(card => card.classList.add('is-visible'));
+        return;
+      }
+
+      if (!('IntersectionObserver' in window)) {
+        cards.forEach(card => card.classList.add('is-visible'));
+        return;
+      }
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px' });
+
+      cards.forEach(card => revealObserver.observe(card));
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
       var navbarCollapse = document.getElementById('navbarSupportedContent');
       var offcanvasBackdrop = document.querySelector('.offcanvas-backdrop');
       var navLinks = navbarCollapse ? navbarCollapse.querySelectorAll('.nav-link') : [];
