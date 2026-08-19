@@ -269,18 +269,18 @@
       <div id="contacto-region-selects" class="contacto-form-row d-none">
         <div class="contacto-form-group">
           <label for="contacto-provincia">Provincia</label>
-          <input type="text" id="contacto-provincia" name="provincia" placeholder="Provincia" required>
+          <input type="text" id="contacto-provincia" name="provincia" placeholder="Provincia">
         </div>
         <div class="contacto-form-group">
           <label for="contacto-poblacion">Población</label>
-          <input type="text" id="contacto-poblacion" name="poblacion" placeholder="Poblacion" required>
+          <input type="text" id="contacto-poblacion" name="poblacion" placeholder="Poblacion">
         </div>
       </div>
 
       <div id="contacto-country-row" class="contacto-form-row d-none">
         <div class="contacto-form-group">
           <label for="contacto-pais-internacional">País</label>
-          <input type="text" id="contacto-pais-internacional" name="pais" placeholder="País" required>
+          <input type="text" id="contacto-pais-internacional" name="pais" placeholder="País">
         </div>
       </div>
 
@@ -631,13 +631,17 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       toggleTopbarVisibility();
-      var zonaSelect = document.getElementById('gw-zona');
-      var regionSelects = document.getElementById('gw-region-selects');
-      var countryRow = document.getElementById('gw-country-row');
-      var provinciaInput = document.getElementById('gw-provincia');
-      var poblacionInput = document.getElementById('gw-poblacion');
-      var paisInput = document.getElementById('gw-pais-internacional');
+      var zonaSelect = document.getElementById('contacto-zona');
+      var regionSelects = document.getElementById('contacto-region-selects');
+      var countryRow = document.getElementById('contacto-country-row');
+      var provinciaInput = document.getElementById('contacto-provincia');
+      var poblacionInput = document.getElementById('contacto-poblacion');
+      var paisInput = document.getElementById('contacto-pais-internacional');
       var formTimestamp = document.getElementById('gw-form-ts');
+
+      if (!zonaSelect || !regionSelects || !countryRow || !provinciaInput || !poblacionInput || !paisInput) {
+        return;
+      }
 
       if (formTimestamp) {
         formTimestamp.value = Math.floor(Date.now() / 1000);
