@@ -629,14 +629,16 @@
    document.getElementById('contacto-form').addEventListener('submit', function(event) {
        event.preventDefault(); // Evita que recargue la página o busque enviar.php
 
-       // Enviar usando tu Service ID y Template ID configurados
-       emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', this)
-           .then(function() {
-               alert('¡Éxito! Tu solicitud ha sido enviada.');
-               document.getElementById('contacto-form').reset();
-           }, function(error) {
-               alert('Error al enviar: ' + JSON.stringify(error));
-           });
+      // ... dentro de tu script de EmailJS
+emailjs.sendForm('service_l3s9ktu', 'template_gmfbf67', this)
+    .then(function() {
+        // Redirige a la página de éxito
+        window.location.href = 'gracias.html';
+    }, function(error) {
+        // Redirige a la página de error si algo falla
+        console.error('Error:', error);
+        window.location.href = 'mensaje-rechazado.html';
+    });
    });
 </script>
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
