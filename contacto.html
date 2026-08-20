@@ -638,12 +638,13 @@
        }
        if (submitButton) submitButton.disabled = true;
 
+       var formData = new URLSearchParams(new FormData(form));
        fetch('https://crm2.gwecologico.com/api/recibir_expediente.php', {
          method: 'POST',
-         body: new FormData(form),
+         body: formData,
          mode: 'cors',
          credentials: 'omit',
-         headers: { 'Accept': 'application/json' }
+         headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8', 'Accept': 'application/json' }
        })
        .then(function(response) {
          return response.text().then(function(responseText) {
