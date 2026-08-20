@@ -652,7 +652,8 @@
              throw new Error('El CRM no devolvio una respuesta JSON valida (HTTP ' + response.status + ')');
            }
            if (!response.ok || !data.ok) {
-             throw new Error(data.error || 'No se pudo guardar la solicitud');
+             var detail = data.detalles && data.detalles.length ? ' (' + data.detalles.join(', ') + ')' : '';
+             throw new Error((data.error || 'No se pudo guardar la solicitud') + detail);
            }
            return data;
          });
