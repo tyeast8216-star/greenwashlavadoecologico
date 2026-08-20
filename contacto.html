@@ -665,6 +665,7 @@
        })
        .catch(function(error) {
          console.error('Error al enviar la solicitud:', error);
+         alert('No se pudo enviar la solicitud: ' + error.message);
          if (submitButton) submitButton.disabled = false;
          window.location.href = 'mensaje-rechazado.html';
        });
