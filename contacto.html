@@ -625,19 +625,38 @@
      publicKey: "wv-d1H5Xm7DWUPEzg", 
    });
 
-   // Capturar el envío del formulario actual
+     // Guardar primero el contacto en el CRM y conservar el aviso por EmailJS.
    document.getElementById('contacto-form').addEventListener('submit', function(event) {
-       event.preventDefault(); // Evita que recargue la página o busque enviar.php
+       event.preventDefault();
+       var form = this;
+      var timestampField = form.querySelector('input[name="form_ts"]');
+      if (timestampField) timestampField.value = Math.floor(Date.now() / 1000);
+       var submitButton = form.querySelector('button[type="submit"]');
+       if (submitButton) submitButton.disabled = true;
 
-       // ... dentro de tu script de EmailJS
-      emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', this)
-          .then(function() {
-              // Redirige a la página de éxito
-              window.location.href = 'gracias.html';
-          }, function(error) {
-              // Redirige a la página de error si algo falla
-              console.error('Error:', error);
-              window.location.href = 'mensaje-rechazado.html';
+       fetch('./api/recibir_expediente.php', {
+         method: 'POST',
+         body: new FormData(form),
+         headers: { 'Accept': 'application/json' }
+       })
+       .then(function(response) {
+         return response.json().then(function(data) {
+           if (!response.ok || !data.ok) {
+             throw new Error(data.error || 'No se pudo guardar la solicitud');
+           }
+           return data;
+         });
+       })
+       .then(function() {
+           return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', form);
+       })
+       .then(function() {
+         window.location.href = 'gracias.html';
+       })
+       .catch(function(error) {
+         console.error('Error al enviar la solicitud:', error);
+         if (submitButton) submitButton.disabled = false;
+         window.location.href = 'mensaje-rechazado.html';
        });
    });
 </script>
@@ -661,7 +680,7 @@
       var provinciaInput = document.getElementById('contacto-provincia');
       var poblacionInput = document.getElementById('contacto-poblacion');
       var paisInput = document.getElementById('contacto-pais-internacional');
-      var formTimestamp = document.getElementById('gw-form-ts');
+      var formTimestamp = document.getElementById('contacto-form-ts');
 
       if (!zonaSelect || !regionSelects || !countryRow || !provinciaInput || !poblacionInput || !paisInput) {
         return;
