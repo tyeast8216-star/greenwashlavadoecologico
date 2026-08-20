@@ -632,6 +632,10 @@
       var timestampField = form.querySelector('input[name="form_ts"]');
       if (timestampField) timestampField.value = Math.floor(Date.now() / 1000);
        var submitButton = form.querySelector('button[type="submit"]');
+       if (typeof grecaptcha !== 'undefined' && !grecaptcha.getResponse()) {
+         alert('Completa el reCAPTCHA antes de enviar el formulario.');
+         return;
+       }
        if (submitButton) submitButton.disabled = true;
 
        fetch('https://crm2.gwecologico.com/api/recibir_expediente.php', {
