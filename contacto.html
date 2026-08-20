@@ -668,12 +668,19 @@
            });
          })
          .then(function() {
-           var captchaField = form.querySelector('textarea[name="g-recaptcha-response"]');
-           if (captchaField) captchaField.disabled = true;
-           return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', form)
-             .finally(function() {
-               if (captchaField) captchaField.disabled = false;
-             });
+           var emailForm = form.cloneNode(true);
+           var captchaField = emailForm.querySelector('textarea[name="g-recaptcha-response"]');
+           if (captchaField) {
+             captchaField.disabled = false;
+             captchaField.value = 'Validado por el CRM';
+           } else {
+             var emailCaptchaField = document.createElement('input');
+             emailCaptchaField.type = 'hidden';
+             emailCaptchaField.name = 'g-recaptcha-response';
+             emailCaptchaField.value = 'Validado por el CRM';
+             emailForm.appendChild(emailCaptchaField);
+           }
+           return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', emailForm);
          })
          .then(function() {
            window.location.href = 'gracias.html';
