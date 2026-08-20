@@ -616,15 +616,7 @@
   </footer>
   </div>
 
-<!-- Cargar librería de EmailJS -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <script type="text/javascript">
-   // Inicializar con tu Public Key de EmailJS
-   emailjs.init({
-     publicKey: "wv-d1H5Xm7DWUPEzg", 
-   });
-
      // El formulario se envia directamente al endpoint PHP del CRM.
    document.getElementById('contacto-form').addEventListener('submit', function(event) {
        event.preventDefault();
@@ -668,22 +660,15 @@
            });
          })
          .then(function() {
-           var emailForm = form.cloneNode(true);
-           emailForm.querySelectorAll('[name="g-recaptcha-response"]').forEach(function(captchaField) {
-             captchaField.remove();
-           });
-           return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', emailForm);
-         })
-         .then(function() {
            window.location.href = 'gracias.html';
          })
          .catch(function(error) {
-           console.error('Error al enviar el expediente:', error);
+           console.error('Error al guardar el expediente:', error);
            var detalle = error && (error.text || error.message || error.status)
              ? (error.text || error.message || ('HTTP ' + error.status))
-             : 'Error desconocido de EmailJS';
+             : 'Error desconocido del CRM';
            var mensaje = crmGuardado
-             ? 'El expediente se guardo en el CRM, pero no se pudo enviar el aviso por EmailJS: ' + detalle
+             ? 'El expediente se guardo en el CRM, pero no se pudo completar el proceso: ' + detalle
              : 'No se pudo guardar el expediente en el CRM: ' + detalle;
            alert(mensaje);
            if (submitButton) submitButton.disabled = false;
