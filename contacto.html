@@ -639,6 +639,8 @@
        }
        if (submitButton) submitButton.disabled = true;
 
+       var crmGuardado = false;
+
          var formData = new URLSearchParams(new FormData(form));
          fetch('https://crm2.gwecologico.com/api/recibir_expediente.php', {
            method: 'POST',
@@ -661,6 +663,7 @@
              if (!response.ok || !data.ok) {
                throw new Error(data.error || 'No se pudo guardar el expediente');
              }
+             crmGuardado = true;
              return data;
            });
          })
@@ -672,7 +675,13 @@
          })
          .catch(function(error) {
            console.error('Error al enviar el expediente:', error);
-           alert('No se pudo enviar la solicitud: ' + error.message);
+           var detalle = error && (error.text || error.message || error.status)
+             ? (error.text || error.message || ('HTTP ' + error.status))
+             : 'Error desconocido de EmailJS';
+           var mensaje = crmGuardado
+             ? 'El expediente se guardo en el CRM, pero no se pudo enviar el aviso por EmailJS: ' + detalle
+             : 'No se pudo guardar el expediente en el CRM: ' + detalle;
+           alert(mensaje);
            if (submitButton) submitButton.disabled = false;
          });
    });
