@@ -669,17 +669,9 @@
          })
          .then(function() {
            var emailForm = form.cloneNode(true);
-           var captchaField = emailForm.querySelector('textarea[name="g-recaptcha-response"]');
-           if (captchaField) {
-             captchaField.disabled = false;
-             captchaField.value = 'Validado por el CRM';
-           } else {
-             var emailCaptchaField = document.createElement('input');
-             emailCaptchaField.type = 'hidden';
-             emailCaptchaField.name = 'g-recaptcha-response';
-             emailCaptchaField.value = 'Validado por el CRM';
-             emailForm.appendChild(emailCaptchaField);
-           }
+           emailForm.querySelectorAll('[name="g-recaptcha-response"]').forEach(function(captchaField) {
+             captchaField.remove();
+           });
            return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', emailForm);
          })
          .then(function() {
