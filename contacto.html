@@ -668,7 +668,12 @@
            });
          })
          .then(function() {
-           return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', form);
+           var captchaField = form.querySelector('textarea[name="g-recaptcha-response"]');
+           if (captchaField) captchaField.disabled = true;
+           return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', form)
+             .finally(function() {
+               if (captchaField) captchaField.disabled = false;
+             });
          })
          .then(function() {
            window.location.href = 'gracias.html';
