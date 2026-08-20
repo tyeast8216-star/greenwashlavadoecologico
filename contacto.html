@@ -641,6 +641,8 @@
        fetch('https://crm2.gwecologico.com/api/recibir_expediente.php', {
          method: 'POST',
          body: new FormData(form),
+         mode: 'cors',
+         credentials: 'omit',
          headers: { 'Accept': 'application/json' }
        })
        .then(function(response) {
@@ -659,7 +661,11 @@
          });
        })
        .then(function() {
-           return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', form);
+           return emailjs.sendForm('service_l3s9ktu', 'template_krw8er6', form)
+             .catch(function(error) {
+               console.warn('El expediente se guardo, pero fallo el aviso por email:', error);
+               return null;
+             });
        })
        .then(function() {
          window.location.href = 'gracias.html';
